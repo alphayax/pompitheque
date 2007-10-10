@@ -1,4 +1,11 @@
 #labels Groupe5
 = Page de brainstorming =
 
-Toutes les idées
+== Superposition aux images ==
+
+== Génération du message ==
+
+ * Creation de la zone de saisie
+ * Gestion des évennements (gestion du clic ect...)
+
+== Gestion de la file ==

@@ -1,7 +1,11 @@
 #labels Groupe5
 = Etude =
+Etude préalable et détaillé pour tout ce qui concerne le groupe 5
 
 == UML ==
+{{{
+Mettre le schema UML
+}}}
 
 == Code ==
 === Objet Message ===
@@ -13,4 +17,9 @@ class Message( heritage? ):
    public:
       string saisie()
       void affiche()
+}}}
+
+=== Objet File ===
+{{{
+A completer
 }}}

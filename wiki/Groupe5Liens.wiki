@@ -1,8 +1,5 @@
 #labels Groupe5
 = Liens =
 
-Liens vers le forum de developpez.com concernant AS3 :
-[http://www.developpez.net/forums/forumdisplay.php?f=787]
-
-Site sur Flex et AS3 avec tutoriaux, explication, truc et astuce, etc...
-[http://wiki.mediabox.fr/tutoriaux/flash]
+ * [http://www.developpez.net/forums/forumdisplay.php?f=787 Liens vers le forum de developpez.com concernant AS3]
+ * [http://wiki.mediabox.fr/tutoriaux/flash Site sur Flex et AS3 avec tutoriaux, explication, truc et astuce, etc...]

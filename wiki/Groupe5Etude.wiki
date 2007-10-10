@@ -12,7 +12,7 @@ Mettre le schema UML
 {{{
 class Message( heritage? ):
    private:
-      string contenue
+      string contenu
    
    public:
       string saisie()

@@ -3,7 +3,8 @@
 
 == Superposition aux images ==
 
- * Récuperation, en entrée, du texte écrit par l'utilisateur
+ * Récuperation, en entrée, du texte écrit par l'utilisateur.
+ * Affichage sur le torse du personnage.
 
 == Génération du message ==
 

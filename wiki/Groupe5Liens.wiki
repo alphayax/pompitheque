@@ -1,5 +1,5 @@
 #labels Groupe5
 = Liens =
 
-Liens vers le forum de developpez.net concernant AS3 :
+Liens vers le forum de developpez.com concernant AS3 :
 [http://www.developpez.net/forums/forumdisplay.php?f=787]

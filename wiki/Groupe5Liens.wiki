@@ -1,2 +1,2 @@
-#labels Groupe5,Liens,Featured
+#labels Groupe5
 = Liens =

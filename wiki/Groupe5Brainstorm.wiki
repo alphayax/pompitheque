@@ -9,6 +9,6 @@
 == Génération du message ==
 
  * Creation de la zone de saisie
- * Gestion des évènements (gestion du clic etc)
+ * Gestion des évènements (gestion du clic etc.)
 
 == Gestion de la file ==

@@ -17,7 +17,7 @@ Vous devrez gérer une politique de messages paramétrable (les messages à dest
 
 == Politique du Groupe ==
 
-=== Assignation ===
+=== Assignations ===
 
  * *Vasallo Pierre et Auberval Nicolas* : affichage des messages : superposition aux images
  * *Clairon Nicolas et Cadet Romain* en _Xtrem Programming_ : Génération du message et affichage des messages : Gestion de la "file" de messages

@@ -1,4 +1,4 @@
-#labels Groupe5
+#labels Groupe5,Featured
 = Rapport du Groupe 5 (Conversation) =
 
 = Sommaire =

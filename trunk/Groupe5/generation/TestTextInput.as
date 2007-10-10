@@ -10,6 +10,10 @@ package
 	public class TestTextInput extends Sprite
 	{
 		
+		// ----o Protected Property
+		
+		protected var tf:CustomField ;
+
 		// ----o Constructor
 		
 		public function TestTextInput()
@@ -44,9 +48,6 @@ package
 			trace (">> " + e.type + " -> " + e.currentTarget) ;	
 		}
 		
-		// ----o Protected Property
-		
-		protected var tf:CustomField ;
 		
 	}
 }

@@ -1,7 +1,17 @@
 #labels Groupe5,Featured
 = Rapport du Groupe 5 (Conversation) =
 
-= Sommaire =
+== Sommaire ==
 [Groupe5Liens Liens utiles]: Tous les liens utiles pour le groupe 5
 
 [Groupe5Brainstorm Brainstorming] : Toutes les idées lumineuses ou pas...
+
+== Politique du Groupe ==
+
+=== Assignation ===
+
+*Vasallo Pierre et Auberval Nicolas* : affichage des messages : superposition aux images
+
+*Clairon Nicolas et Cadet Romain* en _Xtrem Programming_ : Génration du message et affichage des messages : Gestion de la "file" de messages
+
+*Douziech Sylvain* : Chef de Projet

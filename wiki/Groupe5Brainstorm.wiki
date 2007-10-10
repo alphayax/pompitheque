@@ -3,9 +3,11 @@
 
 == Superposition aux images ==
 
+ * Récuperation, en entrée, du texte écrit par l'utilisateur
+
 == Génération du message ==
 
  * Creation de la zone de saisie
- * Gestion des évennements (gestion du clic ect...)
+ * Gestion des évènements (gestion du clic ect...)
 
 == Gestion de la file ==

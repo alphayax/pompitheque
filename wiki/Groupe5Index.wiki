@@ -2,12 +2,14 @@
 = Rapport du Groupe 5 (Conversation) =
 
 == Sommaire ==
-[Groupe5Liens Liens utiles]: Tous les liens utiles pour le groupe 5
-
-[Groupe5Brainstorm Brainstorming] : Toutes les idées lumineuses ou pas...
+ * [Groupe5Liens Liens utiles]: Tous les liens utiles pour le groupe 5
+ * [Groupe5Brainstorm Brainstorming] : Toutes les idées lumineuses ou pas...
+ * [Groupe5GenerationMessage Génération du message]
+ * [Groupe5GestionFile Gestion de la file de message]
+ * [Groupe5Superposition Superposition aux images]
+ * [Groupe5Rapport Rapport]
 
 == Mission ==
-
 Chaque client doit pouvoir discuter avec un client en :
  * cliquant sur son avatar pour le désigner
  * en saisissant un message (dans une zone de texte ou à l'aveugle) (envois sur les retours-chariot)
@@ -16,9 +18,7 @@ Chaque client doit pouvoir discuter avec un client en :
 Vous devrez gérer une politique de messages paramétrable (les messages à destination d'un avatar ne sont-ils visibles que par lui ou par tout autre avatar l'ayant dans son champ de vision, peut-on remonter dans les messages...).
 
 == Politique du Groupe ==
-
 === Assignations ===
-
  * *Vasallo Pierre et Auberval Nicolas* : affichage des messages : superposition aux images
  * *Clairon Nicolas et Cadet Romain* en _Xtrem Programming_ : Génération du message et affichage des messages : Gestion de la "file" de messages
  * *Douziech Sylvain* : Chef de Projet

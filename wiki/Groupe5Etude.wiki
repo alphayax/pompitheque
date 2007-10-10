@@ -1,0 +1,16 @@
+#labels Groupe5
+= Etude =
+
+== UML ==
+
+== Code ==
+=== Objet Message ===
+{{{
+class Message( heritage? ):
+   private:
+      string contenue
+   
+   public:
+      string saisie()
+      void affiche()
+}}}

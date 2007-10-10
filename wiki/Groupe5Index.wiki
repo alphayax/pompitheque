@@ -3,4 +3,5 @@
 
 = Sommaire =
 [Groupe5Liens Liens utiles]: Tous les liens utiles pour le groupe 5
+
 [Groupe5Brainstorm Brainstorming] : Toutes les idées lumineuses ou pas...

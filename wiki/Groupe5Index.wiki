@@ -1,3 +1,4 @@
+#labels Groupe5
 = Rapport du Groupe 5 (Conversation) =
 
 = Sommaire =

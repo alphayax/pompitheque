@@ -7,6 +7,7 @@
  * [Groupe5GenerationMessage Génération du message]
  * [Groupe5GestionFile Gestion de la file de message]
  * [Groupe5Superposition Superposition aux images]
+ * [Groupe5Etude Etude des différents objets nécessaires]
  * [Groupe5Rapport Rapport]
 
 == Mission ==

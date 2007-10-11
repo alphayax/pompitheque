@@ -1,5 +1,5 @@
 #labels Commun
-= SVN HowTo =
+= SVN Howto =
 
 == Demarrage ==
 

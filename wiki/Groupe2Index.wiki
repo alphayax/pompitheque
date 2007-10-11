@@ -9,5 +9,7 @@
 A completer...
 
 == Politique du Groupe ==
+Extrem Programing
+
 === Assignations ===
 A completer...

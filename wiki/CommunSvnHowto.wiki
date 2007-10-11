@@ -48,7 +48,11 @@ Quand vous modifiez des fichiers ou rajoutez des fichiers vous devez faire un «
 
 === Sous Linux ===
 
-Pour les linuxiens, je ne sais plus vraiment comment cela fonctionne (vu que je tourne plutôt sous windows) mais vous trouverez assez facilement des infos sur le net
+Première chose à faire : `svn update`. Cela va mettre à jour votre copie locale de l'arborescence.
+
+Pour ajouter un fichier ou un dossier : `svn add monfichier`.
+
+Pour envoyer tout le joli travail sur le serveur : `svn commit -m "Groupe<N°dugroupe>: Mon message`.
 
 Il existe aussi d'autre clients, vous pourrez trouver la liste ici : http://fr.wikipedia.org/wiki/Subversion_%28logiciel%29#Logiciels_clients
 

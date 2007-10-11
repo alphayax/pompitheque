@@ -5,6 +5,14 @@ Page Recenssant les discutions des différents groupes
 
 [CommunFormat Format des données]
 
+
+= Liens utiles =
+ * [http://livedocs.adobe.com/flash/9.0/main/ Docs complètes]
+ * [http://www.adobe.com/fr/devnet/flex/ Pole de développement de Flex]
+ * [http://flash.developpez.com/ Flash sur developpez.com]
+ * [http://www.adobe.com/products/flex/whitepapers PDF sur flex]
+ * [http://wiki.mediabox.fr/tutoriaux/flash Site sur Flex et AS3 avec tutoriaux, explication, truc et astuce, etc...]
+
 == Compilation ==
 {{{
 mxmlc -source-path="/chemin/vers/le/repertoire" Monfichier.as

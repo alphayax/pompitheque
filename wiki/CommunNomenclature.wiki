@@ -4,7 +4,7 @@
 Afin de rendre ce site le plus lisible possible, il faut respecter quelques conventions de nommage :
 
 == Les messages des commits ==
-A chaque commit, les messages doit être préfixés par "Groupe<N° du groupe>". Exemple :
+A chaque commit, les messages doivent être préfixés par "Groupe<N° du groupe>". Exemple :
 {{{
 svn commit -m "Groupe5: Mon super message"
 }}}

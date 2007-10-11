@@ -1,0 +1,40 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+== Format de données pour les messages ==
+{{{
+<message from="toto" to="all">
+ <content>Salut ca farte ?</content>
+</message>
+}}}
+
+
+== Format de données pour les utilisateurs ==
+{{{
+<user pseudo="toto">
+ <x>50</x>
+ <y>250</y>
+ <orientation>20</orientation>
+</user>
+}}}
+
+
+== Format de données pour la salle et le mobilier ==
+{{{
+<map nom="zemap">
+ <salle>
+  <position x1="1" y1="3" x2="25" y2="55" />
+  <position x1="1" y1="3" x2="25" y2="55" />
+  <position x1="1" y1="3" x2="25" y2="55" />
+ </salle>
+ <mobilier>
+  <table x="11" y="12" orientation="40" />
+  <table x="11" y="12" orientation="40" />
+  <table x="11" y="12" orientation="40" />
+  <chaise x="10" y="12" orientation="40" />
+  <chaise x="10" y="12" orientation="40" />
+  <chaise x="10" y="12" orientation="40" />
+ </mobilier>
+</map>
+}}}

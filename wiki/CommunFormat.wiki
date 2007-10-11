@@ -1,3 +1,4 @@
+#labels Commun
 = Encodage des documents =
 L'encodage de tous les fichiers doit être en *UTF8*
 

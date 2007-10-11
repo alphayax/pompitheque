@@ -1,0 +1,13 @@
+#labels Groupe6,Featured
+= Rapport du Groupe 6 =
+
+== Sommaire ==
+ * [Groupe6Liens Liens utiles]: Tous les liens utiles pour le groupe 6
+ * A completer...
+
+== Mission ==
+A completer...
+
+== Politique du Groupe ==
+=== Assignations ===
+A completer...

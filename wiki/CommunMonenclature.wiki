@@ -23,5 +23,7 @@ CommunLaSuperPage
 === La page d'index ===
 Chaque groupe possède une page `Groupe#Index` ce qui représente la page d'acceuil du groupe
 
+Chaque page wiki doit avoir un label (plus pratique pour avoir toutes les pages d'un seul label). Le label est simple : `Commun` pour toute page commun, `Groupe<N°dugroupe>` pour les pages appartenants à un groupe
+
 == Les tests sur le wiki ==
 On peut s'entrainer sur le wiki [CommunBacASable ici] !

@@ -1,7 +1,7 @@
 #labels Commun
 = Commun =
 
-Page Recenssant les discutions des différents groupes
+Page recenssant les discutions des différents groupes
 
 [CommunFormat Format des données]
 

@@ -6,10 +6,10 @@ Page recenssant les discutions des différents groupes
 [CommunFormat Format des données]
 
 = Pages des groupes =
- * [Groupe1Index Groupe 1]
- * [Groupe2Index Groupe 2]
- * [Groupe3Index Groupe 3]
- * [Groupe4Index Groupe 4]
+ * [Groupe1Index Groupe 1] (Vue panoramique)
+ * [Groupe2Index Groupe 2] (Topographie)
+ * [Groupe3Index Groupe 3] (Déplacement & Orientation)
+ * [Groupe4Index Groupe 4] (3D)
  * [Groupe5Index Groupe 5] (Conversation)
  * [Groupe6Index Groupe 6] (Client/Serveur)
 

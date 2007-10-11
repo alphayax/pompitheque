@@ -1,10 +1,17 @@
+= Encodage des documents =
+Il est _important_ de souligner le fait que les fichiers doivent tous être enregistrés sous l'encodage *UTF8*
+
 = Format des données =
 Afin de communiquer entre les divers modules de l'application, nous avons besoin d'une norme concernant les données.
 Nous pouvons distinguer trois types de données:
   * Les messages
+    * Cette donnée est envoyée au serveur sur demande de l'utilisateur (envoie d'un message)
+    * Le serveur la retourne aux utilisateurs spécifiés (par défaut, tout le monde).
   * Les Utilisateurs
+    * Cette donnée évolue en permanance si l'utilisateur se déplace ou change d'orientation.
+    * Elle est envoyée au serveur a chaque changement.
   * La salle et le mobillier
-    * 
+    * Stoquée sur le serveur ces données seront envoyées uniquement à la connexion d'un client
 
 == Format de données pour les messages ==
 {{{

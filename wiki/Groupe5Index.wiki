@@ -1,6 +1,4 @@
 #labels Groupe5,Featured
-#Index du groupe 5
-
 = Rapport du Groupe 5 (Conversation) =
 
 == Sommaire ==

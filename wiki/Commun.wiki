@@ -5,6 +5,13 @@ Page recenssant les discutions des différents groupes
 
 [CommunFormat Format des données]
 
+= Pages des groupes =
+ * [Groupe1Index Groupe 1]
+ * [Groupe2Index Groupe 2]
+ * [Groupe3Index Groupe 3]
+ * [Groupe4Index Groupe 4]
+ * [Groupe5Index Groupe 5] (Conversation)
+ * [Groupe6Index Groupe 6] (Client/Serveur)
 
 = Liens utiles =
  * [http://livedocs.adobe.com/flash/9.0/main/ Docs complètes]

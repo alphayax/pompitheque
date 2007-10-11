@@ -1,7 +1,7 @@
 #labels Commun
 = Nomenclature =
 
-Afin de rendre ce site le plus lisible possible, il faut respecter quelques convention de nomages :
+Afin de rendre ce site le plus lisible possible, il faut respecter quelques convention de nommage :
 
 == Les messages des commits ==
 A chaque commit, les messages doit être préfixés par "Groupe<N° du groupe>". Exemple :

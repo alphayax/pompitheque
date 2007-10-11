@@ -13,6 +13,9 @@ Page Recenssant les discutions des différents groupes
  * [http://www.adobe.com/products/flex/whitepapers PDF sur flex]
  * [http://wiki.mediabox.fr/tutoriaux/flash Site sur Flex et AS3 avec tutoriaux, explication, truc et astuce, etc...]
 
+== Format des données de comunication ==
+ [[formatdata]]
+
 == Compilation ==
 {{{
 mxmlc -source-path="/chemin/vers/le/repertoire" Monfichier.as

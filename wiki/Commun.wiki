@@ -3,6 +3,8 @@
 
 = Commun =
 
+[CommunFormat Format des données]
+
 == Compilation ==
 {{{
 mxmlc -source-path="/chemin/vers/le/repertoire" Monfichier.as

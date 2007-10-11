@@ -1,5 +1,5 @@
 = Encodage des documents =
-Il est _important_ de souligner le fait que les fichiers doivent tous être enregistrés sous l'encodage *UTF8*
+L'encodage de tous les fichiers doit être en *UTF8*
 
 = Format des données =
 Afin de communiquer entre les divers modules de l'application, nous avons besoin d'une norme concernant les données.

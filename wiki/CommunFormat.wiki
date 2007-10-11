@@ -1,6 +1,10 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
+= Format des données =
+Afin de communiquer entre les divers modules de l'application, nous avons besoin d'une norme concernant les données.
+Nous pouvons distinguer trois types de données:
+  * Les messages
+  * Les Utilisateurs
+  * La salle et le mobillier
+    * 
 
 == Format de données pour les messages ==
 {{{

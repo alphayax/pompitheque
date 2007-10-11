@@ -9,5 +9,8 @@
 A completer...
 
 == Politique du Groupe ==
+
 === Assignations ===
-A completer...
+ * Ponzoni Yann : Chef de projet
+ * Martoglio Yoann
+ * Verheye Fabien

@@ -1,7 +1,7 @@
 #labels Commun
 = Nomenclature =
 
-Afin de rendre ce site le plus lisible possible, il faut respecter quelques convention de nommage :
+Afin de rendre ce site le plus lisible possible, il faut respecter quelques conventions de nommage :
 
 == Les messages des commits ==
 A chaque commit, les messages doit être préfixés par "Groupe<N° du groupe>". Exemple :
@@ -10,7 +10,7 @@ svn commit -m "Groupe5: Mon super message"
 }}}
 
 == Les pages wiki ==
-Chaque page wiki doit être préfixé par Groupe<N° du groupe> puis par le nom de la page. exemple :
+Chaque page wiki doit être préfixée par Groupe<N° du groupe> puis par le nom de la page. exemple :
 {{{
 Groupe5MaSuperPage
 }}}

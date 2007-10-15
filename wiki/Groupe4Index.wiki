@@ -12,9 +12,9 @@
 === Ennoncé ===
 Construction de la scène "3D' par intégration des images
 Chaque client doit pouvoir voir ce qu'il y a en face de lui (dans une vue d'environ 140 defrés), c'est a dire :
-* les avatars en avant plan
-* recouvrant les avatar en arriere plan
-* recouvrant la vue panoramique du fond
+ * les avatars en avant plan
+ * recouvrant les avatar en arriere plan
+ * recouvrant la vue panoramique du fond
 
 
 === Taches ===

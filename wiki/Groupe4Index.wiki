@@ -3,7 +3,10 @@
 
 == Sommaire ==
  * [Groupe4Liens Liens utiles]: Tous les liens utiles pour le groupe 4
- * A completer...
+ * [Groupe4avatar Gestion des avatars]: Idées et réflexions sur les avatars (redimensionnement, placement...)
+ * [Groupe4objet Creation des objets]: Idées et réflexions sur les objets (création du damier en perspective, dessin d'une table, transformation 3D)
+ * [Groupe4classe Diagramme de classe]
+ * [Groupe4rapport Rapport]
 
 == Mission ==
 === Ennoncé ===
@@ -39,7 +42,9 @@ Chaque client doit pouvoir voir ce qu'il y a en face de lui (dans une vue d'envi
    * Insertion interface pour le retour a la vue 2D
 
 === Questions pour les autres groupes ====
-En cours...
+ * G1: taille de l'image recu ?
+ * G5: c'est nous ou vous qui calculons la zone de texte sur l'avatar ?
+ * G6: communication avec le serveur pour le rafraichissement de l'image ?
 
 == Politique du Groupe ==
 === Assignations ===

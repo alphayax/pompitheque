@@ -19,7 +19,7 @@ Chaque client doit pouvoir voir ce qu'il y a en face de lui (dans une vue d'envi
    * pour deux types de playmobils = Homme et Femme
    * pour deux positions = assis (sur une chaise playmobil) et debout
    * (eventuelement chaise vide a faire aussi)
-   * pour chaques cas prendre une photo tout les 10 degrés = 36 photo ** 4 (eventuelement prendre seulement les photos sur 180° et appliquer un effet mirroir au retouchage)
+   * pour chaques cas prendre une photo tout les 10 degrés = 36 photo x 4 (eventuelement prendre seulement les photos sur 180° et appliquer un effet mirroir au retouchage)
    * /!\ faire attention a la luminosité, avoir un angle tres précis, avoir un fond unis pour decoupage
    * retouche avec logiciel de graphisme pour decouper le fond et ne recuperer que le personnage, eventuelement retravailler la luminosité
  * Integration des photo des playmobils
@@ -30,8 +30,16 @@ Chaque client doit pouvoir voir ce qu'il y a en face de lui (dans une vue d'envi
    * Creation d'un damier en perpective qui tournera avec les fleches afin de voir comment sont appliqué les transformations sur les points
    * Creation d'une table en se basant sur le damier (le dessus de la table = un element du damier)
    * ajout d'autres objets sur la meme base que la table
+ * Intégration globale :
+   * Insertion de l'image du panorama correspondant a la vue du personnage (position + angle -> image=
+   * Insertion des avatars
+   * Insertion des objets
+   * Insertion ecouteur clavier = touche pour tourner
+   * Rafraichissement des avatars en demandant au server les nouvelles positions/angles
+   * Insertion interface pour le retour a la vue 2D
 
-
+=== Questions pour les autres groupes ====
+En cours...
 
 == Politique du Groupe ==
 === Assignations ===

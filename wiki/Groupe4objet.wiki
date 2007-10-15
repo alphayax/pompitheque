@@ -1,5 +1,5 @@
 #summary One-sentence summary of this page.
-#labels Groupe4,Featured
+#labels Groupe4
 
 = Création des objets vectoriel =
 

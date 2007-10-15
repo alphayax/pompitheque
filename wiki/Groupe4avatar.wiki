@@ -4,7 +4,7 @@
 = Gestion des avatars =
 
 == Redimensionnement ==
-Application de thalès pour calculer le pourcentage de redimensionnement
+Application de thalès pour calculer le pourcentage de redimensionnement en fonction de la position sur la grille
 
 [http://pompitheque.googlecode.com/svn/trunk/Groupe4/Dessin_redimenssionement.jpg]
 

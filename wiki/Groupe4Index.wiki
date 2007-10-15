@@ -6,7 +6,21 @@
  * A completer...
 
 == Mission ==
-A completer...
+=== Ennoncé ===
+
+
+=== Taches ===
+Intégrer les images dans un environement en fausse 3D :
+ * Integration des photo des playmobiles
+   * Sous quel angle va t'on voir les avatars ?
+   * Ou seront placé les avatars par rapport a ma position ?
+   * Quel taille pour les avatars afin d'avoir une impression de 3D/perpective
+ * Integration d'élément du decors :
+   * Creation d'un damier en perpective qui tournera avec les fleches afin de voir comment sont appliqué les transformations sur les points
+   * Creation d'une table en se basant sur le damier (le dessus de la table = un element du damier)
+   * eventuelement ajout d'autres objets
+
+
 
 == Politique du Groupe ==
 === Assignations ===

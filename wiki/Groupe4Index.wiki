@@ -7,10 +7,14 @@
 
 == Mission ==
 === Ennoncé ===
+Construction de la scène "3D' par intégration des images
+Chaque client doit pouvoir voir ce qu'il y a en face de lui (dans une vue d'environ 140 defrés), c'est a dire :
+ - les avatars en avant plan
+ - recouvrant les avatar en arriere plan
+ - recouvrant la vue panoramique du fond
 
 
 === Taches ===
-Intégrer les images dans un environement en fausse 3D :
  * Photos des playmobils :
    * pour deux types de playmobils = Homme et Femme
    * pour deux positions = assis (sur une chaise playmobil) et debout
@@ -25,10 +29,13 @@ Intégrer les images dans un environement en fausse 3D :
  * Integration d'élément du decors :
    * Creation d'un damier en perpective qui tournera avec les fleches afin de voir comment sont appliqué les transformations sur les points
    * Creation d'une table en se basant sur le damier (le dessus de la table = un element du damier)
-   * eventuelement ajout d'autres objets
+   * ajout d'autres objets sur la meme base que la table
 
 
 
 == Politique du Groupe ==
 === Assignations ===
-A completer...
+ * Chef de projet : GROLLEMUND Naitan 
+ * Photographe : HALOT Sébastion
+ * Integration de l'avatar : ARNAUD Bérenger et GAILHAC Anthony en extreme programming
+ * Intégration du décors : DISER Sorel et DUTEIL Julien en extreme programming

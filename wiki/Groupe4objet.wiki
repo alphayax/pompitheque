@@ -1,0 +1,22 @@
+#summary One-sentence summary of this page.
+
+= Création des objets vectoriel =
+
+== Création d'un damier ==
+Le damier peut servir de sol et donner une impression de perspective.
+Mais aussi le damier est composé de rectangle qui peuvent servir de base pour un objet (haut de table : rectangulaire ou rond (coordonnée de l'ovale) )
+
+*Plusieurs taches :*
+ * dessiner un damier en perspective en vue de face 
+ * calculer les autres vue
+ * ajouter des ecouteurs claviers et appliquer les calcul de vue en fonction des deplacement
+
+*Quelques informations utiles :*
+ * [http://www.crdp.ac-grenoble.fr/imel/jlj/persp/dessin/damier/infogene.htm Damier en perspective]
+ * [http://pompitheque.googlecode.com/svn/trunk/Groupe4/Cube3D/cube3d.swf cube "fausse" 3D en flash]: source sur le SVN
+
+== Création d'une table ==
+
+en cours...
+
+

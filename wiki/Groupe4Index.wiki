@@ -1,4 +1,4 @@
-#labels Groupe4
+#labels Groupe4,Featured
 = Rapport du Groupe 4 =
 
 == Sommaire ==

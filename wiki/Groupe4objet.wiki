@@ -13,10 +13,8 @@ Mais aussi le damier est composé de rectangle qui peuvent servir de base pour u
 
 *Quelques informations utiles :*
  * [http://www.crdp.ac-grenoble.fr/imel/jlj/persp/dessin/damier/infogene.htm Damier en perspective]
- * [http://pompitheque.googlecode.com/svn/trunk/Groupe4/Cube3D/cube3d.swf cube "fausse" 3D en flash]: source sur le SVN
+ * [http://pompitheque.googlecode.com/svn/trunk/Groupe4/Cube3D/cube3d.swf cube "fausse" 3D en flash] (source sur le SVN)
 
 == Création d'une table ==
 
 en cours...
-
-

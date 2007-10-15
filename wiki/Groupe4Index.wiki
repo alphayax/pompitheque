@@ -19,7 +19,7 @@ Chaque client doit pouvoir voir ce qu'il y a en face de lui (dans une vue d'envi
    * pour deux types de playmobils = Homme et Femme
    * pour deux positions = assis (sur une chaise playmobil) et debout
    * (eventuelement chaise vide a faire aussi)
-   * pour chaques cas prendre une photo tout les 10 degrés = 36 photo * 4 (eventuelement prendre seulement les photos sur 180° et appliquer un effet mirroir au retouchage)
+   * pour chaques cas prendre une photo tout les 10 degrés = 36 photo ** 4 (eventuelement prendre seulement les photos sur 180° et appliquer un effet mirroir au retouchage)
    * /!\ faire attention a la luminosité, avoir un angle tres précis, avoir un fond unis pour decoupage
    * retouche avec logiciel de graphisme pour decouper le fond et ne recuperer que le personnage, eventuelement retravailler la luminosité
  * Integration des photo des playmobils

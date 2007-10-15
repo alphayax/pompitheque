@@ -3,8 +3,10 @@
 = Gestion des avatars =
 
 == Redimensionnement ==
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/Dessin_redimenssionement.jpg]
 Application de thalès pour calculer le pourcentage de redimensionnement
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/Dessin_redimenssionement.jpg]
+
 
 == Placement ==
 

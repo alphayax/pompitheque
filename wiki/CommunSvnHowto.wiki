@@ -33,6 +33,13 @@ Si je dis pas de bêtises on peut aussi en cas de problèmes revenir sur une anc
 
 Donc il faut penser à faire un update avant de commencer à travailler et de faire des commit fréquemment. C'est pas facile de prendre le réflexe au début mais vous verrez que c'est très pratique pour travailler en groupe.
 
+== Installation ==
+
+=== Sous LinuX (ubuntu / debian)
+{{{
+sudo apt-get install sibversion
+}}}
+
 
 == Comment se connecter ? ==
 

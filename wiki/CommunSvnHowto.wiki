@@ -40,8 +40,7 @@ Donc il faut penser à faire un update avant de commencer à travailler et de fa
 sudo apt-get install subversion subversion-tools
 }}}
 
-
-=== Windows * / Autres LinuX (Ferdora / Red hat ...) / Mac OS / Solaris / etc... ===
+=== Windows / LinuX / Mac OS / Solaris / etc... ===
 Rendez vous sur cette page pour plus d'informations a propos des packages disponibles pour votre distribution :
 [http://subversion.tigris.org/project_packages.html]
 

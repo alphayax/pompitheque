@@ -21,7 +21,7 @@ Url du repositery : https://pompitheque.googlecode.com/svn/trunk/
 
 Subversion (SVN) est un logiciel informatique de contrôle de version. Il reprend les principes de CVS mais en l'améliorant ( ex : copie et renommage de fichiers avec conservation de l'historique, commit atomiques, etc.).
 
-Pour plus d'information : http://fr.wikipedia.org/wiki/Subversion_(logiciel)
+Pour plus d'information : [http://fr.wikipedia.org/wiki/Subversion_(logiciel)]
 
 
 == Comment ça fonctionne ? ==

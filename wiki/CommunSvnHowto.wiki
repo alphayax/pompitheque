@@ -37,8 +37,11 @@ Donc il faut penser à faire un update avant de commencer à travailler et de fa
 
 === Sous LinuX (ubuntu / debian) ===
 {{{
-sudo apt-get install subversion
+sudo apt-get install subversion subversion-tools
 }}}
+
+
+=== Windows * / Autres LinuX (frdora / Red hat ...) / Mac OS ... ===
 
 
 == Comment se connecter ? ==

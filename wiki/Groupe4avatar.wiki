@@ -8,7 +8,7 @@ Application de thalès pour calculer le pourcentage de redimensionnement en fonc
 
 [http://pompitheque.googlecode.com/svn/trunk/Groupe4/Dessin_redimenssionement.jpg]
 
-Taille de l'image = (Distance max - Distance entre les deux personnes)*(Taille originale)/(Distance Max);
+Taille de l'image = (Distance max - Distance entre les deux personnes) x (Taille originale) / (Distance Max);
 
 == Placement ==
 

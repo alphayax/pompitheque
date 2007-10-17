@@ -35,10 +35,6 @@ Donc il faut penser à faire un update avant de commencer à travailler et de fa
 
 == Installation ==
 
-=== Sous LinuX (ubuntu / debian) ===
-{{{
-sudo apt-get install subversion subversion-tools
-}}}
 
 === Windows / LinuX / Mac OS / Solaris / etc... ===
 Rendez vous sur cette page pour plus d'informations a propos des packages disponibles pour votre distribution :
@@ -57,6 +53,13 @@ Désormais à chaque fois que vous voudrez travailler sur le projet faites d'abo
 Quand vous modifiez des fichiers ou rajoutez des fichiers vous devez faire un « SVN commit », vous sélectionnez les fichiers, rajoutez un commentaire et vous faite votre commit, les fichiers seront alors uploader sur le svn.
 
 === Sous Linux ===
+
+==== Installation (ubuntu / debian) ====
+{{{
+sudo apt-get install subversion subversion-tools
+}}}
+
+==== Utilisation ====
 
 Première chose à faire : `svn update`. Cela va mettre à jour votre copie locale de l'arborescence.
 

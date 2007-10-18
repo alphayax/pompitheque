@@ -1,6 +1,4 @@
 #labels Groupe4
-#Méthodes et calculs sur les avatars
-
 = Gestion des avatars =
 
 == Redimensionnement ==
@@ -11,7 +9,25 @@ Application de thalès pour calculer le pourcentage de redimensionnement en fonc
 Taille de l'image = (Distance max - Distance entre les deux personnes) x (Taille originale) / (Distance Max);
 
 
-== Zone et plan de l'avatar ==
+== Placement ==
+
+en cours..
+
+
+=== Savoir si un avatar est dans le champ de vision ===
+
+On suppose :
+  * L'origine de la vue : x,,vue,, et y,,vue,,
+  * La direction de la vision (en degré) : r
+  * L'angle de vision : 140°
+  * La position d'un avatar quelconque : x,,?,, et y,,?,,
+
+Il faut respecter ces deux conditions pour qu'un avatar soi vu :
+  # [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AvatarVuCond1.png]
+  # [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AvatarVuCond2.png]
+
+
+=== Zone et plan de l'avatar ===
 
 Pour savoir dans quel plan est un avatar, on va déjà le classer dans une zone.
 Chaque zone est large de 5 mètre. (_*à discuter et vérifier*_)
@@ -28,21 +44,3 @@ On suppose :
 Pour déterminer la zone, voici une formule "simple" :
 
 [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/ZoneAvatar.png]
-
-
-== Placement ==
-
-en cours..
-
-
-== Savoir si un avatar est dans le champ de vision ==
-
-On suppose :
-  * L'origine de la vue : x,,vue,, et y,,vue,,
-  * La direction de la vision (en degré) : r
-  * L'angle de vision : 140°
-  * La position d'un avatar quelconque : x,,?,, et y,,?,,
-
-Il faut respecter ces deux conditions pour qu'un avatar soi vu :
-  # [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AvatarVuCond1.png]
-  # [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AvatarVuCond2.png]

@@ -13,13 +13,18 @@ package generation
     import flash.display.Shape;
 	import flash.display.Sprite ;
 	import flash.display.StageScaleMode ;
-	
+
+    // Composants Text
+    import flash.text.TextField ; 
+    import flash.text.TextFieldType ;
+    import flash.text.TextFormat ;
+ 	
 	public class MessageField extends Sprite
 	{
 		
 		// ----o Protected Property
 		
-		private var tf:CustomField ;
+		private var tf:TextField ;
         private var debug:Debug ;
 //        protected var my_focus:FocusManager;
 
@@ -30,24 +35,34 @@ package generation
 			
 			// stage.scaleMode = StageScaleMode.NO_SCALE ;
 			
-			tf = new CustomField() ;
-			tf.addEventListener(TextEvent.TEXT_INPUT, onInput) ;
+            /******* Champs Texte ************/
+			tf = new TextField() ;
+			tf.type = TextFieldType.INPUT ;		
+		    tf.width = 400 ;
+		    tf.height = 100 ;
+		    tf.border = true ;
+		    tf.borderColor = 0xFFFFFF ;
+		    tf.textColor = 0xFFFFFF ;
+		    tf.defaultTextFormat = new TextFormat("arial", 12)  ;
+
+            // Events
+            tf.addEventListener(TextEvent.TEXT_INPUT, onInput) ;
 			tf.addEventListener(Event.CHANGE, onChange) ;
             tf.addEventListener(KeyboardEvent.KEY_DOWN, onEnter);
-			tf.x = 50 ;
-			tf.y = 50 ;
+            tf.x = 50 ;
+            tf.y = 50 ;
 			tf.text = "" ;
             addChild(tf) ;	
             tf.visible = false; 
 
-            // Champ de deboggage
+            /********* Champ de deboggage *************/
             debug = new Debug() ;
             debug.x = 100;
             debug.y = 0;
             debug.text = "Debug";
             addChild( debug );
 
-            // instances du bouton et des dessins
+            /************** Bouton ********************/
             var monBouton:SimpleButton = new SimpleButton();
             var normal:Shape = new Shape();
             var survol:Shape = new Shape();
@@ -69,7 +84,7 @@ package generation
             // affichage du bouton
             this.addChild(monBouton);
 			
-            // Focus
+            /***************** Focus  ********************/
             //my_focus = new FocusManager(this); 
 		}
 		
@@ -78,7 +93,7 @@ package generation
         {
             tf.visible = true;
             debug.text = "Affichage de TextInput";
-            tf.focusEnabled = true;
+            //tf.focusEnabled = true;
             //foc.setFocus(tf);
             //trace(">> " + e.type + " -> " + e.currentTarget) ;
         }
@@ -107,26 +122,14 @@ package generation
 	}
 }
  
+/*********************************
+            Class Debug
+*********************************/
+
+// Composants Text
 import flash.text.TextField ; 
 import flash.text.TextFieldType ;
 import flash.text.TextFormat ;
- 
-class CustomField extends TextField 
-{
-	// ----o Constructor
- 
-	public function CustomField()
-	{
- 
-		type = TextFieldType.INPUT ;		
-		width = 300 ;
-		height = 300 ;
-		border = true ;
-		borderColor = 0xFFFFFF ;
-		textColor = 0xFFFFFF ;
-		defaultTextFormat = new TextFormat("arial", 12)  ;
-    }
-}
 
 class Debug extends TextField 
 {

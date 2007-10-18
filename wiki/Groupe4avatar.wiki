@@ -21,6 +21,10 @@ On peut prendre par exemple :
   * Deuxième plan : zones 2 et 3
   * Dernier plan : zones 4 et plus
 
+On suppose :
+  * L'origine de la vue : x,,vue,, et y,,vue,,
+  * La position d'un avatar quelconque : x,,?,, et y,,?,,
+
 Pour déterminer la zone, voici une formule "simple" :
 
 [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/ZoneAvatar.png]

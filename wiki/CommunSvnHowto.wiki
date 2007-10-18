@@ -28,7 +28,7 @@ Pour plus d'information : [http://fr.wikipedia.org/wiki/Subversion_(logiciel)]
 
 Avant chaque session de travail on se connecte au serveur SVN et on télécharge les fichiers hébergés (commande « update »). On récupère ainsi au fur et à mesure les fichiers du projet pour travailler, chaque fichiers est la derniere version donc cela facilite la coordination.
 
-Après avoir modifié des fichiers on fait un « commit », commande qui va envoyer les fichiers sur le serveur, va tester si le fichier n'a pas été modifié entre temps par un autre utilisateur et sinon va remplacer le fichier du serveur par votre version. Si le fichier a été modifier par un autre utilisateur pendant que vous travailliez dessus on recoit une alerte, on peut ainsi vérifier et mieux intégrer les versions des fichiers.
+Après avoir modifié des fichiers on fait un « commit », commande qui va envoyer les fichiers sur le serveur, va tester si le fichier n'a pas été modifié entre temps par un autre utilisateur et sinon va remplacer le fichier du serveur par votre version. Si le fichier a été modifié par un autre utilisateur pendant que vous travailliez dessus on recoit une alerte, on peut ainsi vérifier et mieux intégrer les versions des fichiers.
 Si je dis pas de bêtises on peut aussi en cas de problèmes revenir sur une ancienne version d'un fichier.
 
 Donc il faut penser à faire un update avant de commencer à travailler et de faire des commit fréquemment. C'est pas facile de prendre le réflexe au début mais vous verrez que c'est très pratique pour travailler en groupe.

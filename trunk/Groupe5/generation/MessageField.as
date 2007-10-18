@@ -1,7 +1,7 @@
 package generation
 {
     // Focus
-    //import fl.managers.FocusManager; 
+    import fl.managers.FocusManager; 
     // event		
 	import flash.events.TextEvent 
 	import flash.events.Event;

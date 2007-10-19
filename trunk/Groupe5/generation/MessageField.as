@@ -1,32 +1,32 @@
 package generation
 {
-    // Focus
-    import fl.managers.FocusManager; 
-    // event		
+         //Debug
+         import generation.Debug;
+        // event		
 	import flash.events.TextEvent 
 	import flash.events.Event;
 	import flash.events.KeyboardEvent ;
-    import flash.events.MouseEvent;
-    import flash.events.*;
-    // Composants
-    import flash.display.SimpleButton;
-    import flash.display.Shape;
+        import flash.events.MouseEvent;
+        import flash.events.*;
+        // Composants
+        import flash.display.SimpleButton;
+        import flash.display.Shape;
 	import flash.display.Sprite ;
 	import flash.display.StageScaleMode ;
 
-    // Composants Text
-    import flash.text.TextField ; 
-    import flash.text.TextFieldType ;
-    import flash.text.TextFormat ;
+         // Composants Text
+        import flash.text.TextField ; 
+        import flash.text.TextFieldType ;
+        import flash.text.TextFormat ;
  	
 	public class MessageField extends Sprite
 	{
 		
 		// ----o Protected Property
 		
-		private var tf:TextField ;
-        private var debug:Debug ;
-//        protected var my_focus:FocusManager;
+                private var tf:TextField ;
+                private var debug:Debug ;
+                //        protected var my_focus:FocusManager;
 
 		// ----o Constructor
 
@@ -36,22 +36,25 @@ package generation
 			// stage.scaleMode = StageScaleMode.NO_SCALE ;
 			
             /******* Champs Texte ************/
-			tf = new TextField() ;
-			tf.type = TextFieldType.INPUT ;		
-		    tf.width = 400 ;
-		    tf.height = 100 ;
-		    tf.border = true ;
-		    tf.borderColor = 0xFFFFFF ;
-		    tf.textColor = 0xFFFFFF ;
-		    tf.defaultTextFormat = new TextFormat("arial", 12)  ;
+		tf = new TextField() ;
+		tf.type = TextFieldType.INPUT ;		
+		tf.width = 300 ;
+		tf.height = 20 ;
+		tf.border = true ;
+		tf.borderColor = 0xFFFFFF ;
+		tf.textColor = 0xFFFFFF ;
+		tf.defaultTextFormat = new TextFormat("arial", 12)  ;
 
             // Events
             tf.addEventListener(TextEvent.TEXT_INPUT, onInput) ;
-			tf.addEventListener(Event.CHANGE, onChange) ;
+            tf.addEventListener(Event.CHANGE, onChange) ;
             tf.addEventListener(KeyboardEvent.KEY_DOWN, onEnter);
+            //tf.addEventListener(MouseEvent.MOUSE_DOWN, selectionne);
+            //tf.addEventListener(MouseEvent.MOUSE_UP, place);
+            
             tf.x = 50 ;
-            tf.y = 50 ;
-			tf.text = "" ;
+            tf.y = 220 ;
+	    //tf.text = "" ;
             addChild(tf) ;	
             tf.visible = false; 
 
@@ -81,6 +84,7 @@ package generation
             monBouton.hitTestState = normal;
             // application du filtre au bouton
             monBouton.addEventListener(MouseEvent.CLICK, afficheTextInput);
+	    
             // affichage du bouton
             this.addChild(monBouton);
 			
@@ -92,10 +96,19 @@ package generation
         public function afficheTextInput(e:Event):void
         {
             tf.visible = true;
+	    
+	    tf.width = 0;
+	    for(var i:int=0;i<200;i++) {
+		tf.width++; 
+		//setInterval(2);
+	    }
+	    
             debug.text = "Affichage de TextInput";
             //tf.focusEnabled = true;
             //foc.setFocus(tf);
             //trace(">> " + e.type + " -> " + e.currentTarget) ;
+            
+            stage.focus = tf
         }
                 
 		public function onChange(e:Event):void
@@ -112,40 +125,16 @@ package generation
         public function onEnter(e:KeyboardEvent):void 
 		{
             if (e.charCode == 13){
-            tf.visible = false;
+            //tf.visible = false;
 			debug.htmlText = tf.text ;
-            tf.text = "";
+            //tf.text = "";
 			trace (">> " + e.type + " -> " + e.currentTarget);
             }
 		}
+		
+
 
 	}
-}
- 
-/*********************************
-            Class Debug
-*********************************/
-
-// Composants Text
-import flash.text.TextField ; 
-import flash.text.TextFieldType ;
-import flash.text.TextFormat ;
-
-class Debug extends TextField 
-{
-	// ----o Constructor
- 
-	public function Debug() 
-	{
- 
-		type = TextFieldType.INPUT ;		
-		width = 300 ;
-		height = 20 ;
-		border = true ;
-		borderColor = 0xFFFFFF ;
-		textColor = 0xFFFFFF ;
-		defaultTextFormat = new TextFormat("arial", 12)  ;
-    }
 }
 
 

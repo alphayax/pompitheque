@@ -8,6 +8,8 @@ package generation
 	import flash.events.KeyboardEvent ;
         import flash.events.MouseEvent;
         import flash.events.*;
+		import flash.events.TimerEvent;
+			import flash.utils.Timer;
         // Composants
         import flash.display.SimpleButton;
         import flash.display.Shape;
@@ -26,6 +28,7 @@ package generation
 		
                 private var tf:TextField ;
                 private var debug:Debug ;
+				
                 //        protected var my_focus:FocusManager;
 
 		// ----o Constructor
@@ -95,21 +98,29 @@ package generation
 		// ----o Public Methods
         public function afficheTextInput(e:Event):void
         {
+			    tf.width = 0;
+				tf.height = 0;
             tf.visible = true;
 	    
-	    tf.width = 0;
+/*
 	    for(var i:int=0;i<200;i++) {
 		tf.width++; 
-		//setInterval(2);
 	    }
-	    
+*/	  		 var t:Timer = new Timer(5,100);
+			t.addEventListener(TimerEvent.TIMER, grandir) ;
+			t.start();
+
+  
             debug.text = "Affichage de TextInput";
-            //tf.focusEnabled = true;
-            //foc.setFocus(tf);
-            //trace(">> " + e.type + " -> " + e.currentTarget) ;
-            
             stage.focus = tf
         }
+		
+		  public function grandir(e:TimerEvent):void 
+		  {
+		  tf.width = tf.width + 4;
+		  tf.height = tf.height + 0.2;
+		  }
+		  
                 
 		public function onChange(e:Event):void
 		{
@@ -127,7 +138,7 @@ package generation
             if (e.charCode == 13){
             //tf.visible = false;
 			debug.htmlText = tf.text ;
-            //tf.text = "";
+            tf.text = "";
 			trace (">> " + e.type + " -> " + e.currentTarget);
             }
 		}

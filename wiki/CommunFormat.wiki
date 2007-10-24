@@ -17,11 +17,11 @@ Nous pouvons distinguer trois types de données:
 == Format de données pour les messages ==
 Le message envoyé sera en fait une file de message donc on a plusieurs messages:
 {{{
-<message from="toto" to="titi">
- <content>Mon premier message</content>
- <content>Mon second message</content>
- <content>Salut ca farte ?</content>
-</message>
+<messages from="toto">
+ <message to="titi">Mon premier message</message>
+ <message to="all">Mon second message pour tout le monde</message>
+ <message to="brice">Salut ca farte ?</message>
+</messages>
 }}}
 Il n'y a pas de destinataire "all" car la vue doit tenir compte de l'historique (où des conversations privées aurait pu avoir lieu)
 

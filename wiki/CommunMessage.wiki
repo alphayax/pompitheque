@@ -1,0 +1,25 @@
+#Presentation de la classe Message.
+
+= Class Message =
+
+Le message est destiné à être mis dans une [CommunFileMessage file de message]. Il possède une méthode de saisie, une methode d'affichage et une méthode de sérialisation qui sera appellé par la [CommunFileMessage file de message] afin d'être passé au serveur.
+
+{{{
+class Message:
+    /******* Attributs publiques **********/
+    string from;
+    string to;
+    bool publicite;
+
+    /******* Méthodes publiques **********/
+    void afficher()
+    string saisir()
+    string toXml()
+
+}}}
+
+== Attributs ==
+*publicité* :
+utilisé lorsqu'un personnage parle à quelqu'un et veut que tout le monde entende (comme s'il criait)... Cela permet de charrier les gens ;)
+
+== Méthodes ==

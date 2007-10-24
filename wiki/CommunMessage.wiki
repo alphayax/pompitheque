@@ -34,4 +34,8 @@ utilisé lorsqu'un personnage parle à quelqu'un et veut que tout le monde enten
 *corps_html*: corps du message en html (permet de faire tout plein de chabada (smiles...))
 
 == Méthodes ==
-`saisir`: methode affichant le TextField permettant à l'utilisateur de saisir le message. Doit-elle renvoyer le message ou le positionne-t-elle directement dans l'attribut ?
+*afficher*: existe-t-elle vraiment ? Là est la question...
+
+*saisir*: methode affichant le TextField permettant à l'utilisateur de saisir le message. Doit-elle renvoyer le message ou le positionne-t-elle directement dans l'attribut ?
+
+*toXml*: Sérialise la classe en XML. Retourne du XML bien formé où se trouve toutes les informations utile à la classe afin de la reconstruire.

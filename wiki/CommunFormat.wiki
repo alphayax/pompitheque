@@ -15,11 +15,15 @@ Nous pouvons distinguer trois types de données:
     * Stoquée sur le serveur ces données seront envoyées uniquement à la connexion d'un client
 
 == Format de données pour les messages ==
+Le message envoyé sera en fait une file de message donc on a plusieurs messages:
 {{{
-<message from="toto" to="all">
+<message from="toto" to="titi">
+ <content>Mon premier message</content>
+ <content>Mon second message</content>
  <content>Salut ca farte ?</content>
 </message>
 }}}
+Il n'y a pas de destinataire "all" car la vue doit tenir compte de l'historique (où des conversations privées aurait pu avoir lieu)
 
 
 == Format de données pour les utilisateurs ==

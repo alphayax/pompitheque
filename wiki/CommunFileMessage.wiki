@@ -1,0 +1,26 @@
+#labels Commun
+= Class FileMessage =
+
+Cette file contient des [CommunMessage] messages. Elle peut-être affichée, sérialisée...
+
+{{{
+class FileMessage:
+    /******* Attributs publiques **********/
+    string from;
+    Message[];
+
+    /******* Méthodes publiques **********/
+    void afficher(Point p1, Point p2, Point p3, Point p4)
+    void add()
+    void remove()
+    string toXml()
+
+}}}
+
+== Attributs ==
+*from*: Expediteur de la file
+
+== Méthodes ==
+*afficher*: voir Groupe5Superposition
+
+*toXml*: Sérialise la classe en XML. Retourne du XML bien formé où se trouve toutes les informations utile à la classe afin de la reconstruire.

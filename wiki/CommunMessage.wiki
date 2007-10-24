@@ -1,3 +1,4 @@
+#labels Commun
 #Presentation de la classe Message.
 
 = Class Message =
@@ -19,7 +20,10 @@ class Message:
 }}}
 
 == Attributs ==
+*to*: destinataire(s). si `to` est égale à "all", envoie à toutes les personnes du salon
+
 *publicité* :
 utilisé lorsqu'un personnage parle à quelqu'un et veut que tout le monde entende (comme s'il criait)... Cela permet de charrier les gens ;)
+
 
 == Méthodes ==

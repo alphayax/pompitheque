@@ -1,6 +1,4 @@
 #labels Commun
-#Presentation de la classe Message.
-
 = Class Message =
 
 Le message est destiné à être mis dans une [CommunFileMessage file de message]. Il possède une méthode de saisie, une methode d'affichage et une méthode de sérialisation qui sera appellé par la [CommunFileMessage file de message] afin d'être passé au serveur.

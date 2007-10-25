@@ -7,6 +7,10 @@
 
 == Mission ==
 A completer...
+ Génération de la scène 2D a partir de la modélisation fourni par le groupe2. 
+ . Cliquer sur un emplacement libre du micro-monde et s'y déplacer ( déplacement se fait de manière instantanée).
+ . S'orienter dans une direction particulière avec les flèches du clavier. 
+ . Envoi de la nouvelle position et orientation au serveur. 
 
 == Politique du Groupe ==
 === Assignations ===

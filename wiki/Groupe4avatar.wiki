@@ -4,7 +4,7 @@
 == Redimensionnement ==
 Application de thalès pour calculer le pourcentage de redimensionnement en fonction de la position sur la grille
 
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/Dessin_redimenssionement.jpg]
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Dessin_redimenssionement.jpg]
 
 Taille de l'image = (Distance max - Distance entre les deux personnes) x (Taille originale) / (Distance Max);
 

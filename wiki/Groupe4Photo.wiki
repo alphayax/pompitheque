@@ -20,7 +20,7 @@ _Notre studio photo_ :
 
 Ensuite il faut pour chaque image supprimer le fond et le recadrer, nous utilisons pour cela le logiciel de retouche d'image Photoshop qui permet d'executé de réalisé des traitements par lot via de simple script.
 
-_Création du script_:
+_Création du script de decoupage_:
  || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptdecoupage.jpg] || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptdecoupage2.jpg] ||
  # On recadre l'image
  # A l'aide de l'outil "Baguette magique" on selectionne le fond (blanc uni)
@@ -29,4 +29,13 @@ _Création du script_:
  # on copie la nouvelle selection dans un nouveau fichier image
  # on enregistre
 
+Une fois le script creer, il faut l'appliquer sur toutes nos photos, on fait cette etape manuellement car la "Baguette magique" produit parfois des resultats legerement differents par rapport a ce que l'on attend, donc on applique le scrip sur chaque image séparement afin de controler le resultat.
 
+On fait par la meme occasion un script pour inverser les images (une image vu a 120° sera l'image inversé de 240°).
+
+_Création du script d'inversement_:
+
+ [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptinversement.jpg]
+
+_Traitement par lot_ :
+ [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_traitementparlot.jpg]

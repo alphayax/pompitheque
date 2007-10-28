@@ -11,8 +11,6 @@ Taille de l'image = (Distance max - Distance entre les deux personnes) x (Taille
 
 == Placement ==
 
-en cours..
-
 
 === Savoir si un avatar est dans le champ de vision ===
 

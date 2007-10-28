@@ -3,11 +3,15 @@
 
 == Sommaire ==
  # [Groupe4Liens Liens utiles]: Tous les liens utiles pour le groupe 4
- # [Groupe4Photo Prise des photos et retouches]: Explication et rapport
+ # [Groupe4Photo Prise des photos et retouches]
  # [Groupe4avatar Gestion des avatars]: Idées et réflexions sur les avatars (redimensionnement, placement...)
  # [Groupe4objet Creation des objets]: Idées et réflexions sur les objets (création du damier en perspective, dessin d'une table, transformation 3D)
  # [Groupe4classe Diagramme de classe]
  # [Groupe4rapport Rapport]
+
+== Données ==
+Taille de la fenetre 3D : *800x500* 
+(on part sur cette taille mais a rediscuté avec le groupe1 car ca depend un peu de la taille de l'image recu)
 
 == Mission ==
 === Ennoncé ===
@@ -44,8 +48,6 @@ Chaque client doit pouvoir voir ce qu'il y a en face de lui (dans une vue d'envi
 
 === Questions pour les autres groupes ====
  * G1: taille de l'image recu ?
- * G5: c'est nous ou vous qui calculons la zone de texte sur l'avatar ?
- * G6: communication avec le serveur pour le rafraichissement de l'image ?
 
 == Politique du Groupe ==
 === Assignations ===

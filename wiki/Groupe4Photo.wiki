@@ -1,4 +1,4 @@
-#summary Comment son prise les photos des personnages et comment sont elles retravailler ?
+#summary Comment sont prise les photos des personnages et comment sont elles retravailler ?
 
 = Photos des personnages =
 
@@ -21,8 +21,12 @@ _Notre studio photo_ :
 Ensuite il faut pour chaque image supprimer le fond et le recadrer, nous utilisons pour cela le logiciel de retouche d'image Photoshop qui permet d'executé de réalisé des traitements par lot via de simple script.
 
 _Création du script_:
- [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptdecoupage.jpg]
-
-
+ || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptdecoupage.jpg] || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptdecoupage2.jpg] ||
+ # On recadre l'image
+ # A l'aide de l'outil "Baguette magique" on selectionne le fond (blanc uni)
+ # Avec un rectangle de selection on rajoute a la selection le bas de l'image (piece lego servant de support)
+ # on inverse la selection afin de ne recuperer que le personnage
+ # on copie la nouvelle selection dans un nouveau fichier image
+ # on enregistre
 
 

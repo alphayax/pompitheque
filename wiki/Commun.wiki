@@ -13,6 +13,13 @@ Page recenssant les discutions des différents groupes
  * [Groupe5Index Groupe 5] (Conversation)
  * [Groupe6Index Groupe 6] (Client/Serveur)
 
+= Pages Communes =
+ * [CommunDiagClass Diagramme de classe]
+ * [CommunNomenclature Nomenclature]
+ * [CommunFormat Format des données]
+ * [CommunMessage Classe Message]
+ * [CommunFileMessage Classe FileMessage]
+
 = Liens utiles =
  * [http://livedocs.adobe.com/flash/9.0/main/ Docs complètes]
  * [http://www.adobe.com/fr/devnet/flex/ Pole de développement de Flex]

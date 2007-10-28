@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+
+= Diagramme de classe =
+
+[http://pompitheque.googlecode.com/svn/trunk/commun/ImageWiki/DiagrammeClasse.jpg]
+
+Début du diagramme de classe a partir du shema fait sur le tableau en TP: photo [http://pompitheque.googlecode.com/svn/trunk/commun/ImageWiki/DiagClass1_tableau.JPG ici] et [http://pompitheque.googlecode.com/svn/trunk/commun/ImageWiki/DiagClass2_tableau.JPG la].
+
+L'image vient d'un projet Objecteering que vous pouvez trouvez sur le SVN ou directement [http://pompitheque.googlecode.com/svn/trunk/commun/Pompitheque.ofp la].
+
+
+Il n'est pas complet donc c'est a tout les chef de projet de le completer.

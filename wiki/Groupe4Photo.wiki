@@ -26,7 +26,7 @@ _Création du script de decoupage_:
  # A l'aide de l'outil "Baguette magique" on selectionne le fond (blanc uni)
  # Avec un rectangle de selection on rajoute a la selection le bas de l'image (piece lego servant de support)
  # on inverse la selection afin de ne recuperer que le personnage
- # on copie la nouvelle selection dans un nouveau fichier image
+ # on copie la nouvelle selection dans un nouveau fichier image avec un fond transparent
  # on enregistre
 
 Une fois le script creer, il faut l'appliquer sur toutes nos photos, on fait cette etape manuellement car la "Baguette magique" produit parfois des resultats legerement differents par rapport a ce que l'on attend, donc on applique le scrip sur chaque image séparement afin de controler le resultat.
@@ -39,3 +39,6 @@ _Création du script d'inversement_:
 
 _Traitement par lot_ :
  [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_traitementparlot.jpg]
+
+
+On obtiens ainsi notre serie d'avatar vu sous chaque angle, decouper et pres a etre utilise dans le logiciel

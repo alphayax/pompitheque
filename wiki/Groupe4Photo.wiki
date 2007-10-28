@@ -12,11 +12,16 @@ _Les modeles_ :
 Nous avons donc construit un systeme qui simule un studio photo et qui permet de prendre precisement les personnages sous les divers angles.
 
 _Notre studio photo_ :
-|| [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto1.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto1_TN.jpg] || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto2.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto2_TN.jpg] ||
-|| [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto3.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto3_TN.jpg] || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto4.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto4_TN.jpg] ||
+ || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto1.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto1_TN.jpg] || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto2.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto2_TN.jpg] ||
+ || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto3.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto3_TN.jpg] || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto4.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioPhoto4_TN.jpg] ||
 
-Ensuite il faut pour chaque image supprimer le fond et le recadrer
 
+== Traitement ==
+
+Ensuite il faut pour chaque image supprimer le fond et le recadrer, nous utilisons pour cela le logiciel de retouche d'image Photoshop qui permet d'executé de réalisé des traitements par lot via de simple script.
+
+_Création du script_:
+ [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptdecoupage.jpg]
 
 
 

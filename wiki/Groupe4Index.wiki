@@ -2,7 +2,7 @@
 = Rapport du Groupe 4 =
 
 == Sommaire ==
- # [Groupe4Liens Liens utiles]: Tous les liens utiles pour le groupe 4
+ # [Groupe4Exemple Exemple de rendu]
  # [Groupe4Photo Prise des photos et retouches]
  # [Groupe4avatar Gestion des avatars]: Idées et réflexions sur les avatars (redimensionnement, placement...)
  # [Groupe4objet Creation des objets]: Idées et réflexions sur les objets (création du damier en perspective, dessin d'une table, transformation 3D)

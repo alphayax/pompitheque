@@ -3,6 +3,7 @@
 
 == Sommaire ==
  # [Groupe4Liens Liens utiles]: Tous les liens utiles pour le groupe 4
+ # [Groupe4Photo Prise des photos et retouches]: Explication et rapport
  # [Groupe4avatar Gestion des avatars]: Idées et réflexions sur les avatars (redimensionnement, placement...)
  # [Groupe4objet Creation des objets]: Idées et réflexions sur les objets (création du damier en perspective, dessin d'une table, transformation 3D)
  # [Groupe4classe Diagramme de classe]

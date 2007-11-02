@@ -1,10 +1,10 @@
-#summary Comment sont prise les photos des personnages et comment sont elles retravailler ?
+#summary Comment sont prises les photos des personnages et comment sont elles retravaillées ?
 
 = Photos des personnages =
 
 == Prise des photos ==
 
-Les avatars sont des photos de personnage de Lego sous differents angles (tous les dix degrés) et sous différentes position (assis/debout). Nous aurons dans un premiers temps deux modeles d'avatar soit 35*2*2=140photos. Afin de nous eviter des efforts inutiles nous avons pris seulement 18 photo de chaque modele/position et avons inverser les images pour avoir les 36 angles de vues.
+Les avatars sont des photos de personnage de Lego sous differents angles (tous les dix degrés) et sous différentes positions (assis/debout). Nous aurons dans un premier temps deux modeles d'avatar soit 35*2*2=140photos. Afin de nous eviter des efforts inutiles nous avons pris seulement 18 photos de chaque modele/position et avons inversé les images pour avoir les 36 angles de vues.
 
 _Les modeles_ :
  [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioStar.jpg http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/StudioStar_TN.jpg]
@@ -18,18 +18,18 @@ _Notre studio photo_ :
 
 == Traitement ==
 
-Ensuite il faut pour chaque image supprimer le fond et le recadrer, nous utilisons pour cela le logiciel de retouche d'image Photoshop qui permet d'executé de réalisé des traitements par lot via de simple script.
+Ensuite il faut pour chaque image supprimer le fond et le recadrer, nous utilisons pour cela le logiciel de retouche d'image Photoshop qui permet d'executer et de réaliser des traitements par lot via de simples scripts.
 
 _Création du script de decoupage_:
  || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptdecoupage.jpg] || [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/rapport_scriptdecoupage2.jpg] ||
  # On recadre l'image
  # A l'aide de l'outil "Baguette magique" on selectionne le fond (blanc uni)
- # Avec un rectangle de selection on rajoute a la selection le bas de l'image (piece lego servant de support)
+ # Avec un rectangle de selection on rajoute à la selection le bas de l'image (piece lego servant de support)
  # on inverse la selection afin de ne recuperer que le personnage
  # on copie la nouvelle selection dans un nouveau fichier image avec un fond transparent
  # on enregistre
 
-Une fois le script creer, il faut l'appliquer sur toutes nos photos, on fait cette etape manuellement car la "Baguette magique" produit parfois des resultats legerement differents par rapport a ce que l'on attend, donc on applique le scrip sur chaque image séparement afin de controler le resultat.
+Une fois le script creer, il faut l'appliquer sur toutes nos photos, on fait cette etape manuellement car la "Baguette magique" produit parfois des resultats legerement differents par rapport a ce que l'on attend, donc on applique le script sur chaque image séparement afin de controler le resultat.
 
 On fait par la meme occasion un script pour inverser les images (une image vu a 120° sera l'image inversé de 240°).
 

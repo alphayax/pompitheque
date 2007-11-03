@@ -1,0 +1,15 @@
+#Derniers nouveautés concernant le wiki et le projet en général
+
+= Nouvelles fraîches =
+
+Pour que tous le monde puisse connaître les ajouts (ou modifications) les plus importants, dans cette page, chacun fera un bref résumé avec la date d’ajout et un lien comme ceci :
+
+
+
+  * *03/11 par Douziech :* Ajout d’une barre d’avancement
+         [http://code.google.com/p/pompitheque/wiki/communAvancement Avancement des groupes]
+
+
+
+  * *29/10 par Grollemund :* Ajout du diagramme de Classe
+         [http://code.google.com/p/pompitheque/wiki/CommunDiagClass Diagramme de classe]

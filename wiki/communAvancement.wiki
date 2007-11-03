@@ -1,4 +1,4 @@
-#Visualisation de l'avancement de chaque groupe
+#summary Visualisation de l'avancement de chaque groupe
 
 = Avancement de chaque groupe =
 
@@ -48,4 +48,3 @@ Remarque :
 *Avancement Groupe 6 :* 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
 
 Remarque :
-

@@ -1,4 +1,5 @@
 #summary Visualisation de l'avancement de chaque groupe
+#labels Commun
 
 = Avancement de chaque groupe =
 

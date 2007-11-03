@@ -19,6 +19,8 @@ Page recenssant les discutions des différents groupes
  * [CommunFormat Format des données]
  * [CommunMessage Classe Message]
  * [CommunFileMessage Classe FileMessage]
+ * [communNews Nouveautés]
+ * [communAvancement Avancement des groupes]
 
 = Liens utiles =
  * [http://livedocs.adobe.com/flash/9.0/main/ Docs complètes]

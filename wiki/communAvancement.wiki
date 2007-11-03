@@ -1,0 +1,51 @@
+#Visualisation de l'avancement de chaque groupe
+
+= Avancement de chaque groupe =
+
+Afin de savoir où chaque groupe en est, voici un système simple pour que chacun puisse visualiser l’avancement des autres groupes.
+
+Chaque groupe possède une ligne de 20 chiffres correspondant à son numéro de groupe.
+A chaque fois que nécessaire, vous modifiez le chiffre le plus à gauche de la « barre » par un autre caractère. 
+
+Exemple : 
+- - - - 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 Lorsque vous estimez avoir réalisé 20% de l’ensemble de votre travail.
+
+Vous pouvez aussi ajouter une remarque correspondant à ce que vous venez de faire, ou ce qu’il vous reste à faire …
+
+
+
+
+*Avancement Groupe 1 :* 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+
+Remarque :
+
+
+
+*Avancement Groupe 2 :* 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+
+Remarque :
+
+
+
+*Avancement Groupe 3 :* 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+
+Remarque :
+
+
+
+*Avancement Groupe 4 :* 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+
+Remarque :
+
+
+
+*Avancement Groupe 5 :* 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+
+Remarque :
+
+
+
+*Avancement Groupe 6 :* 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+
+Remarque :
+

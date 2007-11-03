@@ -1,4 +1,5 @@
 #summary Dernières nouveautés concernant le wiki et le projet en général
+#labels Commun
 
 = Nouvelles fraîches =
 

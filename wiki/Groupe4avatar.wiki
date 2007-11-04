@@ -9,7 +9,18 @@ Application de thalès pour calculer le pourcentage de redimensionnement en fonc
 Taille de l'image = (Distance max - Distance entre les deux personnes) x (Taille originale) / (Distance Max);
 
 
+
+
 == Placement ==
+
+
+=== Orientation ===
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Légende1.jpg]
+
+Pour les schémas suivants, l'orientation de la vision est donnée par l'orientation du personnage, car on suppose que l'avatar a la tête droite et regarde en face de lui.
+S'il veut changer la direction de sa vue, il tournera le corps et non pas la tête.
+
 
 
 === Savoir si un avatar est dans le champ de vision ===
@@ -25,7 +36,10 @@ Il faut respecter ces deux conditions pour qu'un avatar soi vu :
   # [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AvatarVuCond2.png]
 
 
+
 === Zone et plan de l'avatar ===
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Zones.jpg]
 
 Pour savoir dans quel plan est un avatar, on va déjà le classer dans une zone.
 Chaque zone est large de 5 mètre. (_*à discuter et vérifier*_)

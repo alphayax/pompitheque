@@ -5,6 +5,7 @@ package {
 	{
 		public function Pompitheque()
 		{
+			new Vue("planXML");
 		}
 	}
 }

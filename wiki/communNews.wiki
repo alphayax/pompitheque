@@ -5,12 +5,21 @@
 
 Pour que tous le monde puisse connaître les ajouts (ou modifications) les plus importants, dans cette page, chacun fera un bref résumé avec la date d’ajout et un lien comme ceci :
 
+  * *13/11 par Grollemund :* Toujours des problemes avec le SVN
+
+         On arrive toujours pas a faire nos upload (sous windows du moins) ca donne ca :
+
+                  [http://pompitheque.googlecode.com/svn/trunk/commun/pb_svn.JPG]
+         Ya une debut de reponse ici [http://taylorsystems.us/blog/2006/09/subversion-reported-error-while-doing.html] mais j'arrive a rien. Ce message devrait se trouver dans les issues mais personne ne les lit, on aura peut etre plus de chance ici...
+
 
 
   * *03/11 par Douziech :* Ajout d’une barre d’avancement
+
          [http://code.google.com/p/pompitheque/wiki/communAvancement Avancement des groupes]
 
 
 
   * *29/10 par Grollemund :* Ajout du diagramme de Classe
+
          [http://code.google.com/p/pompitheque/wiki/CommunDiagClass Diagramme de classe]

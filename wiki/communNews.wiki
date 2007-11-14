@@ -5,6 +5,10 @@
 
 Pour que tous le monde puisse connaître les ajouts (ou modifications) les plus importants, dans cette page, chacun fera un bref résumé avec la date d’ajout et un lien comme ceci :
 
+  * *13/11 par Grollemund :* Mise a jour du diagramme de classe
+
+         [http://code.google.com/p/pompitheque/wiki/CommunDiagClass Diagramme de classe]
+
   * *13/11 par Grollemund :* Toujours des problemes avec le SVN
 
          On arrive toujours pas a faire nos upload (sous windows du moins) ca donne ca :

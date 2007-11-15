@@ -5,6 +5,10 @@
 
 Pour que tous le monde puisse connaître les ajouts (ou modifications) les plus importants, dans cette page, chacun fera un bref résumé avec la date d’ajout et un lien comme ceci :
 
+  * *15/11 par Clairon :* Proposition de correction de problème pour SVN
+
+         J'ai mis la solution dans http://code.google.com/p/pompitheque/issues/detail?id=3 il faut utiliser les issues pour discuter des problèmes que l'on rencontre...
+
   * *13/11 par Grollemund :* Mise a jour du diagramme de classe
 
          [http://code.google.com/p/pompitheque/wiki/CommunDiagClass Diagramme de classe]

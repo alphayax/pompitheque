@@ -17,24 +17,24 @@ package message
     import flash.text.TextFieldType ;
     import flash.text.TextFormat ;
 
-    /* Cette classe est tout simplement un TextField surchargé */
+    /*
+    Cette classe est tout simplement un TextField surchargé
+    
+    XXX Est-ce MessageWidget qui hérite de Message ou
+        Message qui hérite de MessageWidget ?
+        Ou encore est-ce qu'il nous faut une troisième classe ???
+    */
 	public class MessageWidget extends Sprite
 	{
 		
 		// ----o Protected Property
         public var tf:TextField;
-        private var __message:Message;
-        private var __result:String = "";
 
 		// ----o Constructor
-		public function MessageWidget( message:Message )
+		public function MessageWidget()
 		{
             // stage.scaleMode = StageScaleMode.NO_SCALE ;
                 
-            /******* Objet Message ***********/
-            // XXX OU METTONS-NOUS LE MESSAGE ????
-            __message = message;
-
             /******* Champs Texte ************/
             tf = new TextField() ;
             tf.type = TextFieldType.INPUT ;		
@@ -93,7 +93,7 @@ package message
 		{
             if (e.charCode == 13){
                 //tf.visible = false;
-                __message.setMessage( tf.text );
+                setMessage( tf.text );
                 tf.text = "";
             }
 		}

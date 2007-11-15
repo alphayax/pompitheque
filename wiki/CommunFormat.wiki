@@ -20,10 +20,16 @@ Le message envoyé sera en fait une file de message donc on a plusieurs messages
 <messages from="toto">
  <message to="titi">Mon premier message</message>
  <message to="all">Mon second message pour tout le monde</message>
- <message to="brice">Salut ca farte ?</message>
+ <message to="brice" wizz="wizz"></message>
 </messages>
 }}}
 Il n'y a pas de destinataire "all" car la vue doit tenir compte de l'historique (où des conversations privées aurait pu avoir lieu)
+
+Le wizz permet d'interpeller un autre utilisateur. Pour l'instant il n'y aura qu'un seul type de wizz mais plusieurs types peuvent être envisager:
+
+ - important!
+ - "je veux te parler en priver"
+ - ect...
 
 
 == Format de données pour les utilisateurs ==

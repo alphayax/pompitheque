@@ -4,6 +4,7 @@ package pompitheque
 
     // Composants Text
     import flash.text.TextField ; 
+	import pompitheque.MessageField; 
  	
 	public class FileMessage
 	{

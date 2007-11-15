@@ -1,9 +1,9 @@
-package generation
+package pompitheque
 {
     // Focus
     //import fl.managers.FocusManager; 
     // event		
-	import generation.MessageField; 
+	import pompitheque.MessageField; 
 	import flash.display.Sprite ;
 
 	public class Message

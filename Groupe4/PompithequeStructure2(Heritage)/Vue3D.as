@@ -18,7 +18,7 @@ package
 		
 		//on cree une vue 3D a partir d'un personnage
 		public function Vue3D(pers:Personne,ListeActeur:Array,DistanceMaxPlan:Number)
-		{
+		{			
 			super();
 			//--------------------------------------------
 			//pour les test on ajoute l'angle de vue de 140°

@@ -7,7 +7,7 @@ Cela permet d'utiliser un outil spécifique qui ne laisse aucun "halo" de pixels
 
 Avec une tablette graphique et un travail au pixel près le coût en temps est colossal: (10' par photo sur 4 séries de 18 photos).
 
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/photoshop.gif]
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/photoshop2.gif]
 
 
 Le gain en terme de qualité est incontestable.

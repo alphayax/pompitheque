@@ -15,16 +15,18 @@ Nous pouvons distinguer trois types de données:
     * Stoquée sur le serveur ces données seront envoyées uniquement à la connexion d'un client
 
 == Format de données pour les messages ==
-Le message envoyé sera en fait une file de message donc on a plusieurs messages:
+Le message envoyé possède un destinataire et un expéditeur
 {{{
-<filemessages from="toto">
- <message to="titi">Mon premier message</message>
- <message to="all">Mon second message pour tout le monde</message>
- <message to="brice" wizz="wizz"></message>
-</filemessages>
+<message from="toto" to="titi">Mon message privé</message>
 }}}
-Il n'y a pas de destinataire "all" car la vue doit tenir compte de l'historique (où des conversations privées aurait pu avoir lieu)
-
+si le destinataire est "all", le message s'enverra à tout le monde
+{{{
+<message from="toto" to="all">Hi folks !</message>
+}}}
+On peut aussi envoyer des wizz (pour la version 2 ?)
+{{{
+<message from="tata" to="brice" wizz="wizz">G't KC !</message>
+}}}
 Le wizz permet d'interpeller un autre utilisateur. Pour l'instant il n'y aura qu'un seul type de wizz mais plusieurs types peuvent être envisager:
 
  - important!

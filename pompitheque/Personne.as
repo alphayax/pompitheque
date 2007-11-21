@@ -5,7 +5,9 @@ import pompitheque.Debug;
     import pompitheque.Vue3D;
     import pompitheque.message.MessageArea;
     import pompitheque.message.Message;
+    import pompitheque.message.FileMessage;
     import flash.events.*;
+    import flash.utils.*;
     import flash.display.Sprite ;
 
     /*
@@ -19,6 +21,7 @@ import pompitheque.Debug;
         private var __login:String; // Login de la personne connectée
         private var __message_area:MessageArea; // Objet Message qui servira à
                                        // l'écriture de messages (sic!)
+        private var __dico_filesmessages:Dictionary;
         private var __vue3D:Vue3D; // Vue 3D de la personne
 
 public var debug:Debug;
@@ -34,6 +37,7 @@ public var debug:Debug;
             var msg:Message = new Message( this, "Moi", "Toi" );
             __message_area = new MessageArea();
             __message_area.setMessage( msg );
+            __dico_filesmessages = new Dictionary();
             __vue3D = new Vue3D( __message_area );
             addChild( __vue3D );
 
@@ -84,6 +88,29 @@ addChild( debug);
         /*
         Cette méthode permet d'écouter les messages envoyés par le serveur
         */
-        public function listen():void{}// TODO
+        public function listen():void
+        {
+            //TODO Récupération d'un message du destinataire
+            var message:Message = new Message().fromXml( messageXML );
+
+            // Insertion du message dans la file qui-va-bien
+            /****
+            Methode haskey puisqu'il faut le faire a la main
+            actionscript ne possede pas de methode pour le faire (AS sucks!!)
+            ****/
+            var isin:Boolean = false;
+
+            for ( var key:String in __dico_filesmessages )
+            {
+                if ( key == destinataire ){ isin = true; }
+            }
+
+            if ( isin == false; )
+            {
+                __dico_filesmessages[destinataire] = new FileMessage();
+            }
+            __dico_filesmessages[destinataire].add( message );
+            __dico_filesmessages[destinataire].afficher( __vue3D.getPoints());
+        }
     }
 }

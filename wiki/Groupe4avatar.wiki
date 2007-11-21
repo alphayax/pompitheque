@@ -1,4 +1,4 @@
-=Pocahontas se fait belle !!!=
+=Pocaontas se fait belle !!!=
 Le meilleur outil qu'offre Phtoshop pour détourer une image est contenu dans le menu Filtre
 
 Cela permet d'utiliser un outil spécifique qui ne laisse aucun "halo" de pixels blanc autour de l'image 
@@ -25,4 +25,4 @@ V2
 [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Animation.gif]
 
 
-Seul problème soulevé, il faudrait un anti-aliasing sur les bord car la pixelisation est inévitable... surtout lorsque l'on transforme la colorisation de l'image qui est codée en RVB, pour une image en couleur indexée (une palette de 250 couleurs maximum est choisie par le logiciel).
+Seul problème soulevé, il faudrait un anti-aliasing sur les bord car la pixelisation est inévitable... surtout lorsque l'on transforme la colorisation de l'image qui est codée en RVB, pour une image en couleur indexée (une palette de 250 couleurs maximum est choisie par le logiciel), des couleurs sont "oubliés" ou légerement mise en transparence, d'ou un écart de qualité entre les .psd et les .gif.

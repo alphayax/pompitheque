@@ -12,17 +12,13 @@ Avec une tablette graphique et un travail au pixel près le coût en temps est c
 
 Le gain en terme de qualité est incontestable.
 
-V1 (Avec un détourage par lasso)
-
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/000.gif]
-
-
-V2
-
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/000v2.gif]
+||V1 (Avec un détourage par lasso)||V2||
+||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/000.gif]||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/000v2.gif]||
 
 
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/PocaontasAnimation.gif]
+
+
+||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/PocaontasAnimation.gif]||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/ScaramoucheAnimation.gif]||
 
 
 Seul problème soulevé, il faudrait un anti-aliasing sur les bord car la pixelisation est inévitable... surtout lorsque l'on transforme la colorisation de l'image qui est codée en RVB, pour une image en couleur indexée (une palette de 250 couleurs maximum est choisie par le logiciel), des couleurs sont "oubliés" ou légerement mise en transparence, d'ou un écart de qualité entre les .psd et les .gif.

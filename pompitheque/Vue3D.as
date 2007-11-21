@@ -36,8 +36,9 @@ package pompitheque
             monBouton.overState = survol;
             monBouton.downState = clic;
             monBouton.hitTestState = normal;
+	    
             // application du filtre au bouton
-            monBouton.addEventListener(MouseEvent.CLICK, onClick);
+            monBouton.addEventListener(MouseEvent.CLICK, onClick);//Personne.onClick
 	    
             // affichage du bouton
             this.addChild(monBouton);

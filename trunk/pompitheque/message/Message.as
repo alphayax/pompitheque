@@ -44,9 +44,25 @@ package pompitheque.message
         */
         public function toXml():String
         {
+            __text = __text.replace( "<", "&lt;" );
+            __text = __text.replace( ">", "&gt;" );
+            __text = __text.replace( "&", "&amp;" );
             var xml:String =  "<message from='" + __from + "' to='" + __to + "'>" + __text + "</message>";
             return xml;
         }
+
+        public function fromXml( stringMessageXml:String ):Message
+        {
+            var messageXML:XML = new XML( stringMessageXml );
+            __to = messageXML.message.@to; 
+            __from = messageXML.message.@from;
+            __text = messageXML.message;
+            __text = __text.replace(  "&lt;", "<" );
+            __text = __text.replace( "&gt;", ">" );
+            __text = __text.replace( "&amp;", "&" );
+            return this;
+ 
+        }//TODO
 
         public function send():void
         {

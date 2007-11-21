@@ -3,31 +3,52 @@ package pompitheque
 	import flash.display.Sprite ;
 
     // Composants Text
-    import flash.text.TextField ; 
 	import pompitheque.MessageField; 
+    import pompitheque.message.Message;
  	
 	public class FileMessage
 	{
 		
 		// ----o Protected Property
-        string from;
-		
+        private var __liste_message:Array;
+        private var __num_message_max:int;
 
 		// ----o Constructor
 
-		public function FileMessage() { }//TODO
+		public function FileMessage()
+        {
+            __liste_message = new Array();
+        }
 		
 		// ----o Public Methods
-        public function affiche(p1,p2,p3,p4):TextField { }//TODO
+        public function affiche(p1,p2,p3,p4):Sprite { }//TODO
 		
-        public function toXml():string {}//TODO
-                        
-		public function add( mess:Message ):void { }//TODO
+                                
+		public function add( message:Message ):void
+        {
+            __liste_message.push( message );
+            if ( __liste_message.length > __num_message_max )
+            {
+                remove()
+            }
+        }
 		
-		public function remove( mess:Message ):void { }//TODO
-        
-        public function setDestinataire( destinataire:string ):void { }//TODO
-		
+		public function remove():void 
+        {
+            __liste_message.pop();    
+        }
+
+        /****************** Accesseurs *****************/
+        public function setMessageMax( max:int ):void
+        {
+            __num_message_max = max;
+        }
+
+        public function getMessageMax():int
+        {
+            return __num_message_max;
+        }
+
 	}
 }
 

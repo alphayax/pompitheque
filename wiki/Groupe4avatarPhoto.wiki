@@ -1,4 +1,4 @@
-=Pocaontas se fait belle !!!=
+=De Jolis avatars !=
 Le meilleur outil qu'offre Phtoshop pour détourer une image est contenu dans le menu Filtre
 
 Cela permet d'utiliser un outil spécifique qui ne laisse aucun "halo" de pixels blanc autour de l'image 

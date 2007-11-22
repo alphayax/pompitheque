@@ -23,3 +23,4 @@ Le gain en terme de qualité est incontestable.
 
 
 Seul problème soulevé, il faudrait un anti-aliasing sur les bord car la pixelisation est inévitable... surtout lorsque l'on transforme la colorisation de l'image qui est codée en RVB, pour une image en couleur indexée (une palette de 250 couleurs maximum est choisie par le logiciel), des couleurs sont "oubliés" ou légerement mise en transparence, d'ou un écart de qualité entre les .psd et les .gif.
+Autre problème la gestion de l'échantillonage de couleur a l'export.

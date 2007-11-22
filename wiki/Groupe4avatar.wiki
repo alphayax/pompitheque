@@ -73,3 +73,12 @@ Les avatars regardent dans une direction qui leur est propre. Du coup, quel est 
 En supposant que celui-ci ne change jamais, c'est-à-dire que l'on voit toujours la même chose, on peut le calculer grâce à cette formule :
 
 [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AngleAvatar.png]
+
+
+
+
+=== Quel image afficher ? ===
+
+C'est très simple, il suffit de prendre l'angle calculé ci-dessus, de divisé par 10¹ (en prenant la partie entière) et d'afficher l'image portant ce numéro.
+
+¹ : on divise par 10 car les avatars ont été pris en photo tous les 10°

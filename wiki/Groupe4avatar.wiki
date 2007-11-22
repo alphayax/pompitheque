@@ -70,6 +70,7 @@ De ce fait, on peut également déterminer les distances des avatars par rapport
 === Quel angle afficher ? ===
 
 Les avatars regardent dans une direction qui leur est propre. Du coup, quel est l'angle vue par notre point d'origine (l'avatar qui regarde) ?
+
 En supposant que celui-ci ne change jamais, c'est-à-dire que l'on voit toujours la même chose, on peut le calculer grâce à cette formule :
 
 [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AngleAvatar.png]

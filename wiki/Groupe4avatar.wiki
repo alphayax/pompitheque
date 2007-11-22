@@ -1,25 +1,75 @@
-=Pocaontas se fait belle !!!=
-Le meilleur outil qu'offre Phtoshop pour détourer une image est contenu dans le menu Filtre
+#labels Groupe4
+= Gestion des avatars =
 
-Cela permet d'utiliser un outil spécifique qui ne laisse aucun "halo" de pixels blanc autour de l'image 
+== Redimensionnement ==
+Application de thalès pour calculer le pourcentage de redimensionnement en fonction de la position sur la grille
 
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/photoshop.gif]
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Dessin_redimenssionement.jpg]
 
-Avec une tablette graphique et un travail au pixel près le coût en temps est colossal: (10' par photo sur 4 séries de 18 photos).
-
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/photoshop2.gif]
-
-
-Le gain en terme de qualité est incontestable.
-
-||V1 (Avec un détourage par lasso)||V2||
-||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/000.gif]||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/000v2.gif]||
+Taille de l'image = (Distance max - Distance entre les deux personnes) x (Taille originale) / (Distance Max);
 
 
 
 
-||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/PocaontasAnimation.gif]||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/ScaramoucheAnimation.gif]||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Scaramouche_assisAnimation.gif]||[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Pocaontas_assisAnimation.gif]||
+== Placement ==
+
+
+=== Orientation ===
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Légende1.jpg]
+
+Pour les schémas suivants, l'orientation de la vision est donnée par l'orientation du personnage, car on suppose que l'avatar a la tête droite et regarde en face de lui.
+S'il veut changer la direction de sa vue, il tournera le corps et non pas la tête.
 
 
 
-Seul problème soulevé, il faudrait un anti-aliasing sur les bord car la pixelisation est inévitable... surtout lorsque l'on transforme la colorisation de l'image qui est codée en RVB, pour une image en couleur indexée (une palette de 250 couleurs maximum est choisie par le logiciel), des couleurs sont "oubliés" ou légerement mise en transparence, d'ou un écart de qualité entre les .psd et les .gif.
+=== Savoir si un avatar est dans le champ de vision ===
+
+On suppose :
+  * L'origine de la vue : x,,vue,, et y,,vue,,
+  * La direction de la vision (en degré) : r
+  * L'angle de vision : 140°
+  * La position d'un avatar quelconque : x,,?,, et y,,?,,
+
+Il faut respecter ces deux conditions pour qu'un avatar soi vu :
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AvatarVuCond1.png]
+
+et
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AvatarVuCond2.png]
+
+
+
+=== Zone et plan de l'avatar ===
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Zones.jpg]
+
+Pour savoir dans quel plan est un avatar, on va déjà le classer dans une zone.
+Chaque zone est large de 5 mètre. (_*à discuter et vérifier*_)
+
+On peut prendre par exemple :
+  * Premier plan : zone 1
+  * Deuxième plan : zones 2 et 3
+  * Dernier plan : zones 4 et plus
+
+On suppose :
+  * L'origine de la vue : x,,vue,, et y,,vue,,
+  * La position d'un avatar quelconque : x,,?,, et y,,?,,
+
+Pour déterminer la zone, voici une formule "simple" :
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/ZoneAvatar.png]
+
+De ce fait, on peut également déterminer les distances des avatars par rapport au point de vue et ainsi ordonner la pile d'affichage de ceux-ci du plus éloigné au plus proche grâce au calcul de la distance :
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/DistanceAvatar.png]
+
+
+
+=== Quel angle afficher ? ===
+
+Les avatars regardent dans une direction qui leur est propre. Du coup, quel est l'angle vue par notre point d'origine (l'avatar qui regarde) ?
+En supposant que celui-ci ne change jamais, c'est-à-dire que l'on voit toujours la même chose, on peut le calculer grâce à cette formule :
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/AngleAvatar.png]

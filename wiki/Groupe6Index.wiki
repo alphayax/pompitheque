@@ -8,3 +8,29 @@
 === Organisation ===
 
 [Groupe6Orga Répartition des taches]
+
+=== Utilisation ===
+
+==Création et connexion du client==
+{{{
+var clt:Client = new Client(srv,nom);
+}}}
+
+==Envoi des données==
+{{{
+clt.send(data:DataEvent);
+}}}
+
+== Réception des données
+{{{
+// Redirection des données depuis la socket vers la methode write
+clt.getSocket().addEventListener(DataEvent.DATA,write);   
+
+// Récéption les messages entrant par la socket grace au Listener DataEvent de la socket (XMLSocket)
+public function write(data:DataEvent):void
+{
+ // Traitement des données
+ // Appel des fonction adéquates en fonction des types de message
+ // Confere format des données (WIKI)
+}
+}}}

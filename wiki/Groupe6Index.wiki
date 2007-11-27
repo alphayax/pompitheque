@@ -1,27 +1,27 @@
 #labels Groupe6,Featured
-==Index du groupe 6==
+=Index du groupe 6=
 
 
 [Groupe6Rapport Rapport du groupe 6]
 
 
-=== Organisation ===
+== Organisation ==
 
 [Groupe6Orga Répartition des taches]
 
-=== Utilisation ===
+== Utilisation ==
 
-==Création et connexion du client==
+===Création et connexion du client===
 {{{
 var clt:Client = new Client(srv,nom);
 }}}
 
-==Envoi des données==
+===Envoi des données===
 {{{
 clt.send(data:DataEvent);
 }}}
 
-== Réception des données
+===Réception des données===
 {{{
 // Redirection des données depuis la socket vers la methode write
 clt.getSocket().addEventListener(DataEvent.DATA,write);   

@@ -43,3 +43,8 @@ public function write(data:DataEvent):void
  // Confere format des données (WIKI)
 }
 }}}
+
+===Phases de test===
+  * Tests de montée en charge : 300 utilisateurs connectés simultanément -> OK
+  * Tests des différents navigateurs : Opéra, IE6, IE7, Firefox -> OK
+  * Tests des systèmes d'exploitation : Windows, Linux (Ubuntu) -> OK

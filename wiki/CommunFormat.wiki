@@ -38,9 +38,11 @@ Le wizz permet d'interpeller un autre utilisateur. Pour l'instant il n'y aura qu
 == Format de données pour les utilisateurs ==
 {{{
 <user pseudo="toto">
- <x>50</x>
- <y>250</y>
- <orientation>20</orientation>
+   <x>1</x>
+   <y>2</y>
+   <orientation>90</orientation>
+   <stature>debout</stature>
+   <type>pocahontas</type>
 </user>
 }}}
 
@@ -62,4 +64,75 @@ Le wizz permet d'interpeller un autre utilisateur. Pour l'instant il n'y aura qu
   <chaise x="10" y="12" orientation="40" />
  </mobilier>
 </map>
+}}}
+
+= Communication avec le serveur =
+
+== Demande du plan et de la liste ==
+Message envoyer par la vue au serveur pour demander la liste des personnes et le plan
+{{{
+<demande nom="nomduserveur" />
+}}}
+
+== Liste des personnes ==
+Message recu par le serveur lors de la creation de la vue
+{{{
+<users>
+ <user pseudo="zorro">
+   <x>1</x>
+   <y>2</y>
+   <orientation>90</orientation>
+   <stature>debout</stature>
+   <type>pocahontas</type>
+ </user>
+ <user pseudo="zorrette">
+   <x>2</x>
+   <y>1</y>
+   <orientation>50</orientation>
+   <stature>debout</stature>
+   <type>pocahontas</type>
+ </user>
+</users>
+}}}
+
+== Nouvelle personne qui se connecte ==
+Message envoyé/recu qd une nouvelle personne se connecte dans le monde.
+
+Le message est envoyer dans la vue2D une fois que la personne choisi sa position pour la premiere fois
+{{{
+<newpers pseudo="zorro">
+   <x>1</x>
+   <y>2</y>
+   <orientation>90</orientation>
+   <stature>debout</stature>
+   <type>pocahontas</type>
+</newpers>
+}}}
+
+== Personne deconnecté ==
+Message envoyé/recu qd un client se deconnecte
+{{{
+<deco pseudo="zorro" />
+}}}
+
+== Nouvelle position d'une personne ==
+Message envoyé/recu qd une personne se deplace.
+
+Le message est envoyer dans la vue2D quand la personne a choisi sa nouvelle position, si la personne se place sur une chaise alors sa stature change
+{{{
+<position pseudo="zorro">
+   <x>5</x>
+   <y>5</y
+   <stature>assis</stature>
+</position>
+}}}
+
+== Nouvel angle d'une personne ==
+Message envoyé/recu qd une personne tourne sur elle meme.
+
+Le message est envoyer dans la vue3D a chaque fois qu'un personne tourne a droite ou a gauche
+{{{
+<orientation pseudo="zorro">
+ <angle>90</angle>
+</orientation>
 }}}

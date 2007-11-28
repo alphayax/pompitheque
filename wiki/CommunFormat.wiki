@@ -49,21 +49,28 @@ Le wizz permet d'interpeller un autre utilisateur. Pour l'instant il n'y aura qu
 
 == Format de données pour la salle et le mobilier ==
 {{{
-<map nom="zemap">
- <salle>
-  <position x1="1" y1="3" x2="25" y2="55" />
-  <position x1="1" y1="3" x2="25" y2="55" />
-  <position x1="1" y1="3" x2="25" y2="55" />
- </salle>
- <mobilier>
-  <table x="11" y="12" orientation="40" />
-  <table x="11" y="12" orientation="40" />
-  <table x="11" y="12" orientation="40" />
-  <chaise x="10" y="12" orientation="40" />
-  <chaise x="10" y="12" orientation="40" />
-  <chaise x="10" y="12" orientation="40" />
- </mobilier>
-</map>
+<plan>
+  <salle>
+    <mur x1="2.00" y1="2.00" x2="18.00" y2="2.00" />
+    <mur x1="18.00" y1="2.00" x2="18.00" y2="17.00" />
+    <mur x1="18.00" y1="17.00" x2="2.00" y2="17.00" />
+    <mur x1="2.00" y1="17.00" x2="2.00" y2="2.00" />
+    <angle x="18" y="2" posPanorama="17" />
+    <angle x="18" y="17" posPanorama="726" />
+    <angle x="2" y="17" posPanorama="1436" />
+    <angle x="2" y="2" posPanorama="2145" />
+  </salle>
+  <mobilier>
+    <table x="4.50" y="5.00" orientation="0" />
+    <table x="10.77" y="4.97" orientation="0" />
+    <chaise x="4.70" y="3.93" orientation="0" />
+    <chaise x="2.77" y="5.20" orientation="0" />
+    <chaise x="4.90" y="6.63" orientation="0" />
+    <chaise x="11.20" y="3.87" orientation="0" />
+    <chaise x="13.20" y="5.30" orientation="0" />
+    <chaise x="11.43" y="6.87" orientation="0" />
+  </mobilier>
+</plan>
 }}}
 
 = Communication avec le serveur =

@@ -1,4 +1,3 @@
-
 = Rapport du Groupe 6 =
 
 === Assignations ===
@@ -43,7 +42,8 @@ Le serveur sera codé dans un langage lui permettant une réactivité rapide, un
 
  * ===État d'avancement du travail===
 
-Nous travaillons en ce moment sur le thread principal. Ce dernier agit comme un démon en attendant des connexions sur un port spécifié. Par la suite, il créera un thread pour chaque nouveau client qui ouvre une connexion sur le serveur.
+Le serveur fonctionne parfaitement. Il reçoit, identifie et connecte les clients qui arrivent. Il détecte également les déconnexions.
+Actuellement, nous travaillons sur les différentes commandes qui pourra reconnaître le serveur. De plus en parallèle, nous avons commencé a intégrer les modules des autres groupes.
 
 ==Le client==
 
@@ -68,6 +68,5 @@ Enfin, grace aux XMLsocket, la communication entre Flash et un serveur se trouve
 
  * ===État d'avancement du travail===
 
-
-Ce travail est en développement parallèle avec le serveur.
-Il permettra de valider les test avec ce dernier.
+Le client est fonctionnel. Il se connecte correctement au serveur et récupère les données dont il a besoin. Il peut également envoyer et recevoir des messages.
+Nous concentrons nos efforts sur l'intégration avec les autres groupes.

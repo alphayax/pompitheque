@@ -9,19 +9,28 @@
 
 [Groupe6Orga Répartition des taches]
 
-== Utilisation ==
+== Travail réalisé ==
 
-===Création et connexion du client===
+=== Client ===
+====Description====
+Nous avons développé une partie de l'application client en action script.
+Dans cette derniere, nous avons crée une classe qui permet de faire toutes les connexions avec le serveur.
+
+==== Utilisation ====
+=====Création et connexion du client=====
+On appelle une instance de la classe Client.
 {{{
 var clt:Client = new Client(srv,nom);
 }}}
 
-===Envoi des données===
+=====Envoi des données=====
+Pour envoyer les données, on utilise la méthode publique send(data);
 {{{
 clt.send(data:DataEvent);
 }}}
 
-===Réception des données===
+=====Réception des données=====
+Pour récupérer des données, on lie un type de données attendu avec une fonction perso.
 {{{
 // Redirection des données depuis la socket vers la methode write
 clt.getSocket().addEventListener(DataEvent.DATA,write);   

@@ -70,3 +70,20 @@ Enfin, grace aux XMLsocket, la communication entre Flash et un serveur se trouve
 
 Le client est fonctionnel. Il se connecte correctement au serveur et récupère les données dont il a besoin. Il peut également envoyer et recevoir des messages.
 Nous concentrons nos efforts sur l'intégration avec les autres groupes.
+
+==Le portail==
+
+ * ===Présentation du problème===
+Les utilisateurs qui veulent utiliser notre projet doivent avoir un point d'entrée. Ce dernier permettra d'afficher l'application cliente Flash et d'établir les connexions entre ces derniers.
+
+ * ===Solution envisagée===
+Dans un premier temps nous allons créer une page PHP qui attaquera la base de données SQlite pour afficher les diverses informations des micromondes. Cette dernière sera placé sur un serveur Apache qui contiendra également les données nécessaires à l'application.
+
+ * ===Contraintes===
+Appel de l'objet flash avec des paramètres.
+
+ * ===Implémentation===
+PHP/SQlite
+
+ * ===État d'avancement du travail===
+Le portail est terminé et fonctionnel. Il est accessible a l'adresse : http://www.arcatys.com/pompitheque/

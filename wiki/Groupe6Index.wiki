@@ -30,7 +30,7 @@ clt.send(data:DataEvent);
 }}}
 
 =====Réception des données=====
-Pour récupérer des données, on lie un type de données attendu avec une fonction perso.
+Pour récupérer des données, on associe une fonction à l'evennement DataEvent.DATA(se déclenche quand des données arrivent).
 {{{
 // Redirection des données depuis la socket vers la methode write
 clt.getSocket().addEventListener(DataEvent.DATA,write);   
@@ -40,7 +40,7 @@ public function write(data:DataEvent):void
 {
  // Traitement des données
  // Appel des fonction adéquates en fonction des types de message
- // Confere format des données (WIKI)
+ // Confere format des données en XML(WIKI)
 }
 }}}
 

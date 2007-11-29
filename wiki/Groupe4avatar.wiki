@@ -100,3 +100,23 @@ On suppose que :
   * le point d'origine et les points du panorama sont dans le même plan avec des coordonnées cohérentes
 
 === Couper le panorama ===
+
+Déterminer le point gauche (respectivement droit) en coordonnées 2D :
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation1.png]
+
+et (si x est préalablement calculé)
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation2a.png]
+
+sinon
+
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation2b.png]
+
+
+Où :
+   * [x, y] = [x,,Gauche,,, y,,Gauche,,] (resp. [x,,Droite,,, y,,Droite,,])
+   * [x,,1,,, y,,1,,] = [x,,Vue,,, y,,Vue,,]
+   * thêta = r,,vue,, + 77° (resp. r,,vue,, - 77°)
+   * [x,,4,,, y,,4,,] = [x,,Fond gauche - 1,,, y,,Fond gauche - 1,,] (resp. [x,,Fond droit,,, y,,Fond droit,,])
+   * [x,,5,,, y,,5,,] = [x,,Fond gauche,,, y,,Fond gauche,,] (resp. [x,,Fond droit + 1,,, y,,Fond droit + 1,,])

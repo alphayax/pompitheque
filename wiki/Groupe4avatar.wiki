@@ -103,15 +103,15 @@ On suppose que :
 
 Déterminer le point gauche (respectivement droit) en coordonnées 2D :
 
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation1.png]
+*Équation n°1 :* [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation1.png]
 
 et (si x est préalablement calculé)
 
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation2a.png]
+*Équation n°2a :* [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation2a.png]
 
 sinon
 
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation2b.png]
+*Équation n°2b :* [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Equation2b.png]
 
 
 Où :
@@ -120,3 +120,82 @@ Où :
    * thêta = r,,vue,, + 77° (resp. r,,vue,, - 77°)
    * [x,,4,,, y,,4,,] = [x,,Fond gauche - 1,,, y,,Fond gauche - 1,,] (resp. [x,,Fond droit,,, y,,Fond droit,,])
    * [x,,5,,, y,,5,,] = [x,,Fond gauche,,, y,,Fond gauche,,] (resp. [x,,Fond droit + 1,,, y,,Fond droit + 1,,])
+
+
+=== Prérequis des algos ===
+   * Les points du panorama sont dans l'ordre
+
+   * *EnsP* : l'ensemble des points du panorama
+   * *EnsI* : l'ensemble des indices des points du panorama qui sont affichés à l'écran
+   * *[x,,vue,,,y,,vue,,]* : les coordonnées du point de vue (origine ou pas)
+   * *r,,vue,,* : angle de vue
+
+
+=== construire EnsI ===
+
+{{{
+for i de 0 à EnsP.taille()
+  if EstDansLeChampsDeVision(EnsP.element(i)) then
+    EnsI.ajouter(i);
+}}}
+
+
+=== Calcule la distance max ===
+*Attention, cet algo n'est pas complet !*
+
+{{{
+pointPanoramaMax := null;
+distanceMax := 0;
+distanceCourante := 0;
+
+for j de 0 à ensI.taille()
+  distanceCourante := DistanceDeLaVue(EnsP.element(EnsI.element(j)));
+  
+  if distanceCourante > distanceMaxLocale then
+    distanceMax := distanceCourante;
+    pointPanoramaMax := EnsP.element(EnsI.element(j));
+
+########################################################################################
+
+pointPanoramaMax  # => le point le plus éloigné
+distanceMax       # => la distance maxi de l'origine de la vue au panorama le plus loin
+}}}
+
+
+=== Points gauche et droit du panorama ===
+{{{
+# Point gauche
+P,,Gauche,,.x := CalculEquation1(EnsP, EnsI, P,,vue,,, r,,vue,,+77°, EstGauche);
+P,,Gauche,,.Y := CalculEquation2(EnsP, EnsI, P,,vue,,, r,,vue,,+77°, EstGauche);
+
+# Point gauche
+P,,Droit,,.x := CalculEquation1(EnsP, EnsI, P,,vue,,, r,,vue,,-77°, EstDroite);
+P,,Droit,,.Y := CalculEquation2(EnsP, EnsI, P,,vue,,, r,,vue,,-77°, EstDroite);
+
+
+# Résultat intermédiaire :
+P,,Gauche,, # => point gauche du fond en coordonnée 2D
+P,,Droit,,  # => point droit du fond en coordonnée 2D
+
+
+# Calcul des coordonnées depuis l'origine
+L,,Gauche,, := 0;
+L,,Droit,, := 0;
+
+for i de 1 à EnsI.element(0) - 1 do
+  L,,Gauche,, += Distance(EnsP.element(i), EnsP.element(i + 1));
+
+L,,Droit,, := L,,Gauche,,;
+
+L,,Gauche,, += Distance(EnsI.element(Ens.element(0)), P,,Gauche,,); # ok
+
+for j de EnsI.element(0) - 1 à EnsI.element(max) do
+  L,,Droit,, += Distance(EnsP.element(j), EnsP.element(j + 1));
+
+L,,droit,, += Distance(EnsI.element(Ens.element(max)), P,,Droit,,); # ok
+
+
+# Résultat intermédiaire :
+L,,Gauche,, # => point de départ du fond par rapport à l'origine du panorama
+L,,Droit,,  # => point d'arrivé du fond par rapport à l'origine du panorama
+}}}

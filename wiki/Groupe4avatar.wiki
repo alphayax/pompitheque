@@ -203,3 +203,13 @@ L{Gauche} # => point de départ du fond par rapport à l'origine du panorama
 L{Droit}  # => point d'arrivé du fond par rapport à l'origine du panorama
 ########################################################################################
 }}}
+
+
+=== Fonctions ===
+*Rappel :* Calcul de la distance depuis l'origine de la vue : [http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/DistanceAvatar.png]
+
+{{{
+function Distance(P1, P2) {
+  return sqrt((P2.x - P1.x)^2 + (P2.y - P1.y)^2);
+}
+}}}

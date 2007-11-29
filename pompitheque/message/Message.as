@@ -10,7 +10,7 @@ package pompitheque.message
 		
         private var __text:String = ""; // corps du message
         private var __to:String = "all"; // destinataire
-        private var __from:String = ""; // expéditeur
+        private var __from:String = ""; // expï¿½iteur
         private var __wizz:Boolean = false; // le wizz de msn
         private var __client:Personne; // Le client qui permettra d'envoyer
                                        // des messages aux serveurs
@@ -18,7 +18,7 @@ package pompitheque.message
 		// ----o constructeur
     
         /*
-        ce constructeur s'applique dans le cas où l'on souhaite parler à tout
+        ce constructeur s'applique dans le cas o l'on souhaite parler ï¿½tout
         le monde (faire une annonce quoi!). il faudra saisir le message.
         */
 		public function Message( personne:Personne, from:String, to:String )
@@ -37,9 +37,11 @@ package pompitheque.message
         public function getMessage():String{ return __text; }
         public function setWizz( wizz:Boolean ):void { __wizz = wizz; }
         public function getWizz():Boolean { return __wizz; }
+	public function getDestinataire():String { return __to; }
+	public function getExpediteur():String { return __from; }
 
         /*
-        cette fonction renvoie une chaine de caractère xml qui sera envoyé au
+        cette fonction renvoie une chaine de caractï¿½e xml qui sera envoyï¿½au
         serveur.
         */
         public function toXml():String
@@ -68,7 +70,8 @@ package pompitheque.message
         {
            var myserial:String = toXml();
            __client.debug.text = myserial;
-           __client.send( myserial );
+          __client.send( myserial );
+	   //__client.listen();
         }
 
 		// ----o public methods

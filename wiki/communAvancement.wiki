@@ -40,11 +40,17 @@ Remarque :
 
 
 
-*Avancement Groupe 5 :* 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+*Avancement Groupe 5 :* - - - - - - - - - - - - - - 5 5 5 5 5 5
 
-Remarque :
+Ce qui est fait:
+ * Etude détaillée
+ * Le message peut être saisie
+ * La file contient des messages
+ * Les messages peuvent être xmlisés (sic!)
 
-
+Ce qui reste à faire:
+ * Les envois de messages à "ALL" (a mettre dans les files qui-vont-bien)
+ * Les alertes
 
 *Avancement Groupe 6* : - - - - - - - - - - - - - - - - - - - 6 6
   * Le serveur est terminé.

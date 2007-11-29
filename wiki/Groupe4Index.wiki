@@ -4,7 +4,7 @@
 == Sommaire ==
  # [Groupe4Exemple Exemple de rendu]
  # [Groupe4Photo Prise des photos et retouches]
- # [Groupe4avatarPhoto Phtotos des avatars]
+ # [Groupe4avatarPhoto Photos des avatars]
  # [Groupe4avatar Gestion des avatars]: Redimensionnement, orientation, placement, ...
  # [Groupe4objet Creation des objets]: Idées et réflexions sur les objets (création du damier en perspective, dessin d'une table, transformation 3D)
  # [Groupe4classe Diagramme de classe]

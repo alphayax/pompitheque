@@ -83,3 +83,20 @@ En supposant que celui-ci ne change jamais, c'est-à-dire que l'on voit toujours
 C'est très simple, il suffit de prendre l'angle calculé ci-dessus, de divisé par 10¹ (en prenant la partie entière) et d'afficher l'image portant ce numéro.
 
 ¹ : on divise par 10 car les avatars ont été pris en photo tous les 10°
+
+
+
+== Panorama ==
+
+=== Général ===
+
+Tout derrière est affiché le panorama, enfin, juste une partie qui constitue le fond de la scène.
+Dans cette partie on va voir comment calculer le point le plus éloigner ainsi que les points gauche et droit du fond.
+
+On suppose que :
+  * le Groupe n°1 fournit les points du panorama dans l'ordre
+  * l'on met en mémoire 10% de fond en plus
+  * l'on connaît le point d'origine et l'angle de la vue
+  * le point d'origine et les points du panorama sont dans le même plan avec des coordonnées cohérentes
+
+=== Couper le panorama ===

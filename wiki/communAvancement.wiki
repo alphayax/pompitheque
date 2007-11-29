@@ -46,7 +46,7 @@ Remarque :
 
 
 
-*Avancement Groupe 6 :
+*Avancement Groupe 6* : - - - - - - - - - - - - - - - - - - - 6 6
   * Le serveur est terminé.
   * La partie cliente en flash est terminée
   * Le portail est terminé.

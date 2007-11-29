@@ -1,0 +1,12 @@
+Dans ce répertoire commence l'integration des différentes parties.
+
+Le but étant d'avoir le projet entièrement finalisé dans ce répertoire.
+
+
+Pour le moment :
+ - La classe Vue3D est un bouchon
+ - La classe Personne qui sera à terme le client doit être complété par les
+   différents groupes
+ - La classe Debug ne sert que de trace (le print quoi!)
+
+

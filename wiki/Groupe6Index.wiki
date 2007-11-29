@@ -19,12 +19,17 @@ Dans cette derniere, nous avons crée une classe qui permet de faire toutes les 
 ==== Utilisation ====
 =====Création et connexion du client=====
 On appelle une instance de la classe Client.
+Les paramètres sont :
+ * le numéro du micromonde
+ * le login de l'utilisateur
+Ces parametres sont récupérés a partir du portail (nous le gerons)
 {{{
 var clt:Client = new Client(srv,nom);
 }}}
 
 =====Envoi des données=====
 Pour envoyer les données, on utilise la méthode publique send(data);
+On passe comme données des chaines de carractères ou directement un format XML
 {{{
 clt.send(data:DataEvent);
 }}}

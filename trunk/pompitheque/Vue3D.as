@@ -2,13 +2,24 @@ package pompitheque
 {
 
     import pompitheque.message.MessageArea;
-	import flash.display.Sprite ;
+    import flash.display.Sprite ;
     import flash.events.*;
     // Composants
     import flash.display.SimpleButton;
     import flash.display.Shape;
     import flash.display.StageScaleMode ;
-
+    
+    /****************************************************************************
+    pour integration:
+    - Vue3D doit prendre en parametre un MessageArea -> Vue3D(message_area)
+    - prevoir event qund on clic sur 1 personne ->addEventListener(MouseEvent.CLICK, onClick);//Personne.onClick
+    
+    -import MessageArea
+    ******************************************************************************/
+    
+    
+    
+    
 	public class Vue3D extends Sprite
 	{
 		// ----o protected property
@@ -45,7 +56,8 @@ package pompitheque
 }
         
         /******************************************
-                        Evenements
+	Evenements pas utiliser dans l integration, on utilisera la methode onClick de 
+	       la classe Personne 
         *******************************************/
         public function onClick(e:Event):void
         {

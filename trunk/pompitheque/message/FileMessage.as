@@ -1,9 +1,9 @@
-package pompitheque
+package pompitheque.message
 {
 	import flash.display.Sprite ;
 
     // Composants Text
-	import pompitheque.MessageField; 
+	//import pompitheque.message.MessageField; 
     import pompitheque.message.Message;
  	
 	public class FileMessage
@@ -21,7 +21,8 @@ package pompitheque
         }
 		
 		// ----o Public Methods
-        public function affiche(p1,p2,p3,p4):Sprite { }//TODO
+       // public function affiche(p1,p2,p3,p4):void//Sprite 
+	//{ }//TODO
 		
                                 
 		public function add( message:Message ):void
@@ -29,7 +30,7 @@ package pompitheque
             __liste_message.push( message );
             if ( __liste_message.length > __num_message_max )
             {
-                remove()
+                this.remove();
             }
         }
 		
@@ -47,9 +48,18 @@ package pompitheque
         public function getMessageMax():int
         {
             return __num_message_max;
-        }
-
 	}
+	    
+	public function getItem(i:int):Message
+	{
+	    if ( __liste_message.length > i && i>=0 )
+	    {
+	       return __liste_message[i];
+	    }
+	    else return null;
+	}
+
+    }
 }
 
 

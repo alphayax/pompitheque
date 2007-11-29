@@ -166,18 +166,18 @@ distanceMax       # => la distance maxi de l'origine de la vue au panorama le pl
 === Points gauche et droit du panorama ===
 {{{
 # Point gauche
-P{Gauche,,.x := CalculEquation1(EnsP, EnsI, P{vue}, r{vue}+77°, EstGauche);
-P{Gauche,,.Y := CalculEquation2(EnsP, EnsI, P{vue}, r{vue}+77°, EstGauche);
+P{Gauche}.x := CalculEquation1(EnsP, EnsI, P{vue}, r{vue}+77°, EstGauche);
+P{Gauche}.Y := CalculEquation2(EnsP, EnsI, P{vue}, r{vue}+77°, EstGauche);
 
 # Point gauche
-P{Droit,,.x := CalculEquation1(EnsP, EnsI, P{vue}, r{vue}-77°, EstDroite);
-P{Droit,,.Y := CalculEquation2(EnsP, EnsI, P{vue}, r{vue}-77°, EstDroite);
+P{Droit}.x := CalculEquation1(EnsP, EnsI, P{vue}, r{vue}-77°, EstDroite);
+P{Droit}.Y := CalculEquation2(EnsP, EnsI, P{vue}, r{vue}-77°, EstDroite);
 
 
 ########################################################################################
 # Résultat intermédiaire :
-P{Gauche,, # => point gauche du fond en coordonnée 2D
-P{Droit,,  # => point droit du fond en coordonnée 2D
+P{Gauche} # => point gauche du fond en coordonnée 2D
+P{Droit}  # => point droit du fond en coordonnée 2D
 ########################################################################################
 
 

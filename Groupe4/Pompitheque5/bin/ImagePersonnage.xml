@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="analyseXml.xsl" type="text/xsl" ?>
+
+<ListeAvatar>
+  <avatar typeAvatar="pocahontas" statureAvatar="debout" >
+        <orientation degres="0">
+             <url>Image Personnage/Pocahontas/debout/000.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="10">
+             <url>Image Personnage/Pocahontas/debout/010.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="20">
+             <url>Image Personnage/Pocahontas/debout/020.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="30">
+             <url>Image Personnage/Pocahontas/debout/030.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="40">
+             <url>Image Personnage/Pocahontas/debout/040.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="50">
+             <url>Image Personnage/Pocahontas/debout/050.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="60">
+             <url>Image Personnage/Pocahontas/debout/060.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="70">
+             <url>Image Personnage/Pocahontas/debout/070.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="80">
+             <url>Image Personnage/Pocahontas/debout/080.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="90">
+             <url>Image Personnage/Pocahontas/debout/090.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="100">
+             <url>Image Personnage/Pocahontas/debout/100.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="110">
+             <url>Image Personnage/Pocahontas/debout/110.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="120">
+             <url>Image Personnage/Pocahontas/debout/120.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="130">
+             <url>Image Personnage/Pocahontas/debout/130.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="140">
+             <url>Image Personnage/Pocahontas/debout/140.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="150">
+             <url>Image Personnage/Pocahontas/debout/150.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="160">
+             <url>Image Personnage/Pocahontas/debout/160.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="170">
+             <url>Image Personnage/Pocahontas/debout/170.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="180">
+             <url>Image Personnage/Pocahontas/debout/180.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="190">
+             <url>Image Personnage/Pocahontas/debout/190.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="200">
+             <url>Image Personnage/Pocahontas/debout/200.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="210">
+             <url>Image Personnage/Pocahontas/debout/210.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="220">
+             <url>Image Personnage/Pocahontas/debout/220.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="230">
+             <url>Image Personnage/Pocahontas/debout/230.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="240">
+             <url>Image Personnage/Pocahontas/debout/240.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="250">
+             <url>Image Personnage/Pocahontas/debout/250.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="260">
+             <url>Image Personnage/Pocahontas/debout/260.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="270">
+             <url>Image Personnage/Pocahontas/debout/270.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="280">
+             <url>Image Personnage/Pocahontas/debout/280.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="290">
+             <url>Image Personnage/Pocahontas/debout/290.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="300">
+             <url>Image Personnage/Pocahontas/debout/300.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="310">
+             <url>Image Personnage/Pocahontas/debout/310.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="320">
+             <url>Image Personnage/Pocahontas/debout/320.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="330">
+             <url>Image Personnage/Pocahontas/debout/330.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="340">
+             <url>Image Personnage/Pocahontas/debout/340.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="350">
+             <url>Image Personnage/Pocahontas/debout/350.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="360">
+             <url>Image Personnage/Pocahontas/debout/0.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>50</y2>
+                <x3>50</x3><y3>50</y3>
+                <x4>50</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+  </avatar>
+</ListeAvatar>
+

@@ -34,7 +34,16 @@ Remarque :
 
 
 
-*Avancement Groupe 4 :* 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+*Avancement Groupe 4 :* - - - - - - - - - - - - 4 4 4 4 4 4 4 4
+
+* Prise des photos TERMINER
+* Affichage des personnages dans la vue 3D TERMINER
+* Affichage de la table 
+* Modifier l'angle du proprio sur la vue 
+* Integration de la table a la vue 3D
+* Integration du panorama 
+* Integration et mise en commun de la vue 2D à finaliser
+* Integation de la communication avec le serveur TERMINER
 
 Remarque :
 

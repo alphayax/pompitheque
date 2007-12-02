@@ -22,6 +22,8 @@ package
 		//stature de l'avatar vue ('assis' ou 'debout')
 		private var statureAvatar:String;	
 		
+		private var angleVueArrondie:Number;
+		
 		public function Personne(nom:String,varX:Number,varY:Number,angleAbsolu:Number,statureAvatar:String,typeAvatar:String){
 			super(nom,varX,varY,angleAbsolu);
 			this.typeAvatar=typeAvatar;	
@@ -31,8 +33,8 @@ package
 		
 		public override function affiche3D():void
 		{
-			//trace("nom "+super.nom+"   angleVue :"+this.angleVue);
-			var angleVueArrondie:Number = 0;
+			/**trace("nom "+super.nom+"   angleVue :"+this.angleVue);**/
+			angleVueArrondie = 0;
 			if (super.angleVue%10 < 5)
 				angleVueArrondie = super.angleVue - super.angleVue%10;
 			else angleVueArrondie = super.angleVue + (10 - super.angleVue%10);
@@ -43,7 +45,7 @@ package
 				img.x = -largeur/2; 
 			if(this.numChildren == 0){
 			
-				img.load(new URLRequest(Avatar.getImage(typeAvatar,statureAvatar,angleVueArrondie.toString())));
+				img.load(new URLRequest(this.getImage()));
 				
 				/*var imgTemp:BitmapData;
 				imgTemp = new BitmapData(this.largeur, this.hauteur, false, 0xFFFFFF)
@@ -152,17 +154,13 @@ package
 		//renvoie l'adresse de l'image correspondant a la vue de la personne
 		public function getImage():String
 		{
-			return "image";
+			return Avatar.getImage(typeAvatar,statureAvatar,angleVueArrondie.toString());
 		}
 		
 		//renvoie les 4 coordonnées correspondant a la zone texte de la photo image
 		public function getZoneTexte():Array
 		{
-			//possibilité de les stocké ds un fichier XML
-			//->
-			//on recupere les coordonnées correspondant ds le fichier xml
-			//on applique la reduction de taille dut la perspective pour coller a la photo
-			return new Array();
+			return Avatar.getZoneTexte(typeAvatar,statureAvatar,angleVueArrondie.toString());
 		}		
 		
 		public function setStatureAvatar(statureAvatar:String):void {

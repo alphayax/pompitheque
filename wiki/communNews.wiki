@@ -5,6 +5,10 @@
 
 Pour que tous le monde puisse connaître les ajouts (ou modifications) les plus importants, dans cette page, chacun fera un bref résumé avec la date d’ajout et un lien comme ceci :
 
+  * *02/12 par Grollemund :* Upload de la derniere version de la pompitheque version groupe4
+
+         Important pour le groupe 5 (gestion des message) la classe *Personne* contient une fonction *message(destinataire:String)* : c'est la fonction appeler sur le proprietaire lorsqu'on clique sur une personne, destinataire est le nom de la personne cliqué. 
+
   * *28/11 par Grollemund :* Mise a jour des formats de données
 
          [http://code.google.com/p/pompitheque/wiki/CommunFormat Format des données]

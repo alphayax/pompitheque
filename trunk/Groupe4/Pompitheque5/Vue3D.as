@@ -13,15 +13,24 @@ package
 		private var pers:Personne;
 		//Liste des acteurs : contiendra des Personnes et des objet du mobilier
 		private var ListeActeur:Array;
+		//Liste des points panoramiques du plan
+		//  autant que de points en param 1, 2 valeurs en param 2 :
+		//  les coordonnées x et y
+		private var ListPointsPano:Array;
 		//Distance max dans le plan (utile pour calculer le redimensionnement)
 		private var DistanceMaxPlan:Number;
+		//Points gauche et droit du panorama (+10% non affichable) [x,y]
+		private var PointPanoGauche:Array;
+		private var PointPanoDroit:Array;
+		//data xml contenant toute les info du plan
+		private var Plan:XML
 		
 		//Position du point de vue 
 		public static var xCenter:Number = 400;
 		public static var yCenter:Number = 575;
 		
 		//on cree une vue 3D a partir d'un personnage
-		public function Vue3D(pers:Personne,ListeActeur:Array,DistanceMaxPlan:Number)
+		public function Vue3D(pers:Personne,ListeActeur:Array,Plan:XML)
 		{
 			super();
 			
@@ -37,10 +46,17 @@ package
 			graphics.lineTo(xCenter-largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
 			/*****FIN TEST GROUPE2****/			
 			
+			
 			//propriaitaire de la vue 3D
 			this.pers=pers;
-			//on recupere la distance max dans le plan
-			this.DistanceMaxPlan=DistanceMaxPlan;
+			//plan de la piece
+			this.Plan=Plan;
+			
+			//premiere (et unique) initialisation du plan
+			InitialiserPlan()
+			//premiere initialisation des distances
+			InitialiserVue();
+			
 			//on recupere la liste des acteurs (personnes et mobilier) de la vue
 			this.ListeActeur=ListeActeur;
 			//pour chaque acteur on calcule les coordonnées 3D et l'angle vue
@@ -55,10 +71,10 @@ package
 			//On tri le tableau d'acteur par rapport a la distance entre le proprio et l'acteur
 			ListeActeur.sort(sortOnDist);
 			/**trace("Sort on ");**/
-			for(var i:* in ListeActeur)
+			for(var j:* in ListeActeur)
 			{
 				/**trace("Distance :"+(Acteur)(ListeActeur[i]).getDistanceProprio());**/
-				addChild(ListeActeur[i]);
+				addChild(ListeActeur[j]);
 			}	
 			
 			//on affiche tout les acteurs			
@@ -68,6 +84,176 @@ package
 			this.addEventListener("enterFrame",enterFrame_handler);
 			
 		}	
+		
+		
+		// Initialisation de la piece
+		public function InitialiserPlan():void
+		{
+			var numPoints : Number = 0;
+			ListPointsPano = new Array();
+			
+			// Récupère les points
+			for each(var baliseMur:XML in Plan..mur)
+			{
+				ListPointsPano[numPoints] = {x:baliseMur.attribute("x1"),y:baliseMur.attribute("y1")};
+				numPoints++;
+			}
+		}
+		
+		
+		// Initialisation des distances pour le point de vu courant
+		// A faire avant chaque vue 3D !!
+		// Determine et enregistre :
+		//   - la distance max
+		//   - le point gauche et droit du panorama
+		public function InitialiserVue():void
+		{
+			var listePointsPanoramaVus : Array = new Array();
+			var nbPointsPanoVus : Number = 0;
+			var distanceCourante:Number = 0;
+			PointPanoGauche = new Array();
+			PointPanoDroit = new Array();
+			var xTemp : Number;
+			var yTemp : Number;
+			var positionI : Number;
+			var pointcourant : Array;
+			
+			// Recherche les points visibles du panorama
+			for(var i:Number in 0..(ListPointsPano.length - 1)) {
+				if(EstDansLeChampDeVision(ListPointsPano[ListPointsPano].x, ListPointsPano[ListPointsPano].y)) {
+					listePointsPanoramaVus[nbPointsPanoVus] = i;
+					nbPointsPanoVus++;
+				}
+			}
+			
+			
+			// Si des points sont trouvés, alors on lance les calculs
+			if (listePointsPanoramaVus.length > 0) {
+				
+				// Recherche de la distance la plus éloignée
+				for(var j:Number in listePointsPanoramaVus) {
+					distanceCourrante = DistanceDuPointDeVue(ListPointsPano[listePointsPanoramaVus[j]].x, ListPointsPano[listePointsPanoramaVus[j]].y);
+					
+					if(DistanceMaxPlan < distanceCourrante) {
+						DistanceMaxPlan = distanceCourrante;
+						// Eventuellement, sauvegarder ici le point le plus éloigné
+					}
+				}
+				
+				// Calcul des points gauche et droit :
+				// Calcul à la main du modulo (pour pas dépacer le tableau)
+				if (listePointsPanoramaVus[0] - 1 < 0) {
+					positionI = ListPointsPano.length - 1;
+				} else {
+					positionI = listePointsPanoramaVus[0] - 1
+				}
+				// Calcul du x gauche
+				xTemp = Equation1(
+							ListPointsPano[positionI].x,
+							ListPointsPano[positionI].y,
+							ListPointsPano[listePointsPanoramaVus[0]].x,
+							ListPointsPano[listePointsPanoramaVus[0]].y,
+							77);
+				// Calcul du y gauche
+				yTemp = Equation2a(
+							ListPointsPano[positionI].x,
+							ListPointsPano[positionI].y,
+							ListPointsPano[listePointsPanoramaVus[0]].x,
+							ListPointsPano[listePointsPanoramaVus[0]].y,
+							xTemp);
+				PointPanoGauche = {x:xTemp, y:yTemp};
+				
+				// Calcul à la main du modulo (pour pas dépacer le tableau)
+				if (listePointsPanoramaVus[listePointsPanoramaVus.length] + 1 >= ListPointsPano.length) {
+					positionI = 0;
+				} else {
+					positionI = listePointsPanoramaVus[listePointsPanoramaVus.length] + 1;
+				}
+				// Calcul du x droit
+				xTemp = Equation1(
+							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length]].x,
+							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length]].y,
+							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length] + 1 ].x,
+							ListPointsPano[listePointsPanoramaVus[0]].y,
+							-77);
+				// Calcul du y droit
+				yTemp = Equation2a(
+							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length]].x,
+							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length]].y,
+							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length] + 1 ].x,
+							ListPointsPano[listePointsPanoramaVus[0]].y,
+							xTemp);
+				PointPanoDroit = {x:xTemp, y:yTemp};
+			}
+			
+			
+			// Si rien n'est trouvé, recherche des points les plus proches
+			else {
+				// Recherche les points visibles du panorama
+				for(var k:Number in ListPointPano) {
+					if (k + 1 >= ListPointPano.length) {
+						positionI = 0;
+					} else {
+						positionI = k + 1;
+					}
+				
+					if(Intersection(
+								// Segment 1 point 1
+								ListPointsPano[k].x,
+								ListPointsPano[k].y,
+								// Segment 1 point 2
+								ListPointsPano[positionI].x,
+								ListPointsPano[positionI].y,
+								// Segment 2 point 1 : origine
+								pers.getX2D(),
+								pers.getY2D(),
+								// Segment 2 point 2 (point hypothétique
+								pers.getX2D() + 1000000 * Math.cos(pers.getAngleVue() + 70),
+								pers.getY2D() + 1000000 * Math.sin(pers.getAngleVue() + 70)
+							).length > 1) {
+						
+						pointcourant = Intersection(
+											// Segment 1 point 1
+											ListPointsPano[k].x,
+											ListPointsPano[k].y,
+											// Segment 1 point 2
+											ListPointsPano[positionI].x,
+											ListPointsPano[positionI].y,
+											// Segment 2 point 1 : origine
+											pers.getX2D(),
+											pers.getY2D(),
+											// Segment 2 point 2 (point hypothétique)
+											pers.getX2D() + 1000000 * Math.cos(pers.getAngleVue() + 70),
+											pers.getY2D() + 1000000 * Math.sin(pers.getAngleVue() + 70)
+										);
+						PointPanoGauche = {x:pointcourant.x, y:pointcourant.y};
+						
+						pointcourant = Intersection(
+											// Segment 1 point 1
+											ListPointsPano[k].x,
+											ListPointsPano[k].y,
+											// Segment 1 point 2
+											ListPointsPano[positionI].x,
+											ListPointsPano[positionI].y,
+											// Segment 2 point 1 : origine
+											pers.getX2D(),
+											pers.getY2D(),
+											// Segment 2 point 2 (point hypothétique)
+											pers.getX2D() + 1000000 * Math.cos(pers.getAngleVue() - 70),
+											pers.getY2D() + 1000000 * Math.sin(pers.getAngleVue() - 70)
+										);
+						PointPanoDroit = {x:pointcourant.x, y:pointcourant.y};
+						
+						DistanceMaxPlan = Math.max(
+												DistanceDuPointDeVue(PointPanoGauche.x, PointPanoGauche.y),
+												DistanceDuPointDeVue(PointPanoDroit.x, PointPanoDroit.y)
+											);
+					}
+				}
+				
+			}
+			
+		}
 		
 		
 		
@@ -81,6 +267,7 @@ package
 			il faut calculer ici la taille du mur que l'on voit par rapport a la piece
 			et executer la fonction prevu par le groupe 1 qui va nous renvoyer l'image de fond
 			FIN INTEGRATION GROUPE1**/
+			InitialiserVue();
 			
 			/**afficher un sol en damier (eventuelement)**/
 			
@@ -321,6 +508,103 @@ package
 		}
 		
 		
+		public function EstDansLeChampDeVision(xR:Number,yR:Number):Boolean {
+			return (
+					(
+						Math.cos(pers.getAngleVue() - 70) * yR - Math.sin(pers.getAngleVue() - 70) * xR
+					)
+					/
+					(
+						Math.cos(pers.getAngleVue() - 70) * pers.getY2D() - Math.sin(pers.getAngleVue() - 70) * pers.getX2D()
+					)
+				)
+				> 0
+				&&
+				(
+					(
+						Math.cos(pers.getAngleVue() + 70) * yR - Math.sin(pers.getAngleVue() + 70) * xR
+					)
+					/
+					(
+						Math.cos(pers.getAngleVue() + 70) * pers.getY2D() - Math.sin(pers.getAngleVue() + 70) * pers.getX2D()
+					)
+				)
+				< 0;
+		}
+		
+		public function DistanceDuPointDeVue(xR:Number,yR:Number):Number {
+			return Math.sqrt(Math.pow(xR - pers.getX2D(), 2) + Math.pow(xR - pers.getY2D(), 2));
+		}
+		
+		
+		public function Equation1(x4:Number, y4:Number, x5:Number, y5:Number, theta:Number):Number {
+			return
+				(
+					y4 - x4 * ((y5 -y4) / (x5 - x4)) + (pers.getY2D() / pers.getX2D()) * ((Math.cos(pers.getAngleVue() + theta) - 1) / (Math.sin(pers.getAngleVue() + theta) - 1))
+				)
+				/
+				(
+					((y5 - y4) / (x5 - x4)) - pers.getY2D() - pers.getY2D() * ((Math.cos(pers.getAngleVue() + theta) - 1) / (Math.sin(pers.getAngleVue() + theta) - 1))
+				);
+		}
+		
+		public function Equation2a(x4:Number, y4:Number, x5:Number, y5:Number, x:Number):Number {
+			return
+				(
+					((y5 - y4) / (x5 - x4)) * x + y4 - x4 * ((y5 - y4) / (x5 - x4))
+				);
+		}
+		
+		
+		public function Intersection(Ax:Number, Ay:Number, Bx:Number, By:Number, Cx:Number, Cy:Number, Dx:Number, Dy:Number):Array{
+			var Sx : Number;
+			var Sy : Number;
+			var pCD : Number;
+			var pAB : Number;
+			var oCD : Number;
+			var oAB : Number;
+ 
+			if(Ax==Bx)
+			{
+				if(Cx==Dx) return false;
+				else
+				{
+					pCD = (Cy-Dy)/(Cx-Dx);
+					Sx = Ax;
+					Sy = pCD*(Ax-Cx)+Cy;
+				}
+			}
+			else
+			{
+				if(Cx==Dx)
+				{
+					pAB = (Ay-By)/(Ax-Bx);
+					Sx = Cx;
+					Sy = pAB*(Cx-Ax)+Ay;
+				}
+				else
+				{
+					pCD = (Cy-Dy)/(Cx-Dx);
+					pAB = (Ay-By)/(Ax-Bx);
+					oCD = Cy-pCD*Cx;
+					oAB = Ay-pAB*Ax;
+					Sx = (oAB-oCD)/(pCD-pAB);
+					Sy = pCD*Sx+oCD;
+				}
+			}
+			if( (Sx<Ax && Sx<Bx) |
+				(Sx>Ax && Sx>Bx) |
+				(Sx<Cx && Sx<Dx) |
+				(Sx>Cx && Sx>Dx) |
+				(Sy<Ay && Sy<By) |
+				(Sy>Ay && Sy>By) |
+				(Sy<Cy && Sy<Dy) |
+				(Sy>Cy && Sy>Dy)) {
+					return new Array();
+				} else {
+					return new Array(Sx, Sy);
+				}
+		}
 		
 	}
 }

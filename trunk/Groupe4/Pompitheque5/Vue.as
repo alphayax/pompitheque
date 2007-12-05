@@ -71,7 +71,6 @@ package
 			
 			/*****DEBUT TEST GROUPE2****/
 			//pour les tests on ajoute manuelement les valeurs
-			DistanceMaxPlan = 600;
 			Proprio=new Personne("Bibi",350,0,0,"debout","pocahontas");
 			ajoutPersonne("Sylvie",100,0,0,"debout","pocahontas");
 			ajoutPersonne("Paulette",200,10,0,"debout","pocahontas");
@@ -80,7 +79,7 @@ package
 			ajoutPersonne("Marcelle",500,0,50,"debout","pocahontas");	
 			ajoutPersonne("Marcelle",100,150,50,"debout","pocahontas");	
 			ajoutPersonne("Marcelle",200,100,50,"debout","pocahontas");	
-			vue3D = new Vue3D(Proprio,ListeActeur,DistanceMaxPlan);					
+			vue3D = new Vue3D(Proprio,ListeActeur,Plan);					
 			afficheVue3D();
 			/*****FIN TEST GROUPE2****/
 		}
@@ -113,7 +112,7 @@ package
 			else {
 				if (vue3D == null)
 				{
-					vue3D = new Vue3D(Proprio,ListeActeur,DistanceMaxPlan);
+					vue3D = new Vue3D(Proprio,ListeActeur,Plan);
 				}
 				this.afficheVue3D();
 			}

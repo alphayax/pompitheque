@@ -5,7 +5,8 @@ package pompitheque.message
     import flash.events.Event;
     import flash.events.MouseEvent;
 
-    public class MessageArea extends Sprite {
+    public class MessageArea extends Sprite
+    {
 
         private var __message_widget:MessageWidget ;
 
@@ -20,7 +21,7 @@ package pompitheque.message
             addChild(__message_widget);
             __message_widget.afficheTextInput();
 	    
-	    //evenements
+            //evenements
             addEventListener(MouseEvent.MOUSE_DOWN, selectionne);
             addEventListener(MouseEvent.MOUSE_UP, place);
         }
@@ -28,20 +29,17 @@ package pompitheque.message
         public function setMessage( message:Message ):void
         {
             __message_widget.setMessage( message );
-	}
-	    
+        }
 	    
         /*** Fonctions de Drag and Drop ******/
-	public function selectionne(e:MouseEvent):void {
-	e.currentTarget.startDrag();
-	__message_widget.alpha = 50;
+        public function selectionne(e:MouseEvent):void {
+            e.currentTarget.startDrag();
+            __message_widget.alpha = 50;
         } 
-                 
+                     
         public function place(e:MouseEvent):void {
-	e.currentTarget.stopDrag();
-	__message_widget.alpha = 0;
+            e.currentTarget.stopDrag();
+            __message_widget.alpha = 0;
         }
-                    
     }              
-		              
 }

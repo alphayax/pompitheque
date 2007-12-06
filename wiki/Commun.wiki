@@ -33,3 +33,13 @@ Page recenssant les discutions des différents groupes
 {{{
 mxmlc -source-path="/chemin/vers/le/repertoire" Monfichier.as
 }}}
+
+== Connexion au serveur de test ==
+La connexion se fait via *ssh*.
+ * Serveur : 88.191.52.134
+ * Port : 22
+ * Repertoire : /home/pompitheque/
+ * 1ogin : pompitheque
+ * passwd ! pompi
+
+Vos fichiers sont accessibles directement sur http://www.arcatys.com/pompitheque/dev/

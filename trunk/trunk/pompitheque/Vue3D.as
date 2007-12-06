@@ -323,7 +323,7 @@ package pompitheque
 							trace("ON A TROUVE");
 							
 							/**INTEGRATION GROUPE5**/
-							pers.saisieMessage((Personne)(s).getName());
+							pers.saisieMessage((Personne)(s).getName(), this);
 							/**INTEGRATION GROUPE5**/
 							break;
 						}

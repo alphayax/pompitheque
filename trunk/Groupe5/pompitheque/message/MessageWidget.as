@@ -21,8 +21,7 @@ package pompitheque.message
     import flash.text.TextFieldAutoSize;
 
     /*
-    Cette classe est tout simplement un TextField surchargé
-    */
+    Cette classe est tout simplement un TextField surchargï¿½    */
 	public class MessageWidget extends Sprite
 	{
 		
@@ -38,8 +37,8 @@ package pompitheque.message
             /******* Champs Texte ************/
             __tf = new TextField() ;
             __tf.type = TextFieldType.INPUT ;		
-            __tf.width = 300 ;
-            __tf.height = 20 ;
+            //__tf.width = 300 ;
+            //__tf.height = 20 ;
 	    __tf.maxChars = 59 ;
             __tf.border = true ;
             __tf.borderColor = 0xFFFFFF ;
@@ -64,13 +63,13 @@ package pompitheque.message
         private function __ouvrir(e:TimerEvent):void 
         {
             __tf.width = __tf.width + 4;
-            __tf.height = __tf.height + 0.2;
+            __tf.height = __tf.height + 0.25;
 	    }
 	    
 	private function __fermer(e:TimerEvent):void 
 	{
             __tf.width = __tf.width - 4;
-            __tf.height = __tf.height - 0.2;
+            __tf.height = __tf.height - 0.25;
 	    if(__tf.width < 2) __tf.visible = false;
 	}
 
@@ -99,8 +98,8 @@ package pompitheque.message
         }
 		
         /*
-        Méthode lancé lorsque l'on presse la touche ENTRER.
-        Cette méthode va renoyer le corps du message
+        Mï¿½hode lancï¿½lorsque l'on presse la touche ENTRER.
+        Cette mï¿½hode va renoyer le corps du message
         */
         public function onEnter(e:KeyboardEvent):void
 	{

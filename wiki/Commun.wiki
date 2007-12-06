@@ -40,6 +40,6 @@ La connexion se fait via *ssh*.
  * Port : 22
  * Repertoire : /home/pompitheque/
  * 1ogin : pompitheque
- * passwd ! pompi
+ * passwd : pompi
 
 Vos fichiers sont accessibles directement sur http://www.arcatys.com/pompitheque/dev/

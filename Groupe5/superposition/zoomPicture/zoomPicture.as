@@ -13,28 +13,31 @@ package {
     import flash.display.StageScaleMode;
 
     // taille du fichier Flash pour le compilateur FLEX 2
-    [SWF(frameRate='30',width='320',height='240',backgroundColor='0x869CA7')]
+    [SWF(frameRate='30',width='320',height='240',backgroundColor='0x4682b4')]
 
     public class zoomPicture extends Sprite
     {
         // le sprite qui contient le masque de découpe
         private var maskSprite:Sprite;
-
         // le container qui contient la petite image
         private var containerSmall:Sprite;
-
         // le container qui contient la grande image
         // qui est partiellement caché par le masque 'maskSprite'
         private var containerBig:Sprite;
-
         // le 'loader' qui va contenir la grande image
         private var pictLdr:Loader;
+
+        // la variable qui precise l'etat de la souris "hidden ou non"
+        private var mouseHideState:Boolean = false;
+        // l'echelle du zoom par rapport a l'image réduite
+        private var zoomScale:Number = 2.125;
+        
 
         public function zoomPicture()
         {
             // pas de changement de taille du fichier, sinon le masque ne fonctionne pas
             stage.scaleMode = StageScaleMode.NO_SCALE;
-            // le"container" de la petite image
+            // le "container" de la petite image
             containerSmall = new Sprite();
             // le "container" de la grande image
             containerBig = new Sprite();
@@ -46,14 +49,14 @@ package {
             pictLdr = new Loader();
             // l'adresse URL de l'image
             // cette image est de grande taille
-            var pictURL:String = "playmobile.jpg";
-            // on récupère le path complet du movie Flash, on enlève le nom du fichier Flash
+            var pictURL:String = "0.gif";
+            // on récupère le chemin complet du movie Flash, on enlève le nom du fichier Flash
             // et on ajoute le nom de l'image
             pictURL = (root.loaderInfo.url.substring(0, (root.loaderInfo.url).lastIndexOf("/") + 1 ) ) + pictURL
             // on fait une requête pour l'URL
             var pictURLReq:URLRequest = new URLRequest(pictURL);
             // on charge l'image concernée
-            // équivalent à pictLdr.load(new URLRequest("nounours.png"));
+            // équivalent à pictLdr.load(new URLRequest("playmobile.png"));
             pictLdr.load(pictURLReq);
             // on définit l'évènement que l'on va attacher à pictLdr
             pictLdr.contentLoaderInfo.addEventListener(Event.COMPLETE, imgLoaded);
@@ -70,7 +73,7 @@ package {
             // on ajoute cette image au sprite
             containerSmall.addChild(smallPicture);
             // on récupère le bitmap
-            // que l'on met tels quel dans la grande image
+            // que l'on met tel quel dans la grande image
             var bigData:BitmapData = new BitmapData(smallData.width, smallData.height);
             bigData.copyPixels(smallData, new Rectangle(0, 0, smallData.width, smallData.height), new Point(0, 0));
             var bigPicture:Bitmap = new Bitmap(bigData);
@@ -78,17 +81,16 @@ package {
             bigPicture.cacheAsBitmap = true;
             // on ajoute cette image au sprite
             containerBig.addChild(bigPicture);
-            // l'image de base fait 1000x750 pixels
-            // on l'ajuste à la taille de l'affichage 320x240 pixels
+            // on ajuste l'image à la taille de l'affichage 320x240 pixels
             // soit une réduction de 1/3.125
             containerSmall.scaleX = .320;
             containerSmall.scaleY = .320;
             // on fait la création du masque vectoriel dans un sprite
-            // un rectangle de 120 pixels de large qui va faire voir la grande image
+            // un rectangle de 150 pixels de large qui va faire voir la grande image
             maskSprite = new Sprite();
             maskSprite.graphics.lineStyle(0, 0xFF0000, 1.0, true, "none", "ROUND", "ROUND", 3);
             maskSprite.graphics.beginFill(0xFFFFFF);
-            maskSprite.graphics.drawRoundRect(-40, 0, 120, 80, 40, 40);
+            maskSprite.graphics.drawRoundRect(-75, -45, 150, 90, 40, 40);
             // on remplit la forme créée
             maskSprite.graphics.endFill();
             // on met en cache l'image du masque
@@ -100,8 +102,7 @@ package {
             // on ajoute un évènement sur le stage
             stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
             stage.addEventListener(MouseEvent.MOUSE_WHEEL, mouseWheel);
-            // on cache la souris
-            //Mouse.hide();
+            stage.addEventListener(MouseEvent.MOUSE_DOWN, mouseHideOrShow);
         }
 
          private function mouseMove(event:Event) : void {
@@ -111,14 +112,40 @@ package {
 
             // on décale la grande image par rapport à la position de la souris
             // échelle entre grande et petite image = 3.125
-            // on a un rapport de 3.125 - 1
-            containerBig.x = - mouseX * 2.125;
-            containerBig.y = - mouseY * 2.125;
+            // on a un rapport de 3.125 - 1 --> zoomScale = 2,125
+            containerBig.x = - mouseX * zoomScale;
+            containerBig.y = - mouseY * zoomScale;
         }
 
-        private function mouseWheel(event:Event) : void {
-            containerBig.x = - mouseX * .125;
-            containerBig.y = - mouseY * .125;
+        private function mouseWheel(event:MouseEvent) : void {
+            if ( event.delta < 0 ) {
+                containerBig.scaleX -= containerBig.scaleX * .05;
+                containerBig.scaleY -= containerBig.scaleY * .05;
+                maskSprite.width -= maskSprite.width * .05;
+                maskSprite.height -= maskSprite.height * .05;
+                zoomScale -= zoomScale * .05;
+            }
+            else {
+                containerBig.scaleX += containerBig.scaleX * .05;
+                containerBig.scaleY += containerBig.scaleY * .05;
+                maskSprite.width += maskSprite.width * .05;
+                maskSprite.height += maskSprite.height * .05;
+                zoomScale += zoomScale * .05;
+            }
+            containerBig.x = - mouseX * zoomScale;
+            containerBig.y = - mouseY * zoomScale;
+        }
+
+        private function mouseHideOrShow(event:Event) : void {
+            // on cache/montre la souris au clic de la souris
+            if ( mouseHideState == false ) {
+                Mouse.hide();
+                mouseHideState = true;
+            }
+            else {
+                Mouse.show();
+                mouseHideState = false;
+            }
         }
     }
 }

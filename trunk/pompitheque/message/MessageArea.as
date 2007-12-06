@@ -16,9 +16,9 @@ package pompitheque.message
             __message_widget = new MessageWidget();
         }
         
-        public function saisie():void
+        public function saisie(vue3D:Vue3D):void
         {
-            addChild(__message_widget);
+            vue3D.addChild(__message_widget);
             __message_widget.afficheTextInput();
 	    
             //evenements

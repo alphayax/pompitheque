@@ -193,16 +193,16 @@ package pompitheque
 			return statureAvatar;
 		}
 		
-		/**DEBUT INTEGRATION GROUPE5**/
+		/********************DEBUT INTEGRATION GROUPE5**********************/
 		//fonction appeler sur le proprio lorsqu'on clique sur une personne
-		public function saisieMessage(destinataire:String):void
+		public function saisieMessage(destinataire:String, vue3D:Vue3D):void
 		{
             // On instancie un "CoreMessage"
             var msg:Message = new Message( __client, this.getName(), destinataire );
             // On passe le "CoreMessage" au MessageWidget
             __message_area.setMessage( msg );
             // On appelle la  methode qui va afficher la fenetre de saisie
-            __message_area.saisie(); // Saisie et envoie le message
+            __message_area.saisie( vue3D ); // Saisie et envoie le message
 		}
 
 		public function receiveMessage():void
@@ -224,6 +224,8 @@ package pompitheque
                 for ( var key:String in __dico_filesmessages )
                 {
                        __dico_filesmessages[key].add( message );
+                       // FIXME !!
+                       __dico_filesmessages[key].afficher( vue3D.getPoint() )
                 }
             } 
            else {
@@ -235,10 +237,12 @@ package pompitheque
 
                 if ( isin == false )
                 {
-                    __dico_filesmessages[message.getDestinataire() ] = new FileMessage();
-                    __dico_filesmessages[message.getDestinataire() ].setMessageMax(6);
+                    __dico_filesmessages[message.getDestinataire()] = new FileMessage();
+                    __dico_filesmessages[message.getDestinataire()].setMessageMax(6);
                 }
-               __dico_filesmessages[message.getDestinataire() ].add( message );
+               __dico_filesmessages[message.getDestinataire()].add( message );
+               // FIXME !!!
+               __dico_filesmessages[message.getDestinataire()].afficher( vue3D.getPoint() );
             }
         }
         /**************FIN INTEGRATION GROUPE5*****************/

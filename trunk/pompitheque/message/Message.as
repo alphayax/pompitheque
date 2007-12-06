@@ -14,7 +14,6 @@ package pompitheque.message
         private var __wizz:Boolean = false; // le wizz de msn
         private var __client:Personne; // Le client qui permettra d'envoyer
                                        // des messages aux serveurs
-
 		// ----o constructeur
     
         /*
@@ -28,7 +27,6 @@ package pompitheque.message
             __to = to;
             __client = personne;
 		}
-
 
         /*
         Accesseurs
@@ -69,7 +67,6 @@ package pompitheque.message
         public function send():void
         {
            var myserial:String = toXml();
-           __client.debug.text = myserial;
            __client.send( myserial );
         }
     }

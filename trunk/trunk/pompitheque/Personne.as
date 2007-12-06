@@ -6,7 +6,10 @@ package pompitheque
 	import flash.events.*;
 	import flash.ui.*;
 	import flash.net.*;
-	
+	import pompitheque.message.MessageArea;
+    import pompitheque.message.Message;
+    import pompitheque.message.FileMessage;
+
 	public class Personne extends Acteur
 	{
 		//taille d'origine
@@ -19,15 +22,29 @@ package pompitheque
 		//type de l'avatar vue ('pocahontas'...)
 		private var typeAvatar:String;
 		
-		
+
+        /************* Variables privé pour les messages **********/
+        //--------------     integration groupe5    ---------------
+        private var __message_area:MessageArea; // Pour la saisie du message
+        private var __dico_filesmessages:Dictionary; 
+        /***************** Fin intégration GROUPE5 ****************/
+
+
 		
 		//stature de l'avatar vue ('assis' ou 'debout')
 		private var statureAvatar:String;	
 		
-		public function Personne(nom:String,varX:Number,varY:Number,angleAbsolu:Number,statureAvatar:String,typeAvatar:String){
+        /************************************************
+        *           CONSTRUCTEUR PERSONNE               *
+        ************************************************/
+		public function Personne(nom:String,varX:Number,varY:Number,
+          angleAbsolu:Number,statureAvatar:String,typeAvatar:String)
+        {
 			super(nom,varX,varY,angleAbsolu);
 			this.typeAvatar=typeAvatar;	
 			this.statureAvatar=statureAvatar;
+            __message_area = new MessageArea();
+            __dico_filesmessages = new Dictionary();
 			/**trace(varX+' personne  '+varY) **/
 		}
 		
@@ -46,7 +63,6 @@ package pompitheque
 			if(this.numChildren == 0){
 			
 				img.load(new URLRequest(Avatar.getImage(typeAvatar,statureAvatar,angleVueArrondie.toString())));
-				
 				/*var imgTemp:BitmapData;
 				imgTemp = new BitmapData(this.largeur, this.hauteur, false, 0xFFFFFF)
 				    	imgTemp.draw(img, null, null, null, null, false);
@@ -143,16 +159,10 @@ package pompitheque
 			}
 			**/
 			
-			
-			
-			
 			x = super.x3D;
 			y = super.y3D;
 		}
-		
-		
-		
-		
+
 		//renvoie l'adresse de l'image correspondant a la vue de la personne
 		public function getImage():String
 		{
@@ -185,12 +195,52 @@ package pompitheque
 		
 		/**DEBUT INTEGRATION GROUPE5**/
 		//fonction appeler sur le proprio lorsqu'on clique sur une personne
-		public function message(destinataire:String):void
+		public function saisieMessage(destinataire:String):void
 		{
-			
+            // On instancie un "CoreMessage"
+            var msg:Message = new Message( __client, this.getName(), destinataire );
+            // On passe le "CoreMessage" au MessageWidget
+            __message_area.setMessage( msg );
+            // On appelle la  methode qui va afficher la fenetre de saisie
+            __message_area.saisie(); // Saisie et envoie le message
 		}
-		/**FIN INTEGRATION GROUPE5**/
-		
-		
+
+		public function receiveMessage():void
+        {
+            //TODO Recuperation d'un message du destinataire	
+            /********Message recu*********/
+            var msgRecu:String = receive();
+            // On créé un message vide qui sera remplie par fromxml
+            var message:Message = new Message(this, "", "");
+            message = message.fromXml(msgRecu);
+            
+            // Insertion du message dans la file qui-va-bien
+            /****
+            Methode haskey puisqu'il faut le faire a la main
+            actionscript ne possede pas de methode pour le faire (AS sucks!!)
+            ****/
+            if(message.getDestinataire() == "all")
+            {
+                for ( var key:String in __dico_filesmessages )
+                {
+                       __dico_filesmessages[key].add( message );
+                }
+            } 
+           else {
+                var isin:Boolean = false;
+                for ( var cle:String in __dico_filesmessages )
+                {
+                   if ( cle == message.getDestinataire() ){ isin = true; }
+                }
+
+                if ( isin == false )
+                {
+                    __dico_filesmessages[message.getDestinataire() ] = new FileMessage();
+                    __dico_filesmessages[message.getDestinataire() ].setMessageMax(6);
+                }
+               __dico_filesmessages[message.getDestinataire() ].add( message );
+            }
+        }
+        /**************FIN INTEGRATION GROUPE5*****************/
 	}
 }

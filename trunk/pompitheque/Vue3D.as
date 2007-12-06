@@ -1,4 +1,4 @@
-package
+package pompitheque
 {
 	import flash.display.*;
 	import flash.events.*;
@@ -15,11 +15,14 @@ package
 		private var ListeActeur:Array;
 		//Distance max dans le plan (utile pour calculer le redimensionnement)
 		private var DistanceMaxPlan:Number;
-		
+		// Serveur
+        private var serveur:Client;
+
 		//Position du point de vue 
 		public static var xCenter:Number = 400;
 		public static var yCenter:Number = 575;
 		
+
 		//on cree une vue 3D a partir d'un personnage
 		public function Vue3D(pers:Personne,ListeActeur:Array,DistanceMaxPlan:Number)
 		{
@@ -120,10 +123,6 @@ package
 			if (newPers.isEnVue(pers))
 			{
 				//on supprime le pers dans la vue3D (suppression du child)
-				
-				
-				
-				
 			}						
 		}
 		
@@ -316,8 +315,6 @@ package
 						xInterne = xInterne*375/s.height;
 						yInterne = 375 - yInterne*235/s.width;
 						
-						
-						
 				    	/**trace("Position interne 2: X :"+xInterne+" Y :"+yInterne);**/
 				    	var pixelValue:uint = imgTemp.getPixel32(xInterne, yInterne);
 						var alphaValue:uint = pixelValue >> 24 & 0xFF;
@@ -326,7 +323,7 @@ package
 							trace("ON A TROUVE");
 							
 							/**INTEGRATION GROUPE5**/
-							pers.message((Personne)(s).getName());
+							pers.saisieMessage((Personne)(s).getName());
 							/**INTEGRATION GROUPE5**/
 							break;
 						}
@@ -334,8 +331,5 @@ package
 				}
 			}			
 		}
-		
-		
-		
 	}
 }

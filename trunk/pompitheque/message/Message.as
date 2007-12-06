@@ -71,7 +71,6 @@ package pompitheque.message
            var myserial:String = toXml();
            __client.debug.text = myserial;
            __client.send( myserial );
-           //__client.listen();
         }
     }
 }

@@ -34,8 +34,7 @@ package {
         private var zoomScale:Number = 2.125;
 
 
-        public function zoomPicture()
-        {
+        public function zoomPicture() {
             // pas de changement de taille du fichier, sinon le masque ne fonctionne pas
             stage.scaleMode = StageScaleMode.NO_SCALE;
             // le "container" de la petite image
@@ -104,7 +103,19 @@ package {
             stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
             stage.addEventListener(MouseEvent.MOUSE_WHEEL, mouseWheel);
             stage.addEventListener(MouseEvent.MOUSE_DOWN, mouseHideOrShow);
-            stage.addEventListener(KeyboardEvent.ctrlKey, ctrlKeyZoom);
+            stage.addEventListener(KeyboardEvent.KEY_DOWN, KeyPressed);
+        }
+
+        private function mouseHideOrShow(event:Event) : void {
+            // on cache/montre la souris au clic de la souris
+            if ( mouseHideState == false ) {
+                Mouse.hide();
+                mouseHideState = true;
+            }
+            else {
+                Mouse.show();
+                mouseHideState = false;
+            }
         }
 
         private function mouseMove(event:Event) : void {
@@ -128,13 +139,20 @@ package {
             }
         }
 
-        private function ctrlKeyZoom(event:KeyboardEvent) : void {
+        private function KeyPressed(event:KeyboardEvent) : void {
             if ( event.ctrlKey == true ) {
+                // si CTRL est presse, on voit si une seconde touche pressee
+                // (sans lacher CTRL) est celle attendue ("+" ou "-")
                 stage.addEventListener(KeyboardEvent.KEY_DOWN, ctrlKeyZoom);
             }
-            else if ( event.charCode == 107 ) {
+        }
+
+        private function ctrlKeyZoom(event:KeyboardEvent) : void {
+            // recuperation du code de la touche pressee "PAVE_NUMERIQUE_PLUS = 107"
+            if ( event.charCode == 107 ) {
                 zoomIn();
             }
+            // recuperation du code de la touche pressee "PAVE_NUMERIQUE_MOINS = 109"
             else if ( event.charCode == 109 ) {
                 zoomOut();
             }
@@ -161,18 +179,6 @@ package {
         private function followContainer() : void {
             containerBig.x = - mouseX * zoomScale;
             containerBig.y = - mouseY * zoomScale;
-        }
-
-        private function mouseHideOrShow(event:Event) : void {
-            // on cache/montre la souris au clic de la souris
-            if ( mouseHideState == false ) {
-                Mouse.hide();
-                mouseHideState = true;
-            }
-            else {
-                Mouse.show();
-                mouseHideState = false;
-            }
         }
     }
 }

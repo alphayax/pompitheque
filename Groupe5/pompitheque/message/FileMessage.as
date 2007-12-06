@@ -5,7 +5,20 @@ package pompitheque.message
     // Composants Text
 	//import pompitheque.message.MessageField; 
     import pompitheque.message.Message;
- 	
+ 	import flash.display.Shape;
+	import flash.display.Sprite;
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.filters.DisplacementMapFilter;
+	import flash.geom.*;
+	
+	
+	import flash.text.TextField;
+	import flash.text.TextFieldType;
+	import flash.text.TextFieldAutoSize;
+	import flash.text.TextFormat;
+	
+		
 	public class FileMessage
 	{
 		

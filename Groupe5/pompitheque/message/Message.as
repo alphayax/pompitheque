@@ -37,8 +37,8 @@ package pompitheque.message
         public function getMessage():String{ return __text; }
         public function setWizz( wizz:Boolean ):void { __wizz = wizz; }
         public function getWizz():Boolean { return __wizz; }
-	public function getDestinataire():String { return __to; }
-	public function getExpediteur():String { return __from; }
+        public function getDestinataire():String { return __to; }
+        public function getExpediteur():String { return __from; }
 
         /*
         cette fonction renvoie une chaine de caract�e xml qui sera envoy�au
@@ -64,20 +64,14 @@ package pompitheque.message
             __text = __text.replace( "&amp;", "&" );
             return this;
  
-        }//TODO
+        }
 
         public function send():void
         {
            var myserial:String = toXml();
            __client.debug.text = myserial;
-          __client.send( myserial );
-	   //__client.listen();
-        }
-
-		// ----o public methods
-        //public function afficher(p1,p2,p3,p4):Sprite
-        {
-        //todo papilou et nicky
+           __client.send( myserial );
+           //__client.listen();
         }
     }
 }

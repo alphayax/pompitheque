@@ -31,7 +31,7 @@ package {
         private var mouseHideState:Boolean = false;
         // l'echelle du zoom par rapport a l'image réduite
         private var zoomScale:Number = 2.125;
-        
+
 
         public function zoomPicture()
         {

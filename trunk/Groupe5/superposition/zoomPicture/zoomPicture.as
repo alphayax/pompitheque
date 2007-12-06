@@ -10,6 +10,7 @@ package {
     import flash.geom.Point;
     import flash.ui.Mouse;
     import flash.events.MouseEvent;
+    import flash.events.KeyboardEvent;
     import flash.display.StageScaleMode;
 
     // taille du fichier Flash pour le compilateur FLEX 2
@@ -103,9 +104,10 @@ package {
             stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
             stage.addEventListener(MouseEvent.MOUSE_WHEEL, mouseWheel);
             stage.addEventListener(MouseEvent.MOUSE_DOWN, mouseHideOrShow);
+            stage.addEventListener(KeyboardEvent.ctrlKey, ctrlKeyZoom);
         }
 
-         private function mouseMove(event:Event) : void {
+        private function mouseMove(event:Event) : void {
             // on assigne le déplacement du masque à celui de la souris
             maskSprite.x = mouseX;
             maskSprite.y = mouseY;
@@ -119,19 +121,44 @@ package {
 
         private function mouseWheel(event:MouseEvent) : void {
             if ( event.delta < 0 ) {
-                containerBig.scaleX -= containerBig.scaleX * .05;
-                containerBig.scaleY -= containerBig.scaleY * .05;
-                maskSprite.width -= maskSprite.width * .05;
-                maskSprite.height -= maskSprite.height * .05;
-                zoomScale -= zoomScale * .05;
+                zoomOut();
             }
             else {
-                containerBig.scaleX += containerBig.scaleX * .05;
-                containerBig.scaleY += containerBig.scaleY * .05;
-                maskSprite.width += maskSprite.width * .05;
-                maskSprite.height += maskSprite.height * .05;
-                zoomScale += zoomScale * .05;
+                zoomIn();
             }
+        }
+
+        private function ctrlKeyZoom(event:KeyboardEvent) : void {
+            if ( event.ctrlKey == true ) {
+                stage.addEventListener(KeyboardEvent.KEY_DOWN, ctrlKeyZoom);
+            }
+            else if ( event.charCode == 107 ) {
+                zoomIn();
+            }
+            else if ( event.charCode == 109 ) {
+                zoomOut();
+            }
+        }
+
+        private function zoomIn() : void {
+            containerBig.scaleX += containerBig.scaleX * .05;
+            containerBig.scaleY += containerBig.scaleY * .05;
+            maskSprite.width += maskSprite.width * .05;
+            maskSprite.height += maskSprite.height * .05;
+            zoomScale += zoomScale * .05;
+            followContainer();
+        }
+
+        private function zoomOut() : void {
+            containerBig.scaleX -= containerBig.scaleX * .05;
+            containerBig.scaleY -= containerBig.scaleY * .05;
+            maskSprite.width -= maskSprite.width * .05;
+            maskSprite.height -= maskSprite.height * .05;
+            zoomScale -= zoomScale * .05;
+            followContainer();
+        }
+
+        private function followContainer() : void {
             containerBig.x = - mouseX * zoomScale;
             containerBig.y = - mouseY * zoomScale;
         }

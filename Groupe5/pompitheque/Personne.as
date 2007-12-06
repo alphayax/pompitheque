@@ -139,9 +139,9 @@ addChild( debug);
 	   else {
             var isin:Boolean = false;
 
-            for ( var key:String in __dico_filesmessages )
+            for ( var cle:String in __dico_filesmessages )
             {
-	       if ( key == message.getDestinataire() ){ isin = true; }
+	       if ( cle == message.getDestinataire() ){ isin = true; }
             }
 
             if ( isin == false )

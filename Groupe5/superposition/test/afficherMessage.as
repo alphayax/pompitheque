@@ -54,8 +54,7 @@ package test{
 			
 			//creation  du torse du playmobil
 			var torse:Shape = new Shape();
-			torse.graphics.beginFill(0xFFFFFFF,0.5);
-			torse.graphics.beginFill(0xFFFFFFF,1.0);
+			torse.graphics.beginFill(0xFFFFFFF,0.1);
 			torse.graphics.moveTo(point1.x,point1.y);
 			torse.graphics.lineTo(point2.x,point2.y);
 			torse.graphics.lineTo(point3.x,point3.y);

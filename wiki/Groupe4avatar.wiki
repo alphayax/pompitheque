@@ -16,7 +16,7 @@ Taille de l'image = (Distance max - Distance entre les deux personnes) x (Taille
 
 === Orientation ===
 
-[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Légende1.jpg]
+[http://pompitheque.googlecode.com/svn/trunk/Groupe4/ImagesWiki/Legende1.jpg]
 
 Pour les schémas suivants, l'orientation de la vision est donnée par l'orientation du personnage, car on suppose que l'avatar a la tête droite et regarde en face de lui.
 S'il veut changer la direction de sa vue, il tournera le corps et non pas la tête.

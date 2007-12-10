@@ -103,7 +103,7 @@ package {
             stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
             stage.addEventListener(MouseEvent.MOUSE_WHEEL, mouseWheel);
             stage.addEventListener(MouseEvent.MOUSE_DOWN, mouseHideOrShow);
-            stage.addEventListener(KeyboardEvent.KEY_DOWN, KeyPressed);
+            stage.addEventListener(KeyboardEvent.KEY_DOWN, raccourci);
         }
 
         private function mouseHideOrShow(event:Event) : void {

@@ -159,24 +159,32 @@ package {
         }
 
         private function zoomIn() : void {
+            // on agrandit le sprite contenant l'image originale
             containerBig.scaleX += containerBig.scaleX * .05;
             containerBig.scaleY += containerBig.scaleY * .05;
             maskSprite.width += maskSprite.width * .05;
             maskSprite.height += maskSprite.height * .05;
+            // on augmente l'echelle de zoom de l'image originale
             zoomScale += zoomScale * .05;
+            // on recentre le sprite sur la position de la souris
             followContainer();
         }
 
         private function zoomOut() : void {
+            // on retraicit le sprite contenant l'image originale
             containerBig.scaleX -= containerBig.scaleX * .05;
             containerBig.scaleY -= containerBig.scaleY * .05;
             maskSprite.width -= maskSprite.width * .05;
             maskSprite.height -= maskSprite.height * .05;
+            // on diminue l'echelle de zoom de l'image originale
             zoomScale -= zoomScale * .05;
+            // on recentre le sprite sur la position de la souris
             followContainer();
         }
 
         private function followContainer() : void {
+            // fonction permettant au sprite
+            // de l'image de suivre la souris
             containerBig.x = - mouseX * zoomScale;
             containerBig.y = - mouseY * zoomScale;
         }

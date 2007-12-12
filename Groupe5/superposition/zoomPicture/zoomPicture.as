@@ -140,19 +140,19 @@ package {
         }
 
         private function KeyPressed(event:KeyboardEvent) : void {
-            if ( event.ctrlKey == true ) {
-                // si CTRL est presse, on voit si une seconde touche pressee
-                // (sans lacher CTRL) est celle attendue ("+" ou "-")
-                stage.addEventListener(KeyboardEvent.KEY_DOWN, ctrlKeyZoom);
+            if ( event.altKey ) {
+                // si ALT est presse, on voit si une seconde touche pressee
+                // (sans lacher ALT) est celle attendue ("+" ou "-")
+                stage.addEventListener(KeyboardEvent.KEY_DOWN, secondKeyZoom);
             }
         }
 
-        private function ctrlKeyZoom(event:KeyboardEvent) : void {
-            // recuperation du code de la touche pressee "PAVE_NUMERIQUE_PLUS = 107"
+        private function secondKeyZoom(event:KeyboardEvent) : void {
+            // recuperation du code de la touche pressee "NUMPAD_ADD = 107"
             if ( event.charCode == 107 ) {
                 zoomIn();
             }
-            // recuperation du code de la touche pressee "PAVE_NUMERIQUE_MOINS = 109"
+            // recuperation du code de la touche pressee "NUMPAD_SUBTRACT = 109"
             else if ( event.charCode == 109 ) {
                 zoomOut();
             }

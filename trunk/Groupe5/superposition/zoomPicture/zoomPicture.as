@@ -103,7 +103,7 @@ package {
             stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
             stage.addEventListener(MouseEvent.MOUSE_WHEEL, mouseWheel);
             stage.addEventListener(MouseEvent.MOUSE_DOWN, mouseHideOrShow);
-            stage.addEventListener(KeyboardEvent.KEY_DOWN, KeyPressed);
+            stage.addEventListener(KeyboardEvent.KEY_DOWN, keyPressed);
         }
 
         private function mouseHideOrShow(event:Event) : void {
@@ -139,7 +139,7 @@ package {
             }
         }
 
-        private function KeyPressed(event:KeyboardEvent) : void {
+        private function keyPressed(event:KeyboardEvent) : void {
             if ( event.altKey ) {
                 // si ALT est presse, on voit si une seconde touche pressee
                 // (sans lacher ALT) est celle attendue ("+" ou "-")

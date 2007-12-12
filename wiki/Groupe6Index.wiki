@@ -18,8 +18,10 @@ Dans cette derniere, nous avons crée une classe qui permet de faire toutes les 
 
 ==== Utilisation ====
 =====Inclusion du paquet=====
-Nous avons un fichier "Client.as".
-Ce dernier va dans un package que nous l'avons nommé "chat".
+Nous avons un fichier `Client.as`.
+Ce dernier va dans un package que nous l'avons nommé `chat`.
+
+Les sources Client se trouvent ici : [http://www.arcatys.com/pompitheque/dev/Groupe6/]
 
 Une fois rajouté au projet, il suffira de faire la commande suivante pour l'inclure dans le code
 {{{

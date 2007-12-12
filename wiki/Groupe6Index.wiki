@@ -17,6 +17,15 @@ Nous avons développé une partie de l'application client en action script.
 Dans cette derniere, nous avons crée une classe qui permet de faire toutes les connexions avec le serveur.
 
 ==== Utilisation ====
+=====Inclusion du paquet=====
+Nous avons un fichier "Client.as".
+Ce dernier va dans un package que nous l'avons nommé "chat".
+
+Une fois rajouté au projet, il suffira de faire la commande suivante pour l'inclure dans le code
+{{{
+import chat.*
+}}}
+
 =====Création et connexion du client=====
 On appelle une instance de la classe Client.
 Les paramètres sont :

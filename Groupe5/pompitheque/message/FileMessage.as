@@ -64,14 +64,14 @@ package pompitheque.message
 			//calcul largeur, hauteur et diagonale du rectangle
 			var largeur:Number = Point.distance(pt1,pt2);
 			var hauteur:Number = Point.distance(pt1,pt3);
-			var diag:Number = Point.distance(point1,point3);
+			var diag:Number = Point.distance(pt1,pt3);
 			//creation  du torse du playmobil
 			var torse:Shape = new Shape();
 			torse.graphics.beginFill(0xFFFFFFF,0.1);
-			torse.graphics.moveTo(point1.x,point1.y);
-			torse.graphics.lineTo(point2.x,point2.y);
-			torse.graphics.lineTo(point3.x,point3.y);
-			torse.graphics.lineTo(point4.x,point4.y);
+			torse.graphics.moveTo(pt1.x,pt1.y);
+			torse.graphics.lineTo(pt2.x,pt2.y);
+			torse.graphics.lineTo(pt3.x,pt3.y);
+			torse.graphics.lineTo(pt4.x,pt4.y);
 			torse.graphics.endFill();
 			_parent.addChild(torse);
 			//creation de la textfield

@@ -110,47 +110,46 @@ addChild( debug);
         Cette m�hode permet d'envoyer un message au serveur
         */
         public function send( message:String ):void { } // TODO
-	public function receive():String {var s:String; return s;} // TODO
+        public function receive():String {var s:String; return s;} // TODO
 
         /*
         Cette m�hode permet d'�outer les messages envoy� par le serveur
         */
-        public function addMessage():void
+        public function receiveMessage():void
         {
-	//TODO R�up�ation d'un message du destinataire	
-	/********Message recu*********/
-	var msgRecu:String = receive();
-	var message:Message = new Message(this, "", "");
-	message = message.fromXml(msgRecu);
+            //TODO R�up�ation d'un message du destinataire	
+            /********Message recu*********/
+            var msgRecu:String = receive();
+            var message:Message = new Message(this, "", "");
+            message = message.fromXml(msgRecu);
             
 
-	// Insertion du message dans la file qui-va-bien
+            // Insertion du message dans la file qui-va-bien
             /****
             Methode haskey puisqu'il faut le faire a la main
             actionscript ne possede pas de methode pour le faire (AS sucks!!)
             ****/
-	    if(message.getDestinataire() == "all")
-	    {
-	    for ( var key:String in __dico_filesmessages )
-	    {
-	           __dico_filesmessages[key].add( message );
-            }
+            if(message.getDestinataire() == "all")
+            {
+                for ( var key:String in __dico_filesmessages )
+                {
+                       __dico_filesmessages[key].add( message );
+                }
             } 
-	   else {
-            var isin:Boolean = false;
+           else {
+                var isin:Boolean = false;
+                for ( var cle:String in __dico_filesmessages )
+                {
+                   if ( cle == message.getDestinataire() ){ isin = true; }
+                }
 
-            for ( var cle:String in __dico_filesmessages )
-            {
-	       if ( cle == message.getDestinataire() ){ isin = true; }
+                if ( isin == false )
+                {
+                    __dico_filesmessages[message.getDestinataire() ] = new FileMessage();
+                    __dico_filesmessages[message.getDestinataire() ].setMessageMax(6);
+                }
+               __dico_filesmessages[message.getDestinataire() ].add( message );
             }
-
-            if ( isin == false )
-            {
-	    __dico_filesmessages[message.getDestinataire() ] = new FileMessage();
-	    __dico_filesmessages[message.getDestinataire() ].setMessageMax(6);
-            }
-	       __dico_filesmessages[message.getDestinataire() ].add( message );
-}
 	    /************* Debug ****************/
 	    //debug.text=(__dico_filesmessages[message.getDestinataire()].length).toString;
 	   // __dico_filesmessages["Toi"];

@@ -40,18 +40,18 @@ var clt:Client = new Client(srv,nom);
 
 =====Envoi des données=====
 Pour envoyer les données, on utilise la méthode publique send(data);
-On passe comme données des chaines de carractères ou directement un format XML
+On passe comme données des chaînes de caractères ou directement un format XML
 {{{
 clt.send(data:DataEvent);
 }}}
 
 =====Réception des données=====
-Pour récupérer des données, on associe une fonction à l'evennement DataEvent.DATA(se déclenche quand des données arrivent).
+Pour récupérer des données, on associe une fonction à l'évènement `DataEvent.DATA` (se déclenche quand des données arrivent).
 {{{
-// Redirection des données depuis la socket vers la methode write
+// Redirection des données depuis la socket vers la méthode `write`
 clt.getSocket().addEventListener(DataEvent.DATA,write);   
 
-// Récéption les messages entrant par la socket grace au Listener DataEvent de la socket (XMLSocket)
+// Réception les messages entrant par la socket grace au Listener DataEvent de la socket (XMLSocket)
 public function write(data:DataEvent):void
 {
  // Traitement des données

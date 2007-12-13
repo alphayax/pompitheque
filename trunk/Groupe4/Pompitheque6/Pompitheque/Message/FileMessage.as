@@ -58,8 +58,15 @@ package Pompitheque
 			return taille;
 		}
 	
-		public function afficher(msg:String,pt1:Point,pt2:Point,pt3:Point,pt4:Point):Sprite
+        // Fonction d'affichage d'une file de message.
+        // Cette fonction prend un tableau de 4 points
+		public function afficher(ListePoints:Array):Sprite
         {
+            // Extraction des points
+            var pt1:Point = ListePoints[0];
+            var pt2:Point = ListePoints[1];
+            var pt3:Point = ListePoints[2];
+            var pt4:Point = ListePoints[3];
 		    var _parent:Sprite
 			//calcul largeur, hauteur et diagonale du rectangle
 			var largeur:Number = Point.distance(pt1,pt2);
@@ -91,7 +98,11 @@ package Pompitheque
 			//applique le format
 			tf.defaultTextFormat = format;
 			//affiche le texte
-			tf.text= msg;
+            var all_messages:String;
+            for (var msg:String  in __liste_message){
+                all_messages += msg + "\n";
+            }
+			tf.text= all_messages;
 			_parent.addChild(tf);
 			return _parent;
 		}

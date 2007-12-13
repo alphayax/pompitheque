@@ -129,7 +129,7 @@ Le message est envoyer dans la vue2D quand la personne a choisi sa nouvelle posi
 {{{
 <position pseudo="zorro">
    <x>5</x>
-   <y>5</y
+   <y>5</y>
    <stature>assis</stature>
 </position>
 }}}

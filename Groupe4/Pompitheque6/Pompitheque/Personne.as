@@ -22,19 +22,24 @@ package Pompitheque
 		//type de l'avatar vue ('pocahontas'...)
 		private var typeAvatar:String;
 		
-		
-        /************* Variables privï¿½ pour les messages **********/
+
+        /************* Variables privé pour les messages **********/
         //--------------     integration groupe5    ---------------
         private var __message_area:MessageArea; // Pour la saisie du message
         private var __dico_filesmessages:Dictionary; 
-        /***************** Fin intï¿½gration GROUPE5 ****************/
+        /***************** Fin intégration GROUPE5 ****************/
 
 
 		
 		//stature de l'avatar vue ('assis' ou 'debout')
 		private var statureAvatar:String;	
 		
-		public function Personne(nom:String,varX:Number,varY:Number,angleAbsolu:Number,statureAvatar:String,typeAvatar:String){
+        /************************************************
+        *           CONSTRUCTEUR PERSONNE               *
+        ************************************************/
+		public function Personne(nom:String,varX:Number,varY:Number,
+          angleAbsolu:Number,statureAvatar:String,typeAvatar:String)
+        {
 			super(nom,varX,varY,angleAbsolu);
 			this.typeAvatar=typeAvatar;	
 			this.statureAvatar=statureAvatar;
@@ -59,7 +64,6 @@ package Pompitheque
 			if(this.numChildren == 0){
 			
 			img.load(new URLRequest(Avatar.getImage(typeAvatar,statureAvatar,angleVueArrondie.toString())));
-				
 				/*var imgTemp:BitmapData;
 				imgTemp = new BitmapData(this.largeur, this.hauteur, false, 0xFFFFFF)
 				    	imgTemp.draw(img, null, null, null, null, false);
@@ -156,16 +160,10 @@ package Pompitheque
 			}
 			**/
 			
-			
-			
-			
 			x = super.x3D;
 			y = super.y3D;
 		}
-		
-		
-		
-		
+
 		//renvoie l'adresse de l'image correspondant a la vue de la personne
 		public function getImage():String
 		{
@@ -196,7 +194,7 @@ package Pompitheque
 			return statureAvatar;
 		}
 		
-		/**DEBUT INTEGRATION GROUPE5**/
+		/********************DEBUT INTEGRATION GROUPE5**********************/
 		//fonction appeler sur le proprio lorsqu'on clique sur une personne
 		public function saisieMessage(destinataire:String, vue3D:Vue3D):void
 		{
@@ -213,7 +211,7 @@ package Pompitheque
             //TODO Recuperation d'un message du destinataire	
             /********Message recu*********/
             var msgRecu:String = receive();
-            // On crï¿½ï¿½ un message vide qui sera remplie par fromxml
+            // On créé un message vide qui sera remplie par fromxml
             var message:Message = new Message(this, "", "");
             message = message.fromXml(msgRecu);
             

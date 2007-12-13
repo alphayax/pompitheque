@@ -76,7 +76,7 @@ package Pompitheque
 			_parent.addChild(torse);
 			//creation de la textfield
 			var tf:TextField = new TextField();
-			//Les coordonnï¿½es du textfield sont les memes que l'imager		
+			//Les coordonnées du textfield sont les memes que l'imager		
 			tf.x = torse.x; tf.y = torse.y;
 			tf.width = largeur; tf.height =hauteur;
 			//definition du texte

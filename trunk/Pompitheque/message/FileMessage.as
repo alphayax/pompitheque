@@ -51,10 +51,7 @@ package Pompitheque.message
         {
 			var taille:Number;
 			if(diag>300){ taille=14;}
-			if(diag>200 && diag<300){taille=12;}
-			if(diag<200 && diag>150){taille=10;}
-			if(diag<150 && diag>100){taille=8;}
-			if(diag<100){taille=6;}
+			else{taille=diag/15;}
 			return taille;
 		}
 	

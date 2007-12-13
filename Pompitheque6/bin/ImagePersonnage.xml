@@ -1,0 +1,1353 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="analyseXml.xsl" type="text/xsl" ?>
+
+<ListeAvatar>
+  <avatar typeAvatar="pocahontas" statureAvatar="debout" >
+        <orientation degres="0">
+             <url>Image Personnage/Pocahontas/debout/000.gif</url>
+             <zonetexte>
+                <x1>55</x1><y1>235</y1>
+                <x2>75</x2><y2>130</y2>
+                <x3>167</x3><y3>130</y3>
+                <x4>185</x4><y4>235</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="10">
+             <url>Image Personnage/Pocahontas/debout/010.gif</url>
+             <zonetexte>
+                <x1>55</x1><y1>235</y1>
+                <x2>75</x2><y2>130</y2>
+                <x3>160</x3><y3>130</y3>
+                <x4>180</x4><y4>235</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="20">
+             <url>Image Personnage/Pocahontas/debout/020.gif</url>
+             <zonetexte>
+                <x1>50</x1><y1>235</y1>
+                <x2>72</x2><y2>130</y2>
+                <x3>155</x3><y3>130</y3>
+                <x4>75</x4><y4>235</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="30">
+             <url>Image Personnage/Pocahontas/debout/030.gif</url>
+             <zonetexte>
+                <x1>55</x1><y1>235</y1>
+                <x2>70</x2><y2>130</y2>
+                <x3>145</x3><y3>130</y3>
+                <x4>165</x4><y4>235</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="40">
+             <url>Image Personnage/Pocahontas/debout/040.gif</url>
+             <zonetexte>
+                <x1>58</x1><y1>238</y1>
+                <x2>73</x2><y2>133</y2>
+                <x3>138</x3><y3>127</y3>
+                <x4>158</x4><y4>234</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="50">
+             <url>Image Personnage/Pocahontas/debout/050.gif</url>
+             <zonetexte>
+                <x1>66</x1><y1>235</y1>
+                <x2>77</x2><y2>133</y2>
+                <x3>130</x3><y3>125</y3>
+                <x4>147</x4><y4>234</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="60">
+             <url>Image Personnage/Pocahontas/debout/060.gif</url>
+             <zonetexte>
+                <x1>72</x1><y1>234</y1>
+                <x2>77</x2><y2>132</y2>
+                <x3>122</x3><y3>124</y3>
+                <x4>134</x4><y4>233</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="70">
+             <url>Image Personnage/Pocahontas/debout/070.gif</url>
+             <zonetexte>
+                <x1>74</x1><y1>236</y1>
+                <x2>78</x2><y2>134</y2>
+                <x3>110</x3><y3>124</y3>
+                <x4>115</x4><y4>230</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="80">
+             <url>Image Personnage/Pocahontas/debout/080.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="90">
+             <url>Image Personnage/Pocahontas/debout/090.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="100">
+             <url>Image Personnage/Pocahontas/debout/100.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="110">
+             <url>Image Personnage/Pocahontas/debout/110.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="120">
+             <url>Image Personnage/Pocahontas/debout/120.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="130">
+             <url>Image Personnage/Pocahontas/debout/130.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="140">
+             <url>Image Personnage/Pocahontas/debout/140.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="150">
+             <url>Image Personnage/Pocahontas/debout/150.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="160">
+             <url>Image Personnage/Pocahontas/debout/160.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="170">
+             <url>Image Personnage/Pocahontas/debout/170.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="180">
+             <url>Image Personnage/Pocahontas/debout/180.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="190">
+             <url>Image Personnage/Pocahontas/debout/190.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="200">
+             <url>Image Personnage/Pocahontas/debout/200.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="210">
+             <url>Image Personnage/Pocahontas/debout/210.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="220">
+             <url>Image Personnage/Pocahontas/debout/220.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="230">
+             <url>Image Personnage/Pocahontas/debout/230.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="240">
+             <url>Image Personnage/Pocahontas/debout/240.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="250">
+             <url>Image Personnage/Pocahontas/debout/250.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="260">
+             <url>Image Personnage/Pocahontas/debout/260.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="270">
+             <url>Image Personnage/Pocahontas/debout/270.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="280">
+             <url>Image Personnage/Pocahontas/debout/280.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="290">
+             <url>Image Personnage/Pocahontas/debout/290.gif</url>
+             <zonetexte>
+                <x1>124</x1><y1>232</y1>
+                <x2>129</x2><y2>126</y2>
+                <x3>160</x3><y3>136</y3>
+                <x4>132</x4><y4>235</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="300">
+             <url>Image Personnage/Pocahontas/debout/300.gif</url>
+             <zonetexte>
+                <x1>103</x1><y1>230</y1>
+                <x2>115</x2><y2>125</y2>
+                <x3>160</x3><y3>132</y3>
+                <x4>167</x4><y4>234</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="310">
+             <url>Image Personnage/Pocahontas/debout/310.gif</url>
+             <zonetexte>
+                <x1>89</x1><y1>233</y1>
+                <x2>105</x2><y2>126</y2>
+                <x3>160</x3><y3>132</y3>
+                <x4>169</x4><y4>236</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="320">
+             <url>Image Personnage/Pocahontas/debout/320.gif</url>
+             <zonetexte>
+                <x1>79</x1><y1>234</y1>
+                <x2>95</x2><y2>128</y2>
+                <x3>160</x3><y3>132</y3>
+                <x4>177</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="330">
+             <url>Image Personnage/Pocahontas/debout/330.gif</url>
+             <zonetexte>
+                <x1>68</x1><y1>234</y1>
+                <x2>87</x2><y2>127</y2>
+                <x3>163</x3><y3>129</y3>
+                <x4>183</x4><y4>235</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="340">
+             <url>Image Personnage/Pocahontas/debout/340.gif</url>
+             <zonetexte>
+                <x1>62</x1><y1>235</y1>
+                <x2>81</x2><y2>127</y2>
+                <x3>163</x3><y3>129</y3>
+                <x4>185</x4><y4>235</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="350">
+             <url>Image Personnage/Pocahontas/debout/350.gif</url>
+             <zonetexte>
+                <x1>54</x1><y1>234</y1>
+                <x2>73</x2><y2>127</y2>
+                <x3>162</x3><y3>129</y3>
+                <x4>182</x4><y4>234</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="360">
+             <url>Image Personnage/Pocahontas/debout/000.gif</url>
+             <zonetexte>
+                <x1>52</x1><y1>236</y1>
+                <x2>70</x2><y2>130</y2>
+                <x3>160</x3><y3>129</y3>
+                <x4>182</x4><y4>236</y4>
+             </zonetexte>
+        </orientation>
+  </avatar>
+
+    <!--------------------------------------------------------------------------------------------------------------------->
+  <avatar typeAvatar="pocahontas" statureAvatar="assis" >
+        <orientation degres="0">
+             <url>Image Personnage/Pocahontas/assis/000.gif</url>
+             <zonetexte>
+                <x1>68</x1><y1>237</y1>
+                <x2>82</x2><y2>153</y2>
+                <x3>155</x3><y3>153</y3>
+                <x4>172</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="10">
+             <url>Image Personnage/Pocahontas/assis/010.gif</url>
+             <zonetexte>
+                <x1>55</x1><y1>235</y1>
+                <x2>86</x2><y2>153</y2>
+                <x3>157</x3><y3>153</y3>
+                <x4>171</x4><y4>235</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="20">
+             <url>Image Personnage/Pocahontas/assis/020.gif</url>
+             <zonetexte>
+                <x1>67</x1><y1>237</y1>
+                <x2>90</x2><y2>154</y2>
+                <x3>155</x3><y3>153</y3>
+                <x4>168</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="30">
+             <url>Image Personnage/Pocahontas/assis/030.gif</url>
+             <zonetexte>
+                <x1>66</x1><y1>238</y1>
+                <x2>86</x2><y2>154</y2>
+                <x3>146</x3><y3>154</y3>
+                <x4>156</x4><y4>236</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="40">
+             <url>Image Personnage/Pocahontas/assis/040.gif</url>
+             <zonetexte>
+                <x1>65</x1><y1>237</y1>
+                <x2>83</x2><y2>155</y2>
+                <x3>136</x3><y3>151</y3>
+                <x4>142</x4><y4>236</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="50">
+             <url>Image Personnage/Pocahontas/assis/050.gif</url>
+             <zonetexte>
+                <x1>67</x1><y1>240</y1>
+                <x2>85</x2><y2>156</y2>
+                <x3>130</x3><y3>151</y3>
+                <x4>131</x4><y4>236</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="60">
+             <url>Image Personnage/Pocahontas/assis/060.gif</url>
+             <zonetexte>
+                <x1>71</x1><y1>239</y1>
+                <x2>87</x2><y2>155</y2>
+                <x3>122</x3><y3>152</y3>
+                <x4>119</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="70">
+             <url>Image Personnage/Pocahontas/assis/070.gif</url>
+             <zonetexte>
+                <x1>78</x1><y1>239</y1>
+                <x2>90</x2><y2>158</y2>
+                <x3>115</x3><y3>153</y3>
+                <x4>108</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="80">
+             <url>Image Personnage/Pocahontas/assis/080.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="90">
+             <url>Image Personnage/Pocahontas/assis/090.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="100">
+             <url>Image Personnage/Pocahontas/assis/100.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="110">
+             <url>Image Personnage/Pocahontas/assis/110.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="120">
+             <url>Image Personnage/Pocahontas/assis/120.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="130">
+             <url>Image Personnage/Pocahontas/assis/130.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="140">
+             <url>Image Personnage/Pocahontas/assis/140.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="150">
+             <url>Image Personnage/Pocahontas/assis/150.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="160">
+             <url>Image Personnage/Pocahontas/assis/160.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="170">
+             <url>Image Personnage/Pocahontas/assis/170.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="180">
+             <url>Image Personnage/Pocahontas/assis/180.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="190">
+             <url>Image Personnage/Pocahontas/assis/190.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="200">
+             <url>Image Personnage/Pocahontas/assis/200.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="210">
+             <url>Image Personnage/Pocahontas/assis/210.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="220">
+             <url>Image Personnage/Pocahontas/assis/220.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="230">
+             <url>Image Personnage/Pocahontas/assis/230.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="240">
+             <url>Image Personnage/Pocahontas/assis/240.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="250">
+             <url>Image Personnage/Pocahontas/assis/250.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="260">
+             <url>Image Personnage/Pocahontas/assis/260.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="270">
+             <url>Image Personnage/Pocahontas/assis/270.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="280">
+             <url>Image Personnage/Pocahontas/assis/280.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="290">
+             <url>Image Personnage/Pocahontas/assis/290.gif</url>
+             <zonetexte>
+                <x1>129</x1><y1>238</y1>
+                <x2>121</x2><y2>152</y2>
+                <x3>145</x3><y3>159</y3>
+                <x4>156</x4><y4>240</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="300">
+             <url>Image Personnage/Pocahontas/assis/300.gif</url>
+             <zonetexte>
+                <x1>116</x1><y1>237</y1>
+                <x2>113</x2><y2>152</y2>
+                <x3>148</x3><y3>158</y3>
+                <x4>164</x4><y4>240</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="310">
+             <url>Image Personnage/Pocahontas/assis/310.gif</url>
+             <zonetexte>
+                <x1>104</x1><y1>237</y1>
+                <x2>106</x2><y2>151</y2>
+                <x3>149</x3><y3>155</y3>
+                <x4>168</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="320">
+             <url>Image Personnage/Pocahontas/assis/320.gif</url>
+             <zonetexte>
+                <x1>92</x1><y1>238</y1>
+                <x2>98</x2><y2>151</y2>
+                <x3>151</x3><y3>155</y3>
+                <x4>172</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="330">
+             <url>Image Personnage/Pocahontas/assis/330.gif</url>
+             <zonetexte>
+                <x1>79</x1><y1>237</y1>
+                <x2>87</x2><y2>152</y2>
+                <x3>150</x3><y3>154</y3>
+                <x4>170</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="340">
+             <url>Image Personnage/Pocahontas/assis/340.gif</url>
+             <zonetexte>
+                <x1>69</x1><y1>237</y1>
+                <x2>81</x2><y2>152</y2>
+                <x3>147</x3><y3>154</y3>
+                <x4>168</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="350">
+             <url>Image Personnage/Pocahontas/assis/350.gif</url>
+             <zonetexte>
+                <x1>65</x1><y1>237</y1>
+                <x2>80</x2><y2>152</y2>
+                <x3>151</x3><y3>153</y3>
+                <x4>170</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="360">
+             <url>Image Personnage/Pocahontas/assis/000.gif</url>
+             <zonetexte>
+                <x1>63</x1><y1>238</y1>
+                <x2>80</x2><y2>154</y2>
+                <x3>152</x3><y3>154</y3>
+                <x4>168</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+  </avatar>
+
+    <!--------------------------------------------------------------------------------------------------------------------->
+  <avatar typeAvatar="scaramouche" statureAvatar="debout" >
+        <orientation degres="0">
+             <url>Image Personnage/Scaramouche/debout/000.gif</url>
+             <zonetexte>
+                <x1>57</x1><y1>244</y1>
+                <x2>78</x2><y2>144</y2>
+                <x3>159</x3><y3>144</y3>
+                <x4>178</x4><y4>244</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="10">
+             <url>Image Personnage/Scaramouche/debout/010.gif</url>
+             <zonetexte>
+                <x1>54</x1><y1>246</y1>
+                <x2>69</x2><y2>145</y2>
+                <x3>154</x3><y3>144</y3>
+                <x4>176</x4><y4>246</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="20">
+             <url>Image Personnage/Scaramouche/debout/020.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="30">
+             <url>Image Personnage/Scaramouche/debout/030.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="40">
+             <url>Image Personnage/Scaramouche/debout/040.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="50">
+             <url>Image Personnage/Scaramouche/debout/050.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="60">
+             <url>Image Personnage/Scaramouche/debout/060.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="70">
+             <url>Image Personnage/Scaramouche/debout/070.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="80">
+             <url>Image Personnage/Scaramouche/debout/080.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="90">
+             <url>Image Personnage/Scaramouche/debout/090.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="100">
+             <url>Image Personnage/Scaramouche/debout/100.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="110">
+             <url>Image Personnage/Scaramouche/debout/110.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="120">
+             <url>Image Personnage/Scaramouche/debout/120.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="130">
+             <url>Image Personnage/Scaramouche/debout/130.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="140">
+             <url>Image Personnage/Scaramouche/debout/140.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="150">
+             <url>Image Personnage/Scaramouche/debout/150.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="160">
+             <url>Image Personnage/Scaramouche/debout/160.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="170">
+             <url>Image Personnage/Scaramouche/debout/170.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="180">
+             <url>Image Personnage/Scaramouche/debout/180.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="190">
+             <url>Image Personnage/Scaramouche/debout/190.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="200">
+             <url>Image Personnage/Scaramouche/debout/200.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="210">
+             <url>Image Personnage/Scaramouche/debout/210.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="220">
+             <url>Image Personnage/Scaramouche/debout/220.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="230">
+             <url>Image Personnage/Scaramouche/debout/230.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="240">
+             <url>Image Personnage/Scaramouche/debout/240.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="250">
+             <url>Image Personnage/Scaramouche/debout/250.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="260">
+             <url>Image Personnage/Scaramouche/debout/260.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="270">
+             <url>Image Personnage/Scaramouche/debout/270.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="280">
+             <url>Image Personnage/Scaramouche/debout/280.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="290">
+             <url>Image Personnage/Scaramouche/debout/290.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="300">
+             <url>Image Personnage/Scaramouche/debout/300.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="310">
+             <url>Image Personnage/Scaramouche/debout/310.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="320">
+             <url>Image Personnage/Scaramouche/debout/320.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="330">
+             <url>Image Personnage/Scaramouche/debout/330.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="340">
+             <url>Image Personnage/Scaramouche/debout/340.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="350">
+             <url>Image Personnage/Scaramouche/debout/350.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="360">
+             <url>Image Personnage/Scaramouche/debout/000.gif</url>
+             <zonetexte>
+                <x1>57</x1><y1>244</y1>
+                <x2>78</x2><y2>144</y2>
+                <x3>159</x3><y3>144</y3>
+                <x4>178</x4><y4>244</y4>
+             </zonetexte>
+        </orientation>
+  </avatar>
+
+  <!--------------------------------------------------------------------------------------------------------------------->
+  <avatar typeAvatar="Scaramouche" statureAvatar="assis" >
+        <orientation degres="0">
+             <url>Image Personnage/Scaramouche/assis/000.gif</url>
+             <zonetexte>
+                <x1>64</x1><y1>238</y1>
+                <x2>80</x2><y2>156</y2>
+                <x3>154</x3><y3>156</y3>
+                <x4>169</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="10">
+             <url>Image Personnage/Scaramouche/assis/010.gif</url>
+             <zonetexte>
+                <x1>58</x1><y1>240</y1>
+                <x2>77</x2><y2>155</y2>
+                <x3>147</x3><y3>154</y3>
+                <x4>166</x4><y4>239</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="20">
+             <url>Image Personnage/Scaramouche/assis/020.gif</url>
+             <zonetexte>
+                <x1>56</x1><y1>238</y1>
+                <x2>75</x2><y2>153</y2>
+                <x3>139</x3><y3>152</y3>
+                <x4>163</x4><y4>239</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="30">
+             <url>Image Personnage/Scaramouche/assis/030.gif</url>
+             <zonetexte>
+                <x1>62</x1><y1>239</y1>
+                <x2>82</x2><y2>154</y2>
+                <x3>140</x3><y3>152</y3>
+                <x4>150</x4><y4>239</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="40">
+             <url>Image Personnage/Scaramouche/assis/040.gif</url>
+             <zonetexte>
+                <x1>61</x1><y1>237</y1>
+                <x2>83</x2><y2>155</y2>
+                <x3>136</x3><y3>151</y3>
+                <x4>142</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="50">
+             <url>Image Personnage/Scaramouche/assis/050.gif</url>
+             <zonetexte>
+                <x1>65</x1><y1>237</y1>
+                <x2>85</x2><y2>155</y2>
+                <x3>128</x3><y3>152</y3>
+                <x4>131</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="60">
+             <url>Image Personnage/Scaramouche/assis/060.gif</url>
+             <zonetexte>
+                <x1>67</x1><y1>237</y1>
+                <x2>85</x2><y2>155</y2>
+                <x3>119</x3><y3>152</y3>
+                <x4>119</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="70">
+             <url>Image Personnage/Scaramouche/assis/070.gif</url>
+             <zonetexte>
+                <x1>72</x1><y1>237</y1>
+                <x2>90</x2><y2>155</y2>
+                <x3>111</x3><y3>153</y3>
+                <x4>105</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="80">
+             <url>Image Personnage/Scaramouche/assis/080.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="90">
+             <url>Image Personnage/Scaramouche/assis/090.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="100">
+             <url>Image Personnage/Scaramouche/assis/100.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="110">
+             <url>Image Personnage/Scaramouche/assis/110.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="120">
+             <url>Image Personnage/Scaramouche/assis/120.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="130">
+             <url>Image Personnage/Scaramouche/assis/130.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="140">
+             <url>Image Personnage/Scaramouche/assis/140.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="150">
+             <url>Image Personnage/Scaramouche/assis/150.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="160">
+             <url>Image Personnage/Scaramouche/assis/160.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="170">
+             <url>Image Personnage/Scaramouche/assis/170.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="180">
+             <url>Image Personnage/Scaramouche/assis/180.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="190">
+             <url>Image Personnage/Scaramouche/assis/190.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="200">
+             <url>Image Personnage/Scaramouche/assis/200.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="210">
+             <url>Image Personnage/Scaramouche/assis/210.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="220">
+             <url>Image Personnage/Scaramouche/assis/220.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="230">
+             <url>Image Personnage/Scaramouche/assis/230.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="240">
+             <url>Image Personnage/Scaramouche/assis/240.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="250">
+             <url>Image Personnage/Scaramouche/assis/250.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="260">
+             <url>Image Personnage/Scaramouche/assis/260.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="270">
+             <url>Image Personnage/Scaramouche/assis/270.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="280">
+             <url>Image Personnage/Scaramouche/assis/280.gif</url>
+             <zonetexte>
+                <x1>0</x1><y1>0</y1>
+                <x2>0</x2><y2>0</y2>
+                <x3>0</x3><y3>0</y3>
+                <x4>0</x4><y4>0</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="290">
+             <url>Image Personnage/Scaramouche/assis/290.gif</url>
+             <zonetexte>
+                <x1>129</x1><y1>238</y1>
+                <x2>121</x2><y2>150</y2>
+                <x3>145</x3><y3>156</y3>
+                <x4>163</x4><y4>240</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="300">
+             <url>Image Personnage/Scaramouche/assis/300.gif</url>
+             <zonetexte>
+                <x1>116</x1><y1>237</y1>
+                <x2>115</x2><y2>150</y2>
+                <x3>149</x3><y3>154</y3>
+                <x4>167</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="310">
+             <url>Image Personnage/Scaramouche/assis/310.gif</url>
+             <zonetexte>
+                <x1>103</x1><y1>237</y1>
+                <x2>106</x2><y2>150</y2>
+                <x3>150</x3><y3>153</y3>
+                <x4>171</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="320">
+             <url>Image Personnage/Scaramouche/assis/320.gif</url>
+             <zonetexte>
+                <x1>94</x1><y1>237</y1>
+                <x2>98</x2><y2>151</y2>
+                <x3>150</x3><y3>152</y3>
+                <x4>173</x4><y4>237</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="330">
+             <url>Image Personnage/Scaramouche/assis/330.gif</url>
+             <zonetexte>
+                <x1>81</x1><y1>238</y1>
+                <x2>93</x2><y2>151</y2>
+                <x3>151</x3><y3>151</y3>
+                <x4>172</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="340">
+             <url>Image Personnage/Scaramouche/assis/340.gif</url>
+             <zonetexte>
+                <x1>72</x1><y1>238</y1>
+                <x2>94</x2><y2>151</y2>
+                <x3>155</x3><y3>151</y3>
+                <x4>179</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="350">
+             <url>Image Personnage/Scaramouche/assis/350.gif</url>
+             <zonetexte>
+                <x1>69</x1><y1>238</y1>
+                <x2>86</x2><y2>154</y2>
+                <x3>155</x3><y3>154</y3>
+                <x4>176</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+        <orientation degres="360">
+             <url>Image Personnage/Scaramouche/assis/000.gif</url>
+             <zonetexte>
+                <x1>64</x1><y1>238</y1>
+                <x2>80</x2><y2>156</y2>
+                <x3>154</x3><y3>156</y3>
+                <x4>169</x4><y4>238</y4>
+             </zonetexte>
+        </orientation>
+  </avatar>
+
+</ListeAvatar>
+

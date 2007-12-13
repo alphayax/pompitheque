@@ -1,7 +1,7 @@
-package Pompitheque
+package Pompitheque.message
 {
 	import flash.display.Sprite ;
-    import Pompitheque.Personne;
+    import Pompitheque.personne;
     import flash.events.*;
 
 	public class Message

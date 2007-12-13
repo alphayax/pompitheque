@@ -103,19 +103,7 @@ package {
             stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
             stage.addEventListener(MouseEvent.MOUSE_WHEEL, mouseWheel);
             stage.addEventListener(MouseEvent.MOUSE_DOWN, mouseHideOrShow);
-            stage.addEventListener(KeyboardEvent.KEY_DOWN, keyPressed);
-        }
-
-        private function mouseHideOrShow(event:Event) : void {
-            // on cache/montre la souris au clic de la souris
-            if ( mouseHideState == false ) {
-                Mouse.hide();
-                mouseHideState = true;
-            }
-            else {
-                Mouse.show();
-                mouseHideState = false;
-            }
+            stage.addEventListener(KeyboardEvent.KEY_DOWN, keyZoom);
         }
 
         private function mouseMove(event:Event) : void {
@@ -131,29 +119,35 @@ package {
         }
 
         private function mouseWheel(event:MouseEvent) : void {
-            if ( event.delta < 0 ) {
+            // zoom en actionnant la molette
+            if ( event.delta < 0 ) { // si molette poussee en arriere
                 zoomOut();
             }
-            else {
+            else { /// si molette poussee en avant
                 zoomIn();
             }
         }
 
-        private function keyPressed(event:KeyboardEvent) : void {
-            if ( event.altKey ) {
-                // si ALT est presse, on voit si une seconde touche pressee
-                // (sans lacher ALT) est celle attendue ("+" ou "-")
-                stage.addEventListener(KeyboardEvent.KEY_DOWN, secondKeyZoom);
+        private function mouseHideOrShow(event:Event) : void {
+            // on cache/montre la souris au clic de la souris
+            if ( mouseHideState == false ) {
+                Mouse.hide();
+                mouseHideState = true;
+            }
+            else {
+                Mouse.show();
+                mouseHideState = false;
             }
         }
 
-        private function secondKeyZoom(event:KeyboardEvent) : void {
+        private function keyZoom(event:KeyboardEvent) : void {
+            // zoom si appui sur "ALT +" ou "ALT -"
             // recuperation du code de la touche pressee "NUMPAD_ADD = 107"
-            if ( event.charCode == 107 ) {
+            if ( event.altKey == true && event.keyCode == 107 ) {
                 zoomIn();
             }
             // recuperation du code de la touche pressee "NUMPAD_SUBTRACT = 109"
-            else if ( event.charCode == 109 ) {
+            else if ( event.altKey == true && event.keyCode == 109 ) {
                 zoomOut();
             }
         }

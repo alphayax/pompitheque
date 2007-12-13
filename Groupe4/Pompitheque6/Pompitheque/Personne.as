@@ -199,7 +199,7 @@ package Pompitheque
 		public function saisieMessage(destinataire:String, vue3D:Vue3D):void
 		{
             // On instancie un "CoreMessage"
-            var msg:Message = new Message( __client, this.getName(), destinataire );
+            var msg:Message = new Message( vue3D.client, this.getName(), destinataire );
             // On passe le "CoreMessage" au MessageWidget
             __message_area.setMessage( msg );
             // On appelle la  methode qui va afficher la fenetre de saisie
@@ -220,31 +220,20 @@ package Pompitheque
             Methode haskey puisqu'il faut le faire a la main
             actionscript ne possede pas de methode pour le faire (AS sucks!!)
             ****/
-            if(message.getDestinataire() == "all")
+            var isin:Boolean = false;
+            for ( var cle:String in __dico_filesmessages )
             {
-                for ( var key:String in __dico_filesmessages )
-                {
-                       __dico_filesmessages[key].add( message );
-                       // FIXME !!
-                       __dico_filesmessages[key].afficher( vue3D.getPoint() )
-                }
-            } 
-           else {
-                var isin:Boolean = false;
-                for ( var cle:String in __dico_filesmessages )
-                {
-                   if ( cle == message.getDestinataire() ){ isin = true; }
-                }
-
-                if ( isin == false )
-                {
-                    __dico_filesmessages[message.getDestinataire()] = new FileMessage();
-                    __dico_filesmessages[message.getDestinataire()].setMessageMax(6);
-                }
-               __dico_filesmessages[message.getDestinataire()].add( message );
-               // FIXME !!!
-               __dico_filesmessages[message.getDestinataire()].afficher( vue3D.getPoint() );
+               if ( cle == message.getExpediteur() ){ isin = true; }
             }
+
+            if ( isin == false )
+            {
+                __dico_filesmessages[message.getExpediteur()] = new FileMessage();
+                __dico_filesmessages[message.getExpediteur()].setMessageMax(6);
+            }
+           __dico_filesmessages[message.getExpediteur()].add( message );
+           // FIXME !!!
+           addChild(__dico_filesmessages[message.getExpediteur()].afficher(vue3D.getPoint()));
         }
         /**************FIN INTEGRATION GROUPE5*****************/
 	}

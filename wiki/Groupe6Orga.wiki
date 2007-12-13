@@ -13,9 +13,11 @@ Les membres de notre équipe sont
 Toute notre équipe à travaillé de concert sur toutes les taches. Voici les responsables de ces dernières:
 
   * Supervision du projet : Ponzoni Yann
+  * Analyse en amont : Martoglio Yoann
   * Développement du serveur : Martoglio Yoann
   * Développement du client : Vereheye Fabien
   * Développement du portail : Ponzoni Yann
+  * Debbugage et optimisations : Vereheye Fabien
   * Intégration avec les autres groupes : Ponzoni Yann
   * Phases de test : Ponzoni Yann
 

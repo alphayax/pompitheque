@@ -14,12 +14,12 @@
 === Client ===
 ====Description====
 Nous avons développé une partie de l'application client en action script.
-Dans cette derniere, nous avons crée une classe qui permet de faire toutes les connexions avec le serveur.
+Dans cette dernière, nous avons crée une classe qui permet de faire toutes les connexions avec le serveur.
 
 ==== Utilisation ====
 =====Inclusion du paquet=====
 Nous avons un fichier `Client.as`.
-Ce dernier va dans un package que nous l'avons nommé `chat`.
+Ce dernier va dans un package que nous avons nommé `chat`.
 
 Les sources Client se trouvent ici : [http://www.arcatys.com/pompitheque/dev/Groupe6/]
 

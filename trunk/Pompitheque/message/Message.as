@@ -1,8 +1,8 @@
 package Pompitheque.message
 {
 	import flash.display.Sprite ;
-    import Pompitheque.personne;
     import flash.events.*;
+    import Pompitheque.Client;
 
 	public class Message
 	{
@@ -10,9 +10,9 @@ package Pompitheque.message
 		
         private var __text:String = ""; // corps du message
         private var __to:String = "all"; // destinataire
-        private var __from:String = ""; // exp�iteur
+        private var __from:String = ""; // expediteur
         private var __wizz:Boolean = false; // le wizz de msn
-        private var __client:Personne; // Le client qui permettra d'envoyer
+        private var __client:Client; // Le client qui permettra d'envoyer
                                        // des messages aux serveurs
 		// ----o constructeur
     
@@ -20,12 +20,11 @@ package Pompitheque.message
         ce constructeur s'applique dans le cas o l'on souhaite parler �tout
         le monde (faire une annonce quoi!). il faudra saisir le message.
         */
-		public function Message( personne:Personne, from:String, to:String )
+		public function Message( client:Client, from:String, dest:String )
 		{
-            // todo
             __from = from;
-            __to = to;
-            __client = personne;
+            __to = dest;
+            __client = client;
 		}
 
         /*

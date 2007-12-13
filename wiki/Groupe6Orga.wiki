@@ -20,4 +20,4 @@ Toute notre équipe à travaillé de concert sur toutes les taches. Voici la ré
   * Intégration avec les autres groupes : Ponzoni Yann
   * Phases de test : Ponzoni Yann
 
-Encore une fois, ce sont des taches "assignées". *Tous les membres de l'équipe ont participé a chacune de ces taches activement.*
+Encore une fois, ce sont des taches "assignées". *Tous les membres de l'équipe ont participé à chacune de ces taches activement.*

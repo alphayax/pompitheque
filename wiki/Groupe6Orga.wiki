@@ -3,7 +3,7 @@
 = Membres de l'équipe =
 
 Les membres de notre équipe sont
-  * *Ponzoni Yann*
+  * Ponzoni Yann _(chef de projet)_
   * Martoglio Yoann
   * Vereheye Fabien
 

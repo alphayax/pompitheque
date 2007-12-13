@@ -10,10 +10,9 @@ Les membres de notre équipe sont
 
 = Répartition des taches =
 
-Toute notre équipe à travaillé de concert sur toutes les taches. Voici la répartition de ces dernières:
+Toute notre équipe à travaillé de concert sur toutes les taches. Voici les responsables de ces dernières:
 
   * Supervision du projet : Ponzoni Yann
-  * Recherche de l'existant : Tous
   * Développement du serveur : Martoglio Yoann
   * Développement du client : Vereheye Fabien
   * Développement du portail : Ponzoni Yann

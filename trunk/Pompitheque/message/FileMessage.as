@@ -1,10 +1,9 @@
-package Pompitheque
+package Pompitheque.message
 {
 	import flash.display.Sprite ;
 
     // Composants Text
-	//import pompitheque.message.MessageField; 
-    import Pompitheque.Message.Message;
+	import pompitheque.message.MessageField; 
  	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.display.Bitmap;
@@ -24,6 +23,7 @@ package Pompitheque
 		
 		// ----o Protected Property
         private var __liste_message:Array;
+        private var __liste_allmessage:Array;
         private var __num_message_max:int;
 
 		// ----o Constructor
@@ -109,6 +109,7 @@ package Pompitheque
                                 
 		public function add( message:Message ):void
         {
+            __liste_allmessage.push( message );
             __liste_message.push( message );
             if ( __liste_message.length > __num_message_max )
             {
@@ -116,13 +117,11 @@ package Pompitheque
             }
         }
 		
-		public function remove():void {__liste_message.pop();}
+		public function remove():void { __liste_message.pop(); }
 
         /****************** Accesseurs *****************/
         public function setMessageMax( max:int ):void {__num_message_max = max;}
-
         public function getMessageMax():int {return __num_message_max;}
-	    
         public function getItem(i:int):Message
         {
             if ( __liste_message.length > i && i>=0 ) {return __liste_message[i];}

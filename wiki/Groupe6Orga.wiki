@@ -3,13 +3,20 @@
 = Membres de l'équipe =
 
 Les membres de notre équipe sont
-  * Ponzoni Yann
+  * *Ponzoni Yann*
   * Martoglio Yoann
   * Vereheye Fabien
 
 
-= Repartition des taches =
+= Répartition des taches =
 
-  * Le serveur
-  * Le client
-  * Le portail
+Toute notre équipe à travaillé de concert sur toutes les taches. Voici la répartition de ces dernières:
+
+  * Supervision du projet : Ponzoni Yann
+  * Recherche de l'existant : Tous
+  * Développement du serveur : Martoglio Yoann
+  * Développement du client : Vereheye Fabien
+  * Développement du portail : Ponzoni Yann
+  * Intégration avec les autres groupes : Ponzoni Yann
+
+Encore une fois, ce sont des taches "assignées". Tous les membres de l'équipe ont participé a chacune de ces taches activement.

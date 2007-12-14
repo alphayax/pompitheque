@@ -83,20 +83,16 @@ package
 		//et des coordonnées 2D du personnage propriaitaire de la vue3D
 		public function CalculCoordonnee3D(persProprio:Personne):void
 		{
-			/**trace("POx  :"+anglePOX);**/
 			x3D = Math.cos((anglePOX)*Math.PI/180)*distanceProprio+Vue3D.xCenter;
 			z3D = Math.sin((anglePOX)*Math.PI/180)*distanceProprio;
-			y3D = z3D*Math.sin(-30*Math.PI/180)+Vue3D.yCenter;
-			/**trace(nom+': coord 3D='+x3D+'  ;   '+y3D);**/
-			//trace('angle : '+angleVue+'   dist :'+distanceProprio);
+			y3D = z3D*Math.sin(-30*Math.PI/180)+Vue3D.yCenter;	
 		}
 		
 		
 		//calcul la distance entre l'acteur et le propriaitaire de la vue 3D
 		public function CalculDistance(persProprio:Personne):void
 		{
-			this.distanceProprio= Math.sqrt(Math.pow((this.x2D-persProprio.getX2D()),2)+Math.pow((this.y2D-persProprio.getY2D()),2));
-			
+			this.distanceProprio= Math.sqrt(Math.pow((this.x2D-persProprio.getX2D()),2)+Math.pow((this.y2D-persProprio.getY2D()),2));			
 		}
 		
 		//calcul du % de la taille de l'acteur a afficher
@@ -129,13 +125,10 @@ package
 		
 		public function CalculAnglePOX(persProprio:Personne):void
 		{
-			//180 * (angle en radian) / pi
 			var tempX:Number = x2D-persProprio.getX2D();
 			var tempY:Number = y2D-persProprio.getY2D();
-			//trace('x :'+180*Math.acos(tempX/distanceProprio)/Math.PI+'   ---   y :'+180*Math.asin(tempY/distanceProprio)/Math.PI);
 			anglePOX = 180*Math.atan2(tempX,tempY)/Math.PI;
 			this.anglePOX = (anglePOX+persProprio.getAngleAbsolu()+90)%360;
-			//angleVue = angleAbsolu;
 		}
 		
 		

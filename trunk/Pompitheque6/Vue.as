@@ -5,8 +5,8 @@ package
 	import flash.events.*;
 	import flash.ui.*;
 	import flash.net.*;
-	import Pompitheque.*;
 	import chat.Client;
+	import flash.filters.BevelFilter;
 	public class Vue extends Sprite
 	{		
 	
@@ -29,8 +29,13 @@ package
 		private var Proprio:Personne;
 		
 		private var IntervalXMLavatar:Number;
+		private var IntervalVue3D:Number;
 		
 		public var client:Client;
+		
+		private var planXmlLoadFini:Boolean = false;
+		
+		private var listPersLoadFini:Boolean = false;
 		
 		public function Vue(proprio:Personne)
 		{
@@ -41,7 +46,7 @@ package
 			//ecouteur serveur, qui appel la fonction triMessage qd on recois un message
 			client.getSocket().addEventListener(DataEvent.DATA,triMessage);
 			//RAJOUTER DATA.CLOSE
-			client.getSocket().addEventListener(Event.CLOSE,callDeconnecte());
+			client.getSocket().addEventListener(Event.CLOSE,callDeconnecte);
 			  
 			//envoie demande au serveur (listepersonnage et plan.xml)
 			var demande:XML = <demande nom="nomduserveur" />;
@@ -164,39 +169,60 @@ package
 						else if(event.ctrlKey == true){ n = 5; }
 						else if(event.shiftKey == true) { n = 10; }
 						
-						vue2D.deplacer(vue2D.moi,vue2D.moi.x + n*Math.sin(vue2D.moi.angleAbsolu*3.14/180),vue2D.moi.y - n*Math.cos(vue2D.moi.angleAbsolu*3.14/180));
+						vue2D.deplacer(vue2D.moi,vue2D.moi.x + n*Math.sin(vue2D.moi.angleVue*3.14/180),vue2D.moi.y - n*Math.cos(vue2D.moi.angleVue*3.14/180));
 						//bas
 					}/*else if ( event.keyCode == 40 ){ 
 						vue2D.deplacer(vue2D.moi,vue2D.moi.x - 20*Math.sin(vue2D.moi.angleAbsolu*3.14/180),vue2D.moi.y + 20*Math.cos(vue2D.moi.angleAbsolu*3.14/180));
 					}*/
 				}
 				
-				if(event.keyCode == 65){
+				if(event.keyCode == Keyboard.ENTER){
 					var xml:XML =
-		                <newpers pseudo="zorro">
-		                          <x>300</x>
-		                          <y>200</y>
-		                          <orientation>90</orientation>
-		                          <stature>debout</stature>
-		                          <type>pocahontas</type>
-		                </newpers>;
-	                //getNouvellePersonne(xml);
-	                
-	                xml =
-		                <newpers pseudo="Sylvie">
-		                          <x>300</x>
-		                          <y>200</y>
-		                          <orientation>35</orientation>
-		                </newpers>;                                                 	
-                	getPositionPersonne(xml);
-                	//getAnglePersonne(xml);
-                	//getDecoPersonne(xml);                	                	 
-				}
-				/*var p:Prompt = new Prompt(event.keyCode.toString());
-				vue2D.addChild(p);*/			
+		                <plan>
+						  <salle>
+						    <mur x1="2.00" y1="2.00" x2="18.00" y2="2.00" />
+						    <mur x1="18.00" y1="2.00" x2="18.00" y2="17.00" />
+						    <mur x1="18.00" y1="17.00" x2="2.00" y2="17.00" />
+						    <mur x1="2.00" y1="17.00" x2="2.00" y2="2.00" />
+						    <angle x="18" y="2" posPanorama="17" />
+						    <angle x="18" y="17" posPanorama="726" />
+						    <angle x="2" y="17" posPanorama="1436" />
+						    <angle x="2" y="2" posPanorama="2145" />
+						  </salle>
+						  <mobilier>
+						    <table x="4.50" y="5.00" orientation="0" />
+						    <table x="10.77" y="4.97" orientation="0" />
+						    <chaise x="4.70" y="3.93" orientation="0" />
+						    <chaise x="2.77" y="5.20" orientation="0" />
+						    <chaise x="4.90" y="6.63" orientation="0" />
+						    <chaise x="11.20" y="3.87" orientation="0" />
+						    <chaise x="13.20" y="5.30" orientation="0" />
+						    <chaise x="11.43" y="6.87" orientation="0" />
+						  </mobilier>
+						</plan>     ;
+					this.triMessage(xml);
+					xml = <users>
+							 <user pseudo="Sylvie">
+							   <x>350</x>
+							   <y>100</y>
+							   <orientation>90</orientation>
+							   <stature>debout</stature>
+							   <type>pocahontas</type>
+							 </user>
+							 <user pseudo="Paulette">
+							   <x>350</x>
+							   <y>200</y>
+							   <orientation>180</orientation>
+							   <stature>debout</stature>
+							   <type>pocahontas</type>
+							 </user>
+							</users>
+					this.triMessage(xml);
+					//ajoutTable("Table1",101,0,0,Proprio);   	                	 
+				}			
 			}
 			
-			if(event.keyCode == 32){
+			if(event.keyCode == Keyboard.ESCAPE){
 				switchVue();
 			}
 		}
@@ -209,34 +235,17 @@ package
 		        clearInterval(IntervalXMLavatar); 
 		        afterLoadedXMLavatar(); 
 		    }
+		    else IntervalXMLavatar = setInterval(isLoadedXMLavatar, 500);
 		}
 		
 		//le chargement des avatar est terminé on continu la creation des vues
-		private function afterLoadedXMLavatar(){		
-			//on attend d'avoir recu et parser le plan et la liste des personnes
-			
-			
+		private function afterLoadedXMLavatar(){					
 			//on cree la vue 2D
 			vue2D = new Vue2D(400,400,20,ListeActeur,Proprio)
 			vueCourrante = vue2D;
 			addChild(vueCourrante);
 			
 			stage.focus = vueCourrante;
-			/*****DEBUT TEST GROUPE2****/
-			//pour les tests on ajoute manuelement les valeurs
-			DistanceMaxPlan = 600;
-			Proprio=new Personne("Bibi",350,0,0,"debout","pocahontas");
-			ajoutPersonne("Sylvie",350,100,0,"debout","pocahontas");
-			ajoutPersonne("Paulette",350,200,0,"debout","pocahontas");
-			ajoutPersonne("Sandrine",350,300,180,"debout","pocahontas");
-			ajoutPersonne("Marcelle",350,400,50,"debout","pocahontas");	
-			ajoutPersonne("Marcelle",350,0,50,"debout","pocahontas");	
-			ajoutPersonne("Marcelle",100,150,50,"debout","pocahontas");	
-			ajoutPersonne("Marcelle",0,0,50,"debout","pocahontas");	
-			ajoutTable("Table1",101,0,0,Proprio);
-			vue3D = new Vue3D(Proprio,ListeActeur,Plan);
-			this.switchVue();
-			/*****FIN TEST GROUPE2****/
 		}
 						
 				
@@ -253,7 +262,8 @@ package
 		//ajout d'une chaise a la liste des acteurs
 		public function ajoutChaise(name:String,x:Number,y:Number,angle:Number):void
 		{
-			ListeActeur.push(new Chaise2D(name,x,y,angle));			
+			//ListeActeur.push(new Chaise2D(name,x,y,angle));	
+			ListeActeur.push(new Chaise2D(x,y));			
 		}
 		
 				
@@ -269,12 +279,26 @@ package
 			else {
 				if (vue3D == null)
 				{
-					vue3D = new Vue3D(Proprio,ListeActeur,Plan);
+					IntervalVue3D = setInterval(isLoadedVue3D, 500);					
 				}
-				this.afficheVue3D();
+				else this.afficheVue3D();
 			}
 			stage.focus = vueCourrante;
-		}									
+		}		
+		
+		private function isLoadedVue3D(){
+		    if ((planXmlLoadFini == true) && (listPersLoadFini == true)){
+		        clearInterval(IntervalXMLavatar); 
+		        vue3D = new Vue3D(Proprio,ListeActeur,Plan); 
+		        this.afficheVue3D();
+		    }
+		    else {
+		    	trace("j'att que le serveur m'envoie le plan et la list de personne");
+		    	IntervalVue3D = setInterval(isLoadedVue3D, 10000);
+		    	 }
+		}
+		
+									
 		public function afficheVue3D():void
 		{						
 			vueCourrante = vue3D;
@@ -291,10 +315,11 @@ package
 	    //appel la fonction correspondant au message recu	
 		private function triMessage(Data:XML):void
 		{
+			trace("je recoi un message de type : "+Data.localName())
 			switch(Data.localName()) 
 			{
 				case "users": getListPersXml(Data); break;
-				case "map": getListPersXml(Data); break;
+				case "plan": getPlanXml(Data); break;
 				case "newpers": getNouvellePersonne(Data); break;
 				case "deco": getDecoPersonne(Data); break;
 				case "position": getPositionPersonne(Data); break;
@@ -324,6 +349,8 @@ package
 				ajoutChaise("Chaise"+x,Table.x,Table.y,Table.orientation);		
 				x++;
 			}
+			trace("jai fini de charger le plan");
+			planXmlLoadFini = true;
 		}
 		
 		//fonction qui recupere la liste des personnes au format xml
@@ -335,9 +362,10 @@ package
 			{
 				ajoutPersonne(Pers.@pseudo,Pers.x,Pers.y,Pers.orientation,Pers.stature,Pers.type);
 			}
+			trace("jai fini de charger la liste des perso");			
+			listPersLoadFini = true;
 		}
 		
-		/***DEBUT INTEGRATION GROUPE3**/
 		//fonction qui recupere la nouvelle personne connecter au serveur au format xml
 		//on met a jour la Vue3D et la Vue2D avec le nouveau personnage (callbackAjoutPersonnage)		
 		public function getNouvellePersonne(Data:XML):void
@@ -399,14 +427,13 @@ package
 		   vue3D.CallBackOrientation(ListeActeur[act]);
 		 }
 
-		/***DEBUT INTEGRATION GROUPE6**/		
 		//fonction appele lorsque le client se deco
 		//on previens le serveur
 		public function callDeconnecte():void
 		{
-			//client.deco ou un truc comme ca
+			client.send("<deco pseudo="+Proprio.getName()+" />");
+			
 		}
-		/***FIN INTEGRATION GROUPE6**/		
 	
 	}
 }

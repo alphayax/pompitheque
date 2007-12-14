@@ -187,7 +187,7 @@ package
 			
 				
 		//lui meme
-		moi = new Avatar2D(Proprio.nom,Proprio.x2D,Proprio.y2D,Proprio.angleAbsolu,Proprio.statureAvatar,"M");
+		moi = new Avatar2D(Proprio.getName(),Proprio.getX2D(),Proprio.getY2D(),Proprio.getAngleAbsolu(),Proprio.getStature(),"M");
 		moi.graphics.drawCircle(0,0,moi.taille/4);
 		addChild(moi);
 	
@@ -382,7 +382,7 @@ package
 		   
 		   public function rotate(obj:Object,a:Number):void {
 		   	obj.rotation = obj.rotation + a;
-		   	obj.angleAbsolu = obj.rotation;
+		   	obj.angleVue = obj.rotation;
 		   	if(obj.getClass() == "avatar"){
 		   		obj.infoBule.rotation = -obj.rotation;
 		   	}
@@ -400,8 +400,8 @@ package
 		   }
 		   
 		   
-		   public function CallBackAjoutPersonnage(newpers:Acteur):void{
-		   	var p:Avatar2D = new Avatar2D(newpers.nom,newpers.x2D,newpers.y2D,newpers.angleAbsolu,"debout",newpers.genre);
+		   public function CallBackAjoutPersonnage(newpers:Personne):void{
+		   	var p:Avatar2D = new Avatar2D(newpers.getName(),newpers.getX2D(),newpers.getY2D(),newpers.getAngleAbsolu(),"debout",newpers.getType());
 		   	listePersonne.push(p);
 		   	addChild(p);
 		   	menuActif = new MenuPersonne(down.width + down.x + 5,down.y,getVue().ListeActeur);
@@ -419,24 +419,24 @@ package
 			addChild(menuActif);
 		   }
 		   
-		   public function CallBackPosition(newpers:Acteur):void{
+		   public function CallBackPosition(newpers:Personne):void{
 		   	for(var i:Number = 0; i < listePersonne.length; i++){
-		   		if(listePersonne[i].nom == newpers.nom){
-		   			listePersonne[i].x2D = newpers.x2D;
-		   			listePersonne[i].y2D = newpers.y2D;
-		   			listePersonne[i].x = newpers.x2D;
-		   			listePersonne[i].y = newpers.y2D;
-		   			listePersonne[i].bouttonConcernant.D2 = [newpers.x2D,newpers.y2D];
+		   		if(listePersonne[i].nom == newpers.getName()){
+		   			listePersonne[i].x2D = newpers.getX2D();
+		   			listePersonne[i].y2D = newpers.getY2D();
+		   			listePersonne[i].x = newpers.getX2D();
+		   			listePersonne[i].y = newpers.getY2D();
+		   			listePersonne[i].bouttonConcernant.D2 = [newpers.getX2D(),newpers.getX2D()];
 		   			break;
 		   		}
 		   	}
 		   }
 		   
-		   public function CallBackOrientation(newpers:Acteur):void{
+		   public function CallBackOrientation(newpers:Personne):void{
 		   	for(var i:Number = 0; i < listePersonne.length; i++){
-		   		if(listePersonne[i].nom == newpers.nom){
-		   			listePersonne[i].angleAbsolu = newpers.angleAbsolu;
-		   			listePersonne[i].rotation = newpers.angleAbsolu;
+		   		if(listePersonne[i].nom == newpers.getName()){
+		   			listePersonne[i].angleAbsolu = newpers.getAngleAbsolu();
+		   			listePersonne[i].rotation = newpers.getAngleAbsolu();
 		   			
 		   			break;
 		   		}

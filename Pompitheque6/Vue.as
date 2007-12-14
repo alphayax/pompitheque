@@ -45,7 +45,6 @@ package
 			client = new Client("serv","nom");
 			//ecouteur serveur, qui appel la fonction triMessage qd on recois un message
 			client.getSocket().addEventListener(DataEvent.DATA,triMessage);
-			//RAJOUTER DATA.CLOSE
 			client.getSocket().addEventListener(Event.CLOSE,callDeconnecte);
 			  
 			//envoie demande au serveur (listepersonnage et plan.xml)

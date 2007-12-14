@@ -31,7 +31,7 @@ package
 		//data xml contenant toute les info du plan
 		private var Plan:XML
 		//panorama
-		private var Panorama:ChargeurDeBitmap = new ChargeurDeBitmap();
+		private var Panorama:ChargeurDeBitmap;
 		
 		//Position du point de vue 
 		public static var xCenter:Number = 400;
@@ -56,6 +56,8 @@ package
 			graphics.moveTo(xCenter,yCenter);
 			graphics.lineTo(xCenter-largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
 			/*****FIN TEST GROUPE4****/			
+			this.Panorama= new ChargeurDeBitmap();
+			addChild(Panorama);
 			
 			//propriaitaire de la vue 3D
 			this.pers=pers;
@@ -86,7 +88,7 @@ package
 			}	
 			reOrderTab();
 			//on affiche tout les acteurs			
-			AfficheVue3D();					
+			AfficheVue3D();								
 		}	
 		
         public function getClient():Client{
@@ -104,6 +106,7 @@ package
 			for each(var baliseMur:XML in Plan..mur)
 			{
 				ListPointsPano[numPoints] = {xX:baliseMur.attribute("x1"),yY:baliseMur.attribute("y1")};
+				//trace(baliseMur.attribute("x1")+","+baliseMur.attribute("y1"));
 				numPoints++;
 			}
 		}
@@ -300,7 +303,8 @@ package
 			InitialiserVue();
 			
 			/**DEBUT INTEGRATION GROUPE1**/
-			trace("pano  : "+PanoDistanceOrigine);
+			trace("PanoDistanceOrigine  : "+PanoDistanceOrigine);
+			trace("PanoLongueur  : "+PanoLongueur);			
 			trace("panorama : "+Panorama);
 			Panorama.setDebut(PanoDistanceOrigine);
 			Panorama.setLargeur(PanoLongueur);
@@ -353,7 +357,7 @@ package
 			AfficheVue3D();		
 			//avertir le serveur que l'orientation de pers a changer
 			var newPos:XML = new XML("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>");
-			Object(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
+			(Vue)(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
 		}
 		
 		//fonction appelé lorsque l'utilisateur appuis sur la fleche directionnel gauche
@@ -370,7 +374,7 @@ package
 			AfficheVue3D();
 			//avertir le serveur que l'orientation de pers a changer
 			var newPos:XML = new XML("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>");
-			Object(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
+			(Vue)(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
 		}
 		
 		

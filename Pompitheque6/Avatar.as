@@ -53,15 +53,9 @@
 				//pour chaque noeud orientation de bal, on cree une colonne degres
 				for each(var Orientation:XML in Avatar..orientation)
 				{
-					/**trace(Orientation.@degres+":URL:"+Orientation.url);**/
-					
 					tabPhoto[Avatar.@typeAvatar][Avatar.@statureAvatar][Orientation.@degres] = new Array();
 					//on ajoute le loader correspondant a l'url
-					//var loadIMG:Loader = new Loader();
-					//loadIMG.load(new URLRequest(Orientation.url));
-					//trace("URL : "+Avatar.@typeAvatar+";"+Avatar.@statureAvatar+";"+Orientation.@degres+"="+Orientation.url);					
 					tabPhoto[Avatar.@typeAvatar][Avatar.@statureAvatar][Orientation.@degres]["loader"] = Orientation.url;
-					//trace("chargement photo :"+tabPhoto[(Avatar.@typeAvatar).toString()][(Avatar.@statureAvatar).toString()][(Orientation.@degres).toString()]["loader"]);
 					//on cree le tableau pour la zone texte
 					tabPhoto[Avatar.@typeAvatar][Avatar.@statureAvatar][Orientation.@degres]["zonetexte"] = new Array();
 					tabPhoto[Avatar.@typeAvatar][Avatar.@statureAvatar][Orientation.@degres]["zonetexte"]["x1"] = Orientation.zonetexte.x1;
@@ -71,7 +65,6 @@
 				}
 			}			
 			isLoadXMLfini = true;
-			/**trace("jai fini de charger le fichier xml");**/
 		}
 		
 		
@@ -81,10 +74,11 @@
 		//aux paramatres dans le tableau
 		public static function  getImage(type:String,stature:String,orientation:String):String	
 		{
-			//trace("je lis le tableau xml"); 
-			//return null;
-			return tabPhoto[type][stature][orientation]["loader"];
-			
+			trace("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+			trace("type :"+type);
+			trace("stature :"+stature);
+			trace("orientation :"+orientation);
+			return tabPhoto[type][stature][orientation]["loader"];			
 		}
 		
 		//fonction qui renvoie un tableau de 4 ligne contenant les quatre points

@@ -56,9 +56,9 @@ package panorama
        	  	LoadImage();
 		// on g�re maintenant le clavier
        		// la sc�ne doit pouvoir recevoir les �v�nements clavier
-       		stage.focus = this;
+       		//stage.focus = this;
 		// on ajoute un �v�nement de type clavier sur la sc�ne
-        	stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+        	//stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
 			setAngle(29);
 	}
 

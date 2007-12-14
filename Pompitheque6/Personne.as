@@ -18,6 +18,7 @@ package
 		var largeur:Number = 235;
 		var hauteur:Number = 375;
 		var tempAngle:Number = -1;
+		
 		//var imgPrec:Loader = new Loader();
 		//var imgSuiv:Loader = new Loader();
 		
@@ -25,11 +26,13 @@ package
 		private var typeAvatar:String;
 		
 		
+		private var angleVueArrondie:Number;
+		
         /************* Variables prive pour les messages **********/
         //--------------     integration groupe5    ---------------
         private var __message_area:MessageArea; // Pour la saisie du message
         private var __dico_filesmessages:Dictionary; 
-        /***************** Fin intégration GROUPE5 ****************/
+        /***************** Fin intï¿½gration GROUPE5 ****************/
 
 
 		
@@ -50,7 +53,7 @@ package
 		public override function affiche3D():void
 		{
 			graphics.clear();
-			var angleVueArrondie:Number = 0;
+			angleVueArrondie = 0;
 			if (super.angleVue%10 < 5)
 				angleVueArrondie = super.angleVue - super.angleVue%10;
 			else angleVueArrondie = super.angleVue + (10 - super.angleVue%10);
@@ -60,8 +63,9 @@ package
 				img.y = -hauteur;
 				img.x = -largeur/2; 
 			if(this.numChildren == 0){
+				
 			
-			img.load(new URLRequest(Avatar.getImage(typeAvatar,statureAvatar,angleVueArrondie.toString())));
+			img.load(new URLRequest(this.getImage()));
 				
 				addChild(img);					
 			}
@@ -76,7 +80,7 @@ package
 		//renvoie l'adresse de l'image correspondant a la vue de la personne
 		public function getImage():String
 		{
-			return "image";
+			return Avatar.getImage(typeAvatar,statureAvatar,angleVueArrondie.toString());
 		}
 		
 		//renvoie les 4 coordonnÃ©es correspondant a la zone texte de la photo image
@@ -113,7 +117,7 @@ package
 
 		public function receiveMessage(msgRecu:XML):void
         {
-            // On créé un message vide qui sera remplie par fromxml
+            // On crï¿½ï¿½ un message vide qui sera remplie par fromxml
             var mes:Message = new Message((Vue3D)(parent).getClient(), "", "");
             var mess:Message = mes.fromXml(msgRecu);
             

@@ -24,14 +24,14 @@ package
 		//Distance max dans le plan (utile pour calculer le redimensionnement)
 		private var DistanceMaxPlan:Number;
 		//Points gauche et droit du panorama (+10% non affichable) [x,y]
-		private var PointPanoGauche:Array;
-		private var PointPanoDroit:Array;
+		private var PointPanoGauche:Object;
+		private var PointPanoDroit:Object;
 		private var PanoDistanceOrigine:Number;
 		private var PanoLongueur:Number;
 		//data xml contenant toute les info du plan
 		private var Plan:XML
 		//panorama
-		private var Panorama:ChargeurDeBitmap;
+		private var Panorama:ChargeurDeBitmap = new ChargeurDeBitmap();
 		
 		//Position du point de vue 
 		public static var xCenter:Number = 400;
@@ -63,9 +63,9 @@ package
 			this.Plan=Plan;
 			
 			//premiere (et unique) initialisation du plan
-			//InitialiserPlan()
+			InitialiserPlan()
 			//premiere initialisation des distances
-			//InitialiserVue();
+			InitialiserVue();
 			
 			//on recupere la liste des acteurs (personnes et mobilier) de la vue
 			this.ListeActeur=ListeActeur;
@@ -77,16 +77,11 @@ package
 				ListeActeur[i].CalculAnglePOX(pers);
 				ListeActeur[i].CalculAngleVue(pers);
 				ListeActeur[i].CalculCoordonnee3D(pers);
-				/**trace("Distance :"+(Acteur)(ListeActeur[i]).getDistanceProprio());**/
 			}	
+			
 			//On tri le tableau d'acteur par rapport a la distance entre le proprio et l'acteur
-			//ListeActeur.sort(sortOnDist);
-			
-			
-			/**trace("Sort on ");**/
 			for(var i:* in ListeActeur)
 			{
-				/**trace("Distance :"+(Acteur)(ListeActeur[i]).getDistanceProprio());**/
 				addChild(ListeActeur[i]);
 			}	
 			reOrderTab();
@@ -98,8 +93,8 @@ package
             return serveur;
         }
 		
-		// Initialisation de la piece
 		
+		// Initialisation de la piece		
 		public function InitialiserPlan():void
 		{
 			var numPoints : Number = 0;
@@ -125,8 +120,8 @@ package
 			var listePointsPanoramaVus:Array = new Array();
 			var nbPointsPanoVus:Number = 0;
 			var distanceCourante:Number = 0;
-			PointPanoGauche = new Array();
-			PointPanoDroit = new Array();
+			//PointPanoGauche = new Array();
+			//PointPanoDroit = new Array();
 			var xTemp:Number;
 			var yTemp:Number;
 			var positionI:Number;
@@ -136,12 +131,11 @@ package
 			
 			// Recherche les points visibles du panorama
 			for(var i:Number = 0; i < ListPointsPano.length; i++ ) {
-				if(EstDansLeChampDeVision(ListPointsPano[ListPointsPano].xX, ListPointsPano[ListPointsPano].yY)) {
+				if(EstDansLeChampDeVision(ListPointsPano[i].xX, ListPointsPano[i].yY)) {
 					listePointsPanoramaVus[nbPointsPanoVus] = i;
 					nbPointsPanoVus++;
 				}
 			}
-			
 			
 			// Si des points sont trouvés, alors on lance les calculs
 			if (listePointsPanoramaVus.length > 0) {
@@ -305,15 +299,14 @@ package
 			// Lancement des calculs
 			InitialiserVue();
 			
-			/**DEBUT INTEGRATION GROUPE1
-			afficher le fond (panorama, fausse3D)
-			il faut calculer ici la taille du mur que l'on voit par rapport a la piece
-			et executer la fonction prevu par le groupe 1 qui va nous renvoyer l'image de fond
-			FIN INTEGRATION GROUPE1**/
+			/**DEBUT INTEGRATION GROUPE1**/
+			trace("pano  : "+PanoDistanceOrigine);
+			trace("panorama : "+Panorama);
 			Panorama.setDebut(PanoDistanceOrigine);
 			Panorama.setLargeur(PanoLongueur);
 			Panorama.Affiche();
-			
+			/**FIN INTEGRATION GROUPE1**/
+						
 			/**afficher un sol en damier (eventuelement)**/
 			
 			//afficher tout les acteurs					
@@ -345,19 +338,11 @@ package
 		{
 			ListeActeur.splice(ListeActeur.indexOf(newPers,0),1);
 			this.removeChild(newPers);
-			//on ne supprime l'image de la personne que si elle est afficher et donc en vue
-			if (newPers.isEnVue(pers))
-			{
-				//on supprime le pers dans la vue3D (suppression du child)
-	
-			}						
 		}
 		
 		//fonction appelé lorsque l'utilisateur appuis sur la fleche directionnel droite
 		public function TourneDroite():void
 		{
-			/**trace("Tourne à droite.");**/
-			
 			pers.setAngleAbsolu(pers.getAngleAbsolu()-2);
 			for(var i:* in ListeActeur)
 			{				
@@ -368,14 +353,12 @@ package
 			AfficheVue3D();		
 			//avertir le serveur que l'orientation de pers a changer
 			var newPos:XML = new XML("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>");
-			//parent.client.send(newPos); 
+			Object(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
 		}
 		
 		//fonction appelé lorsque l'utilisateur appuis sur la fleche directionnel gauche
 		public function TourneGauche():void
 		{
-			/**trace("Tourne à gauche.");**/
-			
 				//(Acteur)(ListeActeur[i]).setAngleVue((angleTemp));
 			pers.setAngleAbsolu(pers.getAngleAbsolu()-2);
 			for(var i:* in ListeActeur)
@@ -387,7 +370,7 @@ package
 			AfficheVue3D();
 			//avertir le serveur que l'orientation de pers a changer
 			var newPos:XML = new XML("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>");
-			//parent.client.send(newPos); 
+			Object(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
 		}
 		
 		

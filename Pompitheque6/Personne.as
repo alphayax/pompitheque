@@ -15,9 +15,9 @@ package
 	public class Personne extends Acteur
 	{
 		//taille d'origine
-		var largeur:Number = 235;
-		var hauteur:Number = 375;
-		var tempAngle:Number = -1;
+		private var largeur:Number = 235;
+		private var hauteur:Number = 375;
+		private var tempAngle:Number = -1;
 		
 		//var imgPrec:Loader = new Loader();
 		//var imgSuiv:Loader = new Loader();

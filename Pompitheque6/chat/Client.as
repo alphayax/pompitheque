@@ -22,21 +22,20 @@ package chat
 		 */
 		public function Client(nSrv:String = "",sNom:String = ""):void
 		{
-			  //initialisation 
-				port = 18000;
-				host = '82.225.184.211';
-		        srv  = nSrv;
-		        nom  = sNom;		      // Pour palier à certaine erreur de securite lie
-		      // au different navigateur, Internet Explorer en particulier,
-		      // nous mettons en place un timer permettant de demander une connexion
-		      // en boucle jusqu'a ce que cela marche
+			// initialisation 
+			port = 18000;
+			host = 'localhost';
+		    srv  = nSrv;
+		    nom  = sNom;		    // Pour palier à certaine erreur de securite lie
+		    // au different navigateur, Internet Explorer en particulier,
+		    // nous mettons en place un timer permettant de demander une connexion
+		    // en boucle jusqu'a ce que cela marche
 			timer = new Timer(2000, 1);
 			
 			// on appelle onTimer quand l'evenement TimerEvent est lancer
 			timer.addEventListener(TimerEvent.TIMER, onTimer);
 
-			tryConnect();
-			
+			tryConnect();			
 		}
 		
 		
@@ -45,12 +44,12 @@ package chat
 		 *
 		 */
 		protected function tryConnect():void
-		{	      //creation de la socket 
-	      //demande du crossdomain.xml (pour la sécurité des communication inter-domaine
-			socket = new XMLSocket();
+		{	        //creation de la socket 
+	        //demande du crossdomain.xml (pour la sécurité des communication inter-domaine
+			socket = new XMLSocket();			
 			Security.allowDomain(host);
+			trace(socket.toString());
 			Security.loadPolicyFile("http://"+host+"/crossdomain.xml");
-			
 			
 			//redirection des erreurs sur la fonction on
 			socket.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onSecurityError);
@@ -89,15 +88,16 @@ package chat
 		
 		protected function onConnect(e:Event):void
 		{
-  		send("/name " + nom);
-		  send("/server:" + srv);
-		  	  
-			portOpen();
+  		 send("/name " + nom);
+		 send("/server:" + srv);
+		 send("<demande />");
+		 	  	  
+		 portOpen();
 		}
 		
 		protected function onClose(e:Event):void
 		{
-		  send(nom +" est déconnecté");
+		  send("<deco pseudo='"+nom+"' />");
 		}
 		
 		protected function onIOError(e:Event):void

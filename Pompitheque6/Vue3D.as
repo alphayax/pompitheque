@@ -357,7 +357,7 @@ package
 			AfficheVue3D();		
 			//avertir le serveur que l'orientation de pers a changer
 			var newPos:XML = new XML("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>");
-			(Vue)(parent).client.send(newPos.toXMLString()); 
+			(Vue)(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
 		}
 		
 		//fonction appelé lorsque l'utilisateur appuis sur la fleche directionnel gauche
@@ -374,7 +374,7 @@ package
 			AfficheVue3D();
 			//avertir le serveur que l'orientation de pers a changer
 			var newPos:XML = new XML("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>");
-			(Vue)(parent).client.send(newPos.toXMLString()); 
+			(Vue)(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
 		}
 		
 		
@@ -417,6 +417,7 @@ package
 		//et rafficher la vue actualisé
 		public function CallBackOrientation(newPers:Personne):void
 		{
+			trace("NEWPERS ORIENTATION:"+newPers);
 			newPers.CalculAngleVue(pers);
 			AffichePers3D(newPers);
 		}

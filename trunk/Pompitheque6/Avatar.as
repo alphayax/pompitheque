@@ -65,6 +65,7 @@
 				}
 			}			
 			isLoadXMLfini = true;
+			trace("jai fini de charger les avatar");
 		}
 		
 		
@@ -74,6 +75,7 @@
 		//aux paramatres dans le tableau
 		public static function  getImage(type:String,stature:String,orientation:String):String	
 		{
+			trace("type:"+type+",stature:"+stature+",orientation:"+orientation);
 			return tabPhoto[type][stature][orientation]["loader"];			
 		}
 		

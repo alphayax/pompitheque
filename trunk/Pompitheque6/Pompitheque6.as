@@ -6,7 +6,7 @@ package
 	{
 		public function Pompitheque6()
 		{
-			var vue:Vue=new Vue(new Personne("Bibi",350,0,0,"debout","pocahontas"));						
+			var vue:Vue=new Vue(new Personne("prop",400,0,0,"debout","pocahontas"));						
 			addChild(vue);
 		}
 	}

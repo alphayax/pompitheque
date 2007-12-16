@@ -56,14 +56,14 @@ package
 			graphics.moveTo(xCenter,yCenter);
 			graphics.lineTo(xCenter-largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
 			/*****FIN TEST GROUPE4****/			
-			this.Panorama= new ChargeurDeBitmap();
-			addChild(Panorama);
 			
 			//propriaitaire de la vue 3D
 			this.pers=pers;
 			//plan de la piece
 			this.Plan=Plan;
 			
+			this.Panorama= new ChargeurDeBitmap();
+			addChild(Panorama);
 			//premiere (et unique) initialisation du plan
 			InitialiserPlan()
 			//premiere initialisation des distances
@@ -357,7 +357,7 @@ package
 			AfficheVue3D();		
 			//avertir le serveur que l'orientation de pers a changer
 			var newPos:XML = new XML("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>");
-			(Vue)(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
+			(Vue)(parent).client.send(newPos.toXMLString()); 
 		}
 		
 		//fonction appelé lorsque l'utilisateur appuis sur la fleche directionnel gauche
@@ -374,7 +374,7 @@ package
 			AfficheVue3D();
 			//avertir le serveur que l'orientation de pers a changer
 			var newPos:XML = new XML("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>");
-			(Vue)(parent).client.send("<orientation  pseudo='"+pers.getName()+"'><angle>"+pers.getAngleAbsolu()+"</angle></orientation>"); 
+			(Vue)(parent).client.send(newPos.toXMLString()); 
 		}
 		
 		

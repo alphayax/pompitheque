@@ -5,6 +5,31 @@
 
 Pour que tous le monde puisse connaître les ajouts (ou modifications) les plus importants, dans cette page, chacun fera un bref résumé avec la date d’ajout et un lien comme ceci :
 
+  * *16/12 par Grollemund :* Des nouvelles du front : Intégration
+
+- La communication avec le serveur et la pompitheque est fonctionnelle du coté Pompitheque, coté Serveur il reste la gestion de 2 3 messages et c'est reglé : le groupe6 est au courant et s'en occupe ca devrait etre reglé pour la presentation
+
+- La creation de la vue (si le serveur est lancer seulement) se fait parfaitement
+
+- Dans la vue 3D : 
+    - Le panorama ne s'affiche pas, on est en train de regarder et d'essayer de reglé le probleme
+
+    - La table est deformé c'est en travaux aussi ca devrait etre fini pour jeudi (mais c'est un pb independant de l'intégration)
+
+- Dans la vue 2D : 
+    - Le chargement du plan ne fait pas afficher les tables
+
+    - Lorsque le proprio tourne dans la vue 3D ce n'est pas mis a jour dans la vue 3D
+
+    - Verifier la liste et l'affichage des personne dans la grille lorsque le probleme avec le message User sera reglé sur le serveur
+- Les messages : Lorsqu'on clic sur un perso, censé afficher l'interface de discussion on a une erreur : le groupe5 est au courant et doit s'en occupé
+
+La version finale est donc sur le SVN dans le repertoire Pompitheque6 et jai aussi uploader le serveur (necessaire pour les test) dans le repertoire Serveur6
+Pour lancer le serveur : java -classpath serveur.jar Serveur
+Modifier si besoin la classe Client avec l'adresse IP ('localhost' si vous faites tourner le serveur et le client sur votre machine) et verifier que le port n'est pas bloquer
+
+Voila
+
   * *02/12 par Grollemund :* Upload de la derniere version de la pompitheque version groupe4
 
          Important pour le groupe 5 (gestion des message) la classe *Personne* contient une fonction *message(destinataire:String)* : c'est la fonction appeler sur le proprietaire lorsqu'on clique sur une personne, destinataire est le nom de la personne cliqué. 

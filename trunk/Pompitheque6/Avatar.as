@@ -74,10 +74,6 @@
 		//aux paramatres dans le tableau
 		public static function  getImage(type:String,stature:String,orientation:String):String	
 		{
-			trace("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-			trace("type :"+type);
-			trace("stature :"+stature);
-			trace("orientation :"+orientation);
 			return tabPhoto[type][stature][orientation]["loader"];			
 		}
 		

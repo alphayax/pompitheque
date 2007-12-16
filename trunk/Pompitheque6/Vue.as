@@ -49,7 +49,7 @@ package
 			  
 			//envoie demande au serveur (listepersonnage et plan.xml)
 			var demande:XML = <demande nom="nomduserveur" />;
-			client.send(demande);		
+			client.send(demande.toXMLString());		
 			
 			//on pré-charge les images a partir du fichier XML
 			new Avatar("ImagePersonnage.xml"); 
@@ -89,12 +89,8 @@ package
 				}catch(e:Error){
 					trace(e.message);
 				}
-				/**trace("---------------------------------");
-				trace("nom :"+(Personne)(s).nom+"  X:"+s.x+" Y:"+s.y);
-				trace("  Height:"+s.height+" Width:"+s.width);**/
 				//si le clic a eu lieu avant le x et y de la personne
 				if(s.y >= event.stageY){
-					/**trace("test car en clic au dessous du clip");**/
 					xOk = Math.abs(event.stageX - s.x);
 				    yOk = s.y - event.stageY;
 				    //si le clic est dans la zone en x et en y
@@ -102,19 +98,13 @@ package
 				    	//trace("OK");
 				    	imgTemp = new BitmapData(s.getChildAt(0).width, s.getChildAt(0).height, true, 0xFFFFFF);
 				    	imgTemp.draw(s.getChildAt(0), null, null, null, null, false);
-				    	//trace("Bitmap  Height:"+imgTemp.height+" Width:"+imgTemp.width);
+
 				    	xInterne = Math.abs(event.stageX - (s.x - s.width/2));
 						yInterne = Math.abs(event.stageY - s.y);
-						//trace("Position interne 1: X :"+xInterne+" Y :"+yInterne);
+						
 						xInterne = xInterne*375/s.height;
 						yInterne = 375 - yInterne*235/s.width;
 						
-						//xInterne = event.stageX - s.x;
-						//yInterne = event.stageY - s.y;
-						//var tep:Bitmap = new Bitmap(imgTemp);
-						//vue3D.addChild(tep);
-						
-				    	//trace("Position interne 2: X :"+xInterne+" Y :"+yInterne);
 				    	var pixelValue:uint = imgTemp.getPixel32(xInterne, yInterne);
 						var alphaValue:uint = pixelValue >> 24 & 0xFF;
 						trace(alphaValue.toString(16));
@@ -287,7 +277,7 @@ package
 		
 		private function isLoadedVue3D(){
 		    if ((planXmlLoadFini == true) && (listPersLoadFini == true)){
-		        clearInterval(IntervalXMLavatar); 
+		        clearInterval(IntervalVue3D); 
 		        vue3D = new Vue3D(Proprio,ListeActeur,Plan); 
 		        this.afficheVue3D();
 		    }

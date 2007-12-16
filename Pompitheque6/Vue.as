@@ -37,14 +37,13 @@ package
 		
 		private var listPersLoadFini:Boolean = false;
 		
-		public function Vue(proprio:Personne)
+		public function Vue(proprio:Personne, servNum:Number)
 		{
 			Proprio = proprio;
 			
 			//on cree la connection avec le serveur
-			client = new Client("1",Proprio.getName());
-			//ecouteur serveur, qui appel la fonction triMessage qd on recois un message
-			
+			client = new Client(servNum.toString(),Proprio.getName());
+			//ecouteur serveur, qui appel la fonction triMessage qd on recois un message			
 			client.getSocket().addEventListener(DataEvent.DATA,triMessage);						
 	
 			//on pré-charge les images a partir du fichier XML
@@ -89,7 +88,6 @@ package
 				    yOk = s.y - event.stageY;
 				    //si le clic est dans la zone en x et en y
 				    if(xOk <= s.width/2 && yOk <= s.height){
-				    	//trace("OK");
 				    	imgTemp = new BitmapData(s.getChildAt(0).width, s.getChildAt(0).height, true, 0xFFFFFF);
 				    	imgTemp.draw(s.getChildAt(0), null, null, null, null, false);
 
@@ -118,7 +116,7 @@ package
 			// Fleche gauche 
 			if(vueCourrante == vue3D){
 				if ( event.keyCode == 37 ) {
-					vue3D.TourneGauche();
+					vue3D.TourneGauche();				
 				}			
 				// Fleche droite
 				if ( event.keyCode == 39 ){ 
@@ -153,10 +151,7 @@ package
 						vue2D.deplacer(vue2D.moi,vue2D.moi.x + n*Math.sin(vue2D.moi.angleVue*3.14/180),vue2D.moi.y - n*Math.cos(vue2D.moi.angleVue*3.14/180));
 					}
 				}
-				
-				if(event.keyCode == Keyboard.ENTER){
- 						                	 
-				}			
+						
 			}
 			
 			if(event.keyCode == Keyboard.ESCAPE){
@@ -178,6 +173,8 @@ package
 		//le chargement des avatar est terminé on continu la creation des vues
 		private function afterLoadedXMLavatar(){					
 			//on cree la vue 2D
+			
+			/**Necessaire pour les tests en attendant que <demande> renvoie aussi le plan**/
 			var xmlTable:XML =
 		                <plan>
 						  <salle>
@@ -202,6 +199,8 @@ package
 						  </mobilier>
 						</plan>     ;
 			ajoutTable("Table1",101,0,0,Proprio);
+			/**fin des test**/
+			
 			getPlanXml(xmlTable);
 			IntervalVue = setInterval(isLoadedVue, 500);
 			//attendre qu'on est tout recu du serveur
@@ -253,10 +252,8 @@ package
 			else {
 				if (vue3D == null)
 				{
-					trace("ds le switch :"+Proprio.getType());
 					//on averti le serv que le proprio s'est co (une fois que le perso a choisi sa place sur la vue 2D)
-					var msg:String = "<user pseudo='"+Proprio.getName()+"'><x>"+Proprio.getX2D()+"</x><y>"+Proprio.getY2D()+"</y><orientation>"+Proprio.getAngleAbsolu()+"</orientation><stature>"+Proprio.getStature()+"</stature><type>"+Proprio.getType()+"</type></user>"
-					trace("MSG ENVOYE = user :"+msg);
+					var msg:String = "<user pseudo='"+Proprio.getName()+"'><x>"+Proprio.getX2D()+"</x><y>"+Proprio.getY2D()+"</y><orientation>"+Proprio.getAngleAbsolu()+"</orientation><stature>"+Proprio.getStature()+"</stature><type>"+Proprio.getType()+"</type></user>";	
 					client.send(msg);
 										   
 					//creation de la vue
@@ -323,7 +320,6 @@ package
 				ajoutChaise("Chaise"+x,Table.x,Table.y,Table.orientation);		
 				x++;
 			}
-			trace("jai fini de charger le plan");
 			planXmlLoadFini = true;
 		}
 		
@@ -338,8 +334,7 @@ package
 				{
 				ajoutPersonne(Pers.@pseudo,Pers.x,Pers.y,Pers.orientation,Pers.stature,Pers.type);
 				}
-			}
-			trace("jai fini de charger la liste des perso");			
+			}		
 			listPersLoadFini = true;
 		}
 		
@@ -359,22 +354,24 @@ package
 		//function qui recupere la personne qui s'est deconnecté afin de prevenir les vues
 		public function getDecoPersonne(Data:XML):void
 		{
-			for(var i:Number = 0; i < ListeActeur.length; i++){
-		       if(ListeActeur[i].nom == Data.@pseudo){
-	               delete ListeActeur[i];
-	
-	               var act:Number = i;
-	               break;
-		       }
-            }		
-		    vue2D.CallBackSuppPersonnage(ListeActeur[act]);
-			vue3D.CallBackSuppPersonnage(ListeActeur[act]);
+			if (Data.pseudo != Proprio.getName())
+			{
+				for(var i:Number = 0; i < ListeActeur.length; i++){
+			       if(ListeActeur[i].nom == Data.@pseudo){
+		               delete ListeActeur[i];
+		
+		               var act:Number = i;
+		               break;
+			       }
+	            }		
+			    vue2D.CallBackSuppPersonnage(ListeActeur[act]);
+				vue3D.CallBackSuppPersonnage(ListeActeur[act]);
+			}
 		}
 
 		//fonction qui recupere la personne qui s'est deplacer et met a jour sa position sur les vues
 		public function getPositionPersonne(Data:XML):void
 		{
-			trace("Data.@pseudo:"+Data.@pseudo+" != Proprio.getName():"+Proprio.getName());
 			if (Data.@pseudo != Proprio.getName())
 			{
 				var act:Number

@@ -330,8 +330,9 @@ package
 		//le sprite est ajouter avec un effet de dispation (incrementation de l'alpha)
 		private function AffichePers3D(newPers:Personne):void
 		{
+			trace("affiche 3D : proprio ("+pers.getName()+") pers ("+newPers.getName()+") isEnVue="+newPers.isEnVue(pers));
 			if (newPers.isEnVue(pers))
-			{
+			{				
 				newPers.affiche3D();	
 			}						
 		}

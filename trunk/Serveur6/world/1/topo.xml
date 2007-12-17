@@ -10,5 +10,13 @@
 <angle x="8" y="6" posPanorama="2145"/>
 </salle>
 <mobilier>
+<table x="4.50" y="5.00" orientation="0" />
+<table x="10.77" y="4.97" orientation="0" />
+<chaise x="4.70" y="3.93" orientation="0" />
+<chaise x="2.77" y="5.20" orientation="0" />
+<chaise x="4.90" y="6.63" orientation="0" />
+<chaise x="11.20" y="3.87" orientation="0" />
+<chaise x="13.20" y="5.30" orientation="0" />
+<chaise x="11.43" y="6.87" orientation="0" />
 </mobilier>
 </plan>

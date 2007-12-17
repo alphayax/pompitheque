@@ -150,10 +150,8 @@ package
 						
 						vue2D.deplacer(vue2D.moi,vue2D.moi.x + n*Math.sin(vue2D.moi.angleVue*3.14/180),vue2D.moi.y - n*Math.cos(vue2D.moi.angleVue*3.14/180));
 					}
-				}
-						
-			}
-			
+				}						
+			}			
 			if(event.keyCode == Keyboard.ESCAPE){
 				switchVue();
 			}
@@ -198,7 +196,7 @@ package
 						    <chaise x="11.43" y="6.87" orientation="0" />
 						  </mobilier>
 						</plan>     ;
-			ajoutTable("Table1",101,0,0,Proprio);
+			//ajoutTable("Table1",101,0,0,Proprio);
 			/**fin des test**/
 			
 			getPlanXml(xmlTable);
@@ -216,7 +214,7 @@ package
 				stage.focus = vueCourrante;		        
 		    }
 		    else {
-		    	trace("j'att que le serveur m'envoie le plan et la list de personne");
+		    	trace("En attente de reception (Liste et Plan) du serveur ");
 		    	IntervalVue = setInterval(isLoadedVue, 10000);
 		    	 }
 		}
@@ -342,11 +340,9 @@ package
 		//on met a jour la Vue3D et la Vue2D avec le nouveau personnage (callbackAjoutPersonnage)		
 		public function getNouvellePersonne(Data:XML):void
 		{  		
-			trace("Dta.@pseudo:"+Data.@pseudo+" != Proprio.getName():"+Proprio.getName());
 			if (Data.@pseudo != Proprio.getName())
 			{
 				var pers:Personne = new Personne(Data.@pseudo ,Data.x,Data.y,Data.orientation,Data.stature,Data.type);
-				trace("VUE : "+ pers.getName()+","+pers.getX2D()+","+pers.getY2D()+","+pers.getAngleAbsolu()+","+pers.getStature()+","+pers.getType());
 				ListeActeur.push(pers);
 				//vue2D.CallBackAjoutPersonnage(pers);
 				vue3D.CallBackAjoutPersonnage(pers);	
@@ -398,17 +394,15 @@ package
 				var act:Number = 0;
 		        for(var i:Number = 0; i < ListeActeur.length; i++){
 		           if(ListeActeur[i].nom == Data.@pseudo ){
+			           	act = i;
 		               (Acteur) (ListeActeur[i]).setAngleAbsolu(Data.angle);
-		               trace("CLASSE :"+(Acteur) (ListeActeur[i]).getClass());
-		               for(var j:Number = i; j < ListeActeur.length - 1; j++){
+		               /* for(var j:Number = i; j < ListeActeur.length - 1; j++){
 		   				ListeActeur[j] = ListeActeur[j+1];
 		   			   }
-		   			   ListeActeur.pop();
-		               act = i;
+		   			   ListeActeur.pop();		   */             
 		               break;  
 		           }
 		       }
-		       trace("CLASSE :"+(Acteur) (ListeActeur[act]).getClass());
 		       vue2D.CallBackOrientation(ListeActeur[act]);
 			   vue3D.CallBackOrientation(ListeActeur[act]);
 			}

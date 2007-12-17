@@ -60,16 +60,17 @@ package
 			angleVueArrondie = Math.abs(angleVueArrondie)%360;
 			
 			var img:Loader = new Loader();
-				img.y = -hauteur;
-				img.x = -largeur/2; 
-			if(this.numChildren == 0){
-				
-			
-			img.load(new URLRequest(this.getImage()));
-				
+			img.y = -hauteur;
+			img.x = -largeur/2; 
+			if(this.numChildren == 0 ){				
 				addChild(img);					
+				img.load(new URLRequest(this.getImage()));				
 			}
-		
+			else {
+				this.removeChildAt(0);
+				img.load(new URLRequest(this.getImage()));				
+				addChild(img);	
+			}
 			x = super.x3D;
 			y = super.y3D;
 		}

@@ -23,7 +23,7 @@ package message
 		// ----o Protected Property
         private var __liste_message:Array;
         private var __liste_allmessage:Array;
-        private var __num_message_max:int;
+        private var __num_message_max:int = 5;
 
 		// ----o Constructor
 

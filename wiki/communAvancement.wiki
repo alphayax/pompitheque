@@ -61,10 +61,10 @@ Ce qui reste à faire:
  * Les envois de messages à "ALL" (a mettre dans les files qui-vont-bien)
  * Les alertes
 
-*Avancement Groupe 6* : - - - - - - - - - - - - - - - - - - - 6 6
+*Avancement Groupe 6* : - - - - - - - - - - - - - - - - - - - - 6
   * Le serveur est terminé.
   * La partie cliente en flash est terminée
   * Le portail est terminé.
 
 Remarque :
- Actuellement, nous concentrons nos efforts sur l'intégration avec les autres groupes.
+ Nous attendons après le groupe 1 pour finaliser le portail

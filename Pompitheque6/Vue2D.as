@@ -151,7 +151,7 @@ package
 		g.drawRect(0,0,hauteur,largeur);
 		g.endFill();
 		
-		/******************* ajouter les personnages **************/
+		/******************* ajouter les personnages **************/		
 		for(i = 0; i < ListeActeur.length; i++){
 			if(ListeActeur[i].getClass() == "personne"){
 				var a:Avatar2D = new Avatar2D(ListeActeur[i].nom,ListeActeur[i].x2D,ListeActeur[i].y2D,ListeActeur[i].angleAbsolu,ListeActeur[i].statureAvatar,"M");
@@ -401,7 +401,8 @@ package
 		   
 		   
 		   public function CallBackAjoutPersonnage(newpers:Personne):void{
-		   	var p:Avatar2D = new Avatar2D(newpers.getName(),newpers.getX2D(),newpers.getY2D(),newpers.getAngleAbsolu(),"debout",newpers.getType());
+		   	var p:Avatar2D = new Avatar2D(newpers.getName(),newpers.getX2D(),newpers.getY2D(),newpers.getAngleAbsolu(),newpers.getStature(),newpers.getType());
+		   	trace("avatar2D : "+ newpers.getName()+","+newpers.getX2D()+","+newpers.getY2D()+","+newpers.getAngleAbsolu()+","+newpers.getStature()+","+newpers.getType());
 		   	listePersonne.push(p);
 		   	addChild(p);
 		   	menuActif = new MenuPersonne(down.width + down.x + 5,down.y,getVue().ListeActeur);

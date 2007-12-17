@@ -23,7 +23,7 @@ package
 		private var DistanceMaxPlan:Number;
 		
 		//tableau des acteurs present dans le monde
-		private var ListeActeur:Array = new Array(); 
+		public var ListeActeur:Array = new Array(); 
 		
 		//personne client
 		private var Proprio:Personne;
@@ -341,12 +341,14 @@ package
 		//fonction qui recupere la nouvelle personne connecter au serveur au format xml
 		//on met a jour la Vue3D et la Vue2D avec le nouveau personnage (callbackAjoutPersonnage)		
 		public function getNouvellePersonne(Data:XML):void
-		{  
-			if (Data.pseudo != Proprio.getName())
+		{  		
+			trace("Dta.@pseudo:"+Data.@pseudo+" != Proprio.getName():"+Proprio.getName());
+			if (Data.@pseudo != Proprio.getName())
 			{
 				var pers:Personne = new Personne(Data.@pseudo ,Data.x,Data.y,Data.orientation,Data.stature,Data.type);
+				trace("VUE : "+ pers.getName()+","+pers.getX2D()+","+pers.getY2D()+","+pers.getAngleAbsolu()+","+pers.getStature()+","+pers.getType());
 				ListeActeur.push(pers);
-				vue2D.CallBackAjoutPersonnage(pers);
+				//vue2D.CallBackAjoutPersonnage(pers);
 				vue3D.CallBackAjoutPersonnage(pers);	
 			}
 		}
@@ -354,7 +356,7 @@ package
 		//function qui recupere la personne qui s'est deconnecté afin de prevenir les vues
 		public function getDecoPersonne(Data:XML):void
 		{
-			if (Data.pseudo != Proprio.getName())
+			if (Data.@pseudo != Proprio.getName())
 			{
 				for(var i:Number = 0; i < ListeActeur.length; i++){
 			       if(ListeActeur[i].nom == Data.@pseudo){
@@ -393,10 +395,11 @@ package
 		{
 			if (Data.@pseudo != Proprio.getName())
 			{
-				var act:Number
+				var act:Number = 0;
 		        for(var i:Number = 0; i < ListeActeur.length; i++){
 		           if(ListeActeur[i].nom == Data.@pseudo ){
-		               ListeActeur[i].angleAbsolu =  Data.orientation;
+		               (Acteur) (ListeActeur[i]).setAngleAbsolu(Data.angle);
+		               trace("CLASSE :"+(Acteur) (ListeActeur[i]).getClass());
 		               for(var j:Number = i; j < ListeActeur.length - 1; j++){
 		   				ListeActeur[j] = ListeActeur[j+1];
 		   			   }
@@ -405,6 +408,7 @@ package
 		               break;  
 		           }
 		       }
+		       trace("CLASSE :"+(Acteur) (ListeActeur[act]).getClass());
 		       vue2D.CallBackOrientation(ListeActeur[act]);
 			   vue3D.CallBackOrientation(ListeActeur[act]);
 			}

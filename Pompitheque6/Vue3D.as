@@ -382,7 +382,8 @@ package
 		//et rafficher la vue actualisé
 		public function CallBackAjoutPersonnage(newPers:Personne):void
 		{
-			ListeActeur.push(newPers);			
+			this.addChild(newPers);
+			ListeActeur.push(newPers);						
 			newPers.CalculCoordonnee3D(pers);	
 			newPers.CalculDistance(pers);
 			newPers.CalculRedimensionnement3D(DistanceMaxPlan);

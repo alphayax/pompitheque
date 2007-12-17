@@ -33,17 +33,21 @@ package
             __tfBig        = new TextField();
             __formatBig    = new TextFormat()
 
-            __pointsTorse  = pointsTorse;
             __tfBig        = tf;
+            __pointsTorse  = pointsTorse;
             __formatBig    = tf.getTextFormat();
 
             this.addChild(__containerBig);
-            __containerBig.addChild( __tfBig );
+            __containerBig.addChild( containerBigLoaded() );
 
-            containerBigLoaded();
+            // on ajoute des evenements
+            addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
+            addEventListener(MouseEvent.MOUSE_WHEEL, mouseWheel);
+            addEventListener(MouseEvent.MOUSE_DOWN, mouseHideOrShow);
+            addEventListener(KeyboardEvent.KEY_DOWN, keyZoom);
         }
 
-        public function containerBigLoaded() : Sprite
+        public function containerBigLoaded() : TextField
         {
             // format du grand texte adapte
             __taillePoliceBig = 12;
@@ -57,13 +61,7 @@ package
             __tfBig.wordWrap        = true;
             __tfBig.setTextFormat( __formatBig );
 
-            // on ajoute des evenements
-            addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
-            addEventListener(MouseEvent.MOUSE_WHEEL, mouseWheel);
-            addEventListener(MouseEvent.MOUSE_DOWN, mouseHideOrShow);
-            addEventListener(KeyboardEvent.KEY_DOWN, keyZoom);
-
-            return this;
+            return __tfBig;
         }
 
         public function mouseMove(event:Event) : void {

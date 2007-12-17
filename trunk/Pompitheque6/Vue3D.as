@@ -45,18 +45,6 @@ package
 		{
 			super();
 			
-			/*****DEBUT TEST GROUPE4****/
-			//pour les test on ajoute l'angle de vue de 140°
-			// centre de la rotation			
-			var angleVue:Number = 140;
-			var largeurVue:Number = 250;
-			graphics.lineStyle(1);
-			graphics.moveTo(xCenter,yCenter);
-			graphics.lineTo(xCenter+largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
-			graphics.moveTo(xCenter,yCenter);
-			graphics.lineTo(xCenter-largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
-			/*****FIN TEST GROUPE4****/			
-			
 			//propriaitaire de la vue 3D
 			this.pers=pers;
 			//plan de la piece
@@ -68,6 +56,21 @@ package
 			InitialiserPlan()
 			//premiere initialisation des distances
 			InitialiserVue();
+			
+			/************/
+			/*****DEBUT TEST GROUPE4****/
+			//pour les test on ajoute l'angle de vue de 140°
+			// centre de la rotation			
+			var angleVue:Number = 140;
+			var largeurVue:Number = 250;
+			graphics.lineStyle(1);
+			graphics.moveTo(xCenter,yCenter);
+			graphics.lineTo(xCenter+largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
+			graphics.moveTo(xCenter,yCenter);
+			graphics.lineTo(xCenter-largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
+			DistanceMaxPlan = 600;
+			/*****FIN TEST GROUPE4****/		
+			/*************/
 			
 			//on recupere la liste des acteurs (personnes et mobilier) de la vue
 			this.ListeActeur=ListeActeur;

@@ -170,36 +170,8 @@ package
 		
 		//le chargement des avatar est terminé on continu la creation des vues
 		private function afterLoadedXMLavatar(){					
-			//on cree la vue 2D
-			
-			/**Necessaire pour les tests en attendant que <demande> renvoie aussi le plan**/
-			var xmlTable:XML =
-		                <plan>
-						  <salle>
-						    <mur x1="2.00" y1="2.00" x2="18.00" y2="2.00" />
-						    <mur x1="18.00" y1="2.00" x2="18.00" y2="17.00" />
-						    <mur x1="18.00" y1="17.00" x2="2.00" y2="17.00" />
-						    <mur x1="2.00" y1="17.00" x2="2.00" y2="2.00" />
-						    <angle x="18" y="2" posPanorama="17" />
-						    <angle x="18" y="17" posPanorama="726" />
-						    <angle x="2" y="17" posPanorama="1436" />
-						    <angle x="2" y="2" posPanorama="2145" />
-						  </salle>
-						  <mobilier>
-						    <table x="4.50" y="5.00" orientation="0" />
-						    <table x="10.77" y="4.97" orientation="0" />
-						    <chaise x="4.70" y="3.93" orientation="0" />
-						    <chaise x="2.77" y="5.20" orientation="0" />
-						    <chaise x="4.90" y="6.63" orientation="0" />
-						    <chaise x="11.20" y="3.87" orientation="0" />
-						    <chaise x="13.20" y="5.30" orientation="0" />
-						    <chaise x="11.43" y="6.87" orientation="0" />
-						  </mobilier>
-						</plan>     ;
-			//ajoutTable("Table1",101,0,0,Proprio);
-			/**fin des test**/
-			
-			getPlanXml(xmlTable);
+			//on cree la vue 2D		
+			ajoutTable("table ronde", 120, 100, 45);			
 			IntervalVue = setInterval(isLoadedVue, 500);
 			//attendre qu'on est tout recu du serveur
 						
@@ -226,9 +198,9 @@ package
 			ListeActeur.push(new Personne(name,x,y,angle,stature,typeavatar));
 		}
 		//ajout d'une table a la liste des acteurs
-		public function ajoutTable(name:String,x:Number,y:Number,angle:Number,Proprio:Personne):void
+		public function ajoutTable(name:String,x:Number,y:Number,angle:Number):void
 		{
-			ListeActeur.push(new Table(name, x, y, angle,Proprio));
+			ListeActeur.push(new Table(name,x,y,angle,50, 0x556600, 0x556600, 0x550055, 0));
 		}	
 		//ajout d'une chaise a la liste des acteurs
 		public function ajoutChaise(name:String,x:Number,y:Number,angle:Number):void
@@ -308,14 +280,14 @@ package
 			var x:Number = 0;
 			for each(var Table:XML in Data.mobilier..table) 
 			{				
-				ajoutTable("Table"+x,Table.x,Table.y,Table.orientation,Proprio);		
+				ajoutTable("Table"+x,Table.@x,Table.@y,Table.@orientation);		
 				x++;
 			}
 			//on parcours toutes les chaises et on les ajoutes a la liste d'acteur
 			x = 0;
 			for each(var Chaise:XML in Data.mobilier..chaise) 
 			{				
-				ajoutChaise("Chaise"+x,Table.x,Table.y,Table.orientation);		
+				ajoutChaise("Chaise"+x,Chaise.@x,Chaise.@y,Chaise.@orientation);		
 				x++;
 			}
 			planXmlLoadFini = true;

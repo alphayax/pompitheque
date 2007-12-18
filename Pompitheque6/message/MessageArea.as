@@ -18,7 +18,7 @@ package message
         public function saisie( vue3D:Vue3D):void
         {
             //XXX Si marche pas, mettre sur la Vue3D
-            addChild(__message_widget);
+            vue3D.addChild(__message_widget);
             __message_widget.afficheTextInput();
 	    
 	    //evenements

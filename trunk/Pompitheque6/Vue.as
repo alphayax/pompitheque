@@ -200,7 +200,8 @@ package
 		//ajout d'une table a la liste des acteurs
 		public function ajoutTable(name:String,x:Number,y:Number,angle:Number):void
 		{
-			ListeActeur.push(new Table(name,x,y,angle,50, 0x556600, 0x556600, 0x550055, 0));
+			//ListeActeur.push(new Table(name,x,y,angle,50, 0x556600, 0x556600, 0x550055, 0));
+			ListeActeur.push(new Table(name,x,y,angle,Proprio));
 		}	
 		//ajout d'une chaise a la liste des acteurs
 		public function ajoutChaise(name:String,x:Number,y:Number,angle:Number):void

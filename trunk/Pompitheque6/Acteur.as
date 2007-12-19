@@ -148,7 +148,7 @@ package
 		public function getZ3D():Number {return z3D;}
 		public function setX3D(x3D:Number):void {this.x3D=x3D;}
 		public function setY3D(y3D:Number):void {this.y3D=y3D;}
-		public function setZ3D(Z3D:Number):void {this.y3D=y3D;}
+		public function setZ3D(z3D:Number):void {this.z3D=z3D;}
 		
 		public function getAngleAbsolu():Number {return angleAbsolu;}
 		public function setAngleAbsolu(angleAbsolu:Number):void {this.angleAbsolu=angleAbsolu;}

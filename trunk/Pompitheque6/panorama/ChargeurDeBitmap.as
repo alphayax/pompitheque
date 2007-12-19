@@ -37,7 +37,8 @@ package panorama
 			setZoom(1);
 			setLargeur(10);
 			setDebut(0);
-			setCheminImage("http://localhost/TaWeb/");
+			setCheminImage("");
+			//setCheminImage("http://localhost/TaWeb/");
 			//setCheminImage("http://stev34.free.fr/fac/");
 			//addPhoto("panorama_01.gif");
 			//addPhoto("panorama_02.gif");

@@ -156,9 +156,8 @@ package
 						vue2D.moi.setX2D(vue2D.moi.x);
 						vue2D.moi.setY2D(vue2D.moi.y);
 						Proprio.setX2D(vue2D.moi.x);
-						Proprio.setY2D(vue2D.moi.y);
-						var clt:Client = new Client();
-		   				clt.send("<position  pseudo='"+vue2D.moi.nom+"'><x>"+vue2D.moi.x+"</x><y>"+ vue2D.moi.y + "</y><stature>"+ vue2D.moi.statut + "</stature></position>"); 
+						Proprio.setY2D(vue2D.moi.y);						
+		   				client.send("<position  pseudo='"+vue2D.moi.nom+"'><x>"+vue2D.moi.x+"</x><y>"+ vue2D.moi.y + "</y><stature>"+ vue2D.moi.statut + "</stature></position>"); 
 		   		
 					}
 				}						
@@ -234,7 +233,7 @@ package
 		public function ajoutTable(name:String,x:Number,y:Number,angle:Number):void
 		{
 			//ListeActeur.push(new Table(name,x,y,angle,50, 0x556600, 0x556600, 0x550055, 0));
-			ListeActeur.push(new Table(name,x,y,angle,Proprio));
+			ListeActeur.push(new Table(name,x,y,angle,2, 0xCC9966, 0x996600, 0x000000, 0));
 		}	
 		//ajout d'une chaise a la liste des acteurs
 		public function ajoutChaise(name:String,x:Number,y:Number,angle:Number):void
@@ -298,17 +297,13 @@ package
 			trace("je recois un message de type : "+xData.localName()+" ("+Data.data+")")
 			switch(xData.localName()) 
 			{
-				case "users": getListPersXml(xData); break;
-				case "plan": getPlanXml(xData); break;
-				case "user": getNouvellePersonne(xData); break;
-				case "deco": getDecoPersonne(xData); break;
-				case "position": {getPositionPersonne(xData);
-				
-				 break;}
-				case "orientation": {getAnglePersonne(xData);
-
-				 break;}
-				case "message": Proprio.receiveMessage(xData); break;
+				case "users": {getListPersXml(xData); break;}
+				case "plan": {getPlanXml(xData); break;}
+				case "user": {getNouvellePersonne(xData); break;}
+				case "deco": {getDecoPersonne(xData); break;}
+				case "position": {getPositionPersonne(xData);break;}
+				case "orientation": {getAnglePersonne(xData);break;}
+				case "message": {Proprio.receiveMessage(xData); break;}
 			}
 		}
 		
@@ -394,8 +389,9 @@ package
 		//fonction qui recupere la personne qui s'est deplacer et met a jour sa position sur les vues
 		public function getPositionPersonne(Data:XML):void
 		{
-				var p:Prompt = new Prompt("getposition persone");
-		   		addChild(p);
+				///var p:Prompt = new Prompt("getposition persone");
+		   		///addChild(p);
+		   		trace("je passe ds le coin");
 			if (Data.@pseudo != Proprio.getName())
 			{
 				var act:Number
@@ -428,6 +424,7 @@ package
 		        for(var i:Number = 0; i < ListeActeur.length; i++){
 		           if(ListeActeur[i].nom == Data.@pseudo ){
 			           	act = i;
+     					trace("ListeActeur[i].getClass():"+ListeActeur[i].getClass());
 		               ListeActeur[i].setAngleAbsolu(Data.angle);
 		               break;  
 		           }

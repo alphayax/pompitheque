@@ -26,7 +26,7 @@ package
 		public var ListeActeur:Array = new Array(); 
 		
 		//personne client
-		private var Proprio:Personne;
+		public var Proprio:Personne;
 		
 		private var IntervalXMLavatar:Number;
 		private var IntervalVue:Number;
@@ -36,6 +36,9 @@ package
 		private var planXmlLoadFini:Boolean = false;
 		
 		private var listPersLoadFini:Boolean = false;
+		
+		//2D pour vue2D
+		private var vue2DLoaded:Number;
 		
 		public function Vue(proprio:Personne, servNum:Number)
 		{
@@ -55,6 +58,7 @@ package
 		public function enterFrame_handler(e:Event):void{
 			
 			stage.focus = this;
+			stage.frameRate = 10;
 			addEventListener(KeyboardEvent.KEY_DOWN,reportKeyDown);	
 			addEventListener(MouseEvent.CLICK,reportClicDown);			
 		}
@@ -149,6 +153,13 @@ package
 						else if(event.shiftKey == true) { n = 10; }
 						
 						vue2D.deplacer(vue2D.moi,vue2D.moi.x + n*Math.sin(vue2D.moi.angleVue*3.14/180),vue2D.moi.y - n*Math.cos(vue2D.moi.angleVue*3.14/180));
+						vue2D.moi.setX2D(vue2D.moi.x);
+						vue2D.moi.setY2D(vue2D.moi.y);
+						Proprio.setX2D(vue2D.moi.x);
+						Proprio.setY2D(vue2D.moi.y);
+						var clt:Client = new Client();
+		   				clt.send("<position  pseudo='"+vue2D.moi.nom+"'><x>"+vue2D.moi.x+"</x><y>"+ vue2D.moi.y + "</y><stature>"+ vue2D.moi.statut + "</stature></position>"); 
+		   		
 					}
 				}						
 			}			
@@ -171,32 +182,54 @@ package
 		//le chargement des avatar est terminé on continu la creation des vues
 		private function afterLoadedXMLavatar(){					
 			//on cree la vue 2D		
-			ajoutTable("table ronde", 120, 100, 45);			
+			ajoutTable("table_ronde", 120, 100, 45);			
 			IntervalVue = setInterval(isLoadedVue, 500);
 			//attendre qu'on est tout recu du serveur
 						
 		}
-		private function isLoadedVue(){
+		
+		
+		private function isLoadedVue():void{
 		    if ((planXmlLoadFini == true) && (listPersLoadFini == true)){
 		        clearInterval(IntervalVue); 
-		        vue2D = new Vue2D(400,400,20,ListeActeur,Proprio)
+		        vue2D = new Vue2D(Plan,Proprio);
 				vueCourrante = vue2D;
 				addChild(vueCourrante);
-				
-				stage.focus = vueCourrante;		        
-		    }
+				stage.focus = vueCourrante;
+					        
+		    } 
 		    else {
 		    	trace("En attente de reception (Liste et Plan) du serveur ");
 		    	IntervalVue = setInterval(isLoadedVue, 10000);
-		    	 }
+		    }
 		}
 						
 				
 		//ajout d'une personne a la liste des acteurs	
 		public function ajoutPersonne(name:String,x:Number,y:Number,angle:Number,stature:String,typeavatar:String):void
 		{
-			ListeActeur.push(new Personne(name,x,y,angle,stature,typeavatar));
+			var p:Personne = new Personne(name,x,y,angle,stature,typeavatar);
+			ListeActeur.push(p);
+			if(vueCourrante == vue2D){
+				vue2DLoaded = setInterval(function ():void{vue2DLoadedFunc(p)}, 500);
+			}
 		}
+		
+		//2D pour la gestion des errors de construction finale de Vue2D
+		private function vue2DLoadedFunc(p):void
+		{
+			if(vue2D == null){
+				clearInterval(vue2DLoaded);
+				vue2DLoaded = setInterval(function ():void{vue2DLoadedFunc(p)}, 500);
+			}else{
+				/*var pp:Prompt = new Prompt("vue2D fini");
+				vue2D.addChild(pp);*/
+				vue2D.ajoutPersonne(p);	
+				clearInterval(vue2DLoaded);
+			}
+		}
+		
+		
 		//ajout d'une table a la liste des acteurs
 		public function ajoutTable(name:String,x:Number,y:Number,angle:Number):void
 		{
@@ -207,7 +240,7 @@ package
 		public function ajoutChaise(name:String,x:Number,y:Number,angle:Number):void
 		{
 			//ListeActeur.push(new Chaise2D(name,x,y,angle));	
-			ListeActeur.push(new Chaise2D(x,y));			
+			ListeActeur.push(new Chaise2D(x,y,angle,false));			
 		}
 		
 				
@@ -232,7 +265,11 @@ package
 			        this.afficheVue3D();
 										
 				}
-				else this.afficheVue3D();
+				else {
+					//var msg:String = "<user pseudo='"+Proprio.getName()+"'><x>"+Proprio.getX2D()+"</x><y>"+Proprio.getY2D()+"</y><orientation>"+Proprio.getAngleAbsolu()+"</orientation><stature>"+Proprio.getStature()+"</stature><type>"+Proprio.getType()+"</type></user>";	
+				//client.send(msg);
+				this.afficheVue3D();
+				}
 			}
 			stage.focus = vueCourrante;
 		}		
@@ -255,8 +292,9 @@ package
 	    //appel la fonction correspondant au message recu	
 		private function triMessage(Data:DataEvent):void
 		{
-			var xData:XML = new XML(Data.data);
 			
+			var xData:XML = new XML(Data.data);
+
 			trace("je recois un message de type : "+xData.localName()+" ("+Data.data+")")
 			switch(xData.localName()) 
 			{
@@ -264,8 +302,12 @@ package
 				case "plan": getPlanXml(xData); break;
 				case "user": getNouvellePersonne(xData); break;
 				case "deco": getDecoPersonne(xData); break;
-				case "position": getPositionPersonne(xData); break;
-				case "orientation": getAnglePersonne(xData); break;
+				case "position": {getPositionPersonne(xData);
+				
+				 break;}
+				case "orientation": {getAnglePersonne(xData);
+
+				 break;}
 				case "message": Proprio.receiveMessage(xData); break;
 			}
 		}
@@ -299,11 +341,13 @@ package
 		//cette fonction sera appele quand on recevrai la liste des personne par le serveur
 		public function getListPersXml(Data:XML):void
 		{
+			/*var p:Prompt = new Prompt(Data.toString());
+			addChild(p);*/	
 			for each(var Pers:XML in Data..user) 
 			{
 				if (Pers.@pseudo != Proprio.getName())
 				{
-				ajoutPersonne(Pers.@pseudo,Pers.x,Pers.y,Pers.orientation,Pers.stature,Pers.type);
+					ajoutPersonne(Pers.@pseudo,Pers.x,Pers.y,Pers.orientation,Pers.stature,Pers.type);
 				}
 			}		
 			listPersLoadFini = true;
@@ -317,8 +361,11 @@ package
 			{
 				var pers:Personne = new Personne(Data.@pseudo ,Data.x,Data.y,Data.orientation,Data.stature,Data.type);
 				ListeActeur.push(pers);
-				//vue2D.CallBackAjoutPersonnage(pers);
-				vue3D.CallBackAjoutPersonnage(pers);	
+				if(vueCourrante == vue2D){
+					vue2D.CallBackAjoutPersonnage(pers);
+				}else{
+					vue3D.CallBackAjoutPersonnage(pers);	
+				}
 			}
 		}
 		
@@ -329,12 +376,16 @@ package
 			{
 				for(var i:Number = 0; i < ListeActeur.length; i++){
 			       if(ListeActeur[i].nom == Data.@pseudo){
-		               delete ListeActeur[i];
-		
+		               //delete ListeActeur[i];
+				        for(var j:Number = i; j < ListeActeur.length - 1; j++){
+		   				ListeActeur[j] = ListeActeur[j+1];
+		   			   }
+		   			   ListeActeur.pop(); 
 		               var act:Number = i;
 		               break;
 			       }
-	            }		
+	            }
+	            		
 			    vue2D.CallBackSuppPersonnage(ListeActeur[act]);
 				vue3D.CallBackSuppPersonnage(ListeActeur[act]);
 			}
@@ -343,19 +394,28 @@ package
 		//fonction qui recupere la personne qui s'est deplacer et met a jour sa position sur les vues
 		public function getPositionPersonne(Data:XML):void
 		{
+				var p:Prompt = new Prompt("getposition persone");
+		   		addChild(p);
 			if (Data.@pseudo != Proprio.getName())
 			{
 				var act:Number
 		        for(var i:Number = 0; i < ListeActeur.length; i++){
-		           if(ListeActeur[i].nom == Data.@pseudo ){
-		               ListeActeur[i].x2D =  Data.x;
-		               ListeActeur[i].y2D =  Data.y;
+		           if(ListeActeur[i].getName() == Data.@pseudo ){
+		               ListeActeur[i].setX2D(Data.x);
+		               ListeActeur[i].setY2D(Data.y);
+		               /*var p:Prompt = new Prompt(Data.x + "   " + Data.y);
+		   			   addChild(p);*/
 		               act = i;
 		               break;  
 		           }
 		        }
-		        vue2D.CallBackPosition(ListeActeur[act]);
-			    vue3D.CallBackPosition(ListeActeur[act]);
+		        if(vueCourrante == vue2D){
+		       		vue2D.CallBackPosition(ListeActeur[act]);
+		       }else{
+			   		vue3D.CallBackPosition(ListeActeur[act]);
+		       }
+		        
+			    
 		 	}
 		}		
 		
@@ -368,16 +428,15 @@ package
 		        for(var i:Number = 0; i < ListeActeur.length; i++){
 		           if(ListeActeur[i].nom == Data.@pseudo ){
 			           	act = i;
-		               (Acteur) (ListeActeur[i]).setAngleAbsolu(Data.angle);
-		               /* for(var j:Number = i; j < ListeActeur.length - 1; j++){
-		   				ListeActeur[j] = ListeActeur[j+1];
-		   			   }
-		   			   ListeActeur.pop();		   */             
+		               ListeActeur[i].setAngleAbsolu(Data.angle);
 		               break;  
 		           }
 		       }
-		       vue2D.CallBackOrientation(ListeActeur[act]);
-			   vue3D.CallBackOrientation(ListeActeur[act]);
+		       if(vueCourrante == vue2D){
+		       	vue2D.CallBackOrientation(ListeActeur[act]);
+		       }else{
+			   	vue3D.CallBackOrientation(ListeActeur[act]);
+		       }
 			}
 		}
 

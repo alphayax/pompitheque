@@ -9,10 +9,12 @@ package
 	public class Avatar2D extends Acteur
 	{
 		private var infoText:TextField;
-		private var couleur:Number = 0x000000;
+		private var couleur:Number = 0xFFFFFF;
 		public var taille:Number = 10;
 		public var infoBule:Sprite;
-		public var bouttonConcernant:menuBoutton;
+		//public var bouttonConcernant:menuBoutton;
+		public var statut:String = "assis";
+		public var chaise:Chaise2D;
 		//private var langueur:Number = 10;
 		public function Avatar2D(n:String, x:Number, y:Number,a:Number,statut:String,genre:String){
 			super(n,x,y,a);
@@ -22,9 +24,9 @@ package
 			//AngleAbsolue = a;
 			graphics.clear();
 			var r:Number = taille/2;
-			if(genre == "M"){
-				graphics.beginFill(0,0);
-				graphics.lineStyle(1,0,1);
+			if(genre.toLowerCase() == "pocahontas"){
+				graphics.beginFill(couleur,0);
+				graphics.lineStyle(1,couleur,1);
 				//graphics.beginFill(0,0);
 				graphics.drawCircle(0,0,r);
 				graphics.endFill();
@@ -35,8 +37,8 @@ package
 				graphics.lineTo(0,-9);
 				graphics.lineTo(2,-7);
 			}else{
-				graphics.beginFill(0,0);
-				graphics.lineStyle(1,0,1);
+				graphics.beginFill(couleur,0);
+				graphics.lineStyle(1,couleur - 0x005555,1);
 				//graphics.beginFill(0,0);
 				graphics.drawCircle(0,0,r);
 				graphics.endFill();
@@ -85,6 +87,8 @@ package
 				this.scaleX = 1;
 				this.scaleY = 1;
 			}
+			statut = s;
+			Object(parent.parent).Proprio.setStatureAvatar(s);
 		}
 		
 		public function ShowBule(e:MouseEvent):void {
@@ -97,7 +101,7 @@ package
 		}
 		
 		public override function getClass():String{
-			return "avatar";
+			return "avatar2D";
 		}
 		
 		

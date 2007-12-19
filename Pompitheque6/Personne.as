@@ -38,6 +38,10 @@ package
 		
 		//stature de l'avatar vue ('assis' ou 'debout')
 		private var statureAvatar:String;	
+		
+
+		
+		
         /************************************************
         *           CONSTRUCTEUR PERSONNE               *
         ************************************************/

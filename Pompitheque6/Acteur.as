@@ -48,7 +48,10 @@ package
 		private var distanceProprio:Number;
 		
 		//pourcentage de la taille de l'acteur a afficher
-		private var tailleImage:Number;		
+		private var tailleImage:Number;
+		
+		//2D pour le menu a droite des recherches
+		public var bouttonConcernant:menuBoutton;
 		
 		public function Acteur(nom:String,x2D:Number,y2D:Number,angleAbsolu:Number)
 		{
@@ -154,6 +157,7 @@ package
 		public function setAngleVue(angleVue:Number):void {this.angleVue=angleVue;}
 		
 		public function getAnglePOX():Number {return anglePOX;}
+		
 		public function setAnglePOX(poprio:Personne,angle:Number):void {
 				var angleTemp:Number = this.getAnglePOX()+angle;
 				if(angleTemp > 0){

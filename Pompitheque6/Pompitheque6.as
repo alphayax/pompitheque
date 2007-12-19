@@ -8,8 +8,8 @@ package
 		public function Pompitheque6()
 		{
 			//this.addEventListener(KeyboardEvent.KEY_DOWN,listener);
-			//var vue:Vue=new Vue(new Personne("un",120,100,0,"debout","pocahontas"),1);						
-			var vue:Vue=new Vue(new Personne("deux",300,100,0,"debout","pocahontas"),1);	
+			var vue:Vue=new Vue(new Personne("un",11,9,0,"debout","pocahontas"),1);						
+			//var vue:Vue=new Vue(new Personne("deux",300,100,0,"debout","pocahontas"),1);	
 			//var vue:Vue=new Vue(new Personne("trois",300,200,0,"debout","pocahontas"),1);		
 			addChild(vue);
 			//stage.focus = this;

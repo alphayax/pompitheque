@@ -22,10 +22,10 @@ package
 		//  les coordonnées x et y
 		private var ListPointsPano:Array;
 		//Distance max dans le plan (utile pour calculer le redimensionnement)
-		private var DistanceMaxPlan:Number;
+		private var DistanceMaxPlan:Number=0;
 		//Points gauche et droit du panorama (+10% non affichable) [x,y]
-		private var PointPanoGauche:Object;
-		private var PointPanoDroit:Object;
+		private var PointPanoGauche:Array;
+		private var PointPanoDroit:Array;
 		private var PanoDistanceOrigine:Number;
 		private var PanoLongueur:Number;
 		//data xml contenant toute les info du plan
@@ -68,7 +68,7 @@ package
 			graphics.lineTo(xCenter+largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
 			graphics.moveTo(xCenter,yCenter);
 			graphics.lineTo(xCenter-largeurVue,yCenter-Math.atan(30*Math.PI/180)*largeurVue);
-			DistanceMaxPlan = 600;
+			//DistanceMaxPlan = 600;
 			/*****FIN TEST GROUPE4****/		
 			/*************/
 			
@@ -102,16 +102,28 @@ package
 		// Initialisation de la piece		
 		public function InitialiserPlan():void
 		{
+			var distanceCourante:Number = 0;
 			var numPoints : Number = 0;
 			ListPointsPano = new Array();
 			
-			// Récupère les points
+			// Recupere les points
 			for each(var baliseMur:XML in Plan..mur)
 			{
-				ListPointsPano[numPoints] = {xX:baliseMur.attribute("x1"),yY:baliseMur.attribute("y1")};
-				//trace(baliseMur.attribute("x1")+","+baliseMur.attribute("y1"));
+				ListPointsPano[numPoints] = {xX:baliseMur.@x1,yY:baliseMur.@y1};
+				trace("3D--1="+baliseMur.@x1+","+baliseMur.@y1);
+				trace("3D--2="+ListPointsPano[numPoints].xX+", "+ListPointsPano[numPoints].yY);
 				numPoints++;
 			}
+
+			// Recherche de la distance la plus éloignée
+			for(var j:Number = 0; j < ListPointsPano.length; j++) {
+				distanceCourante = DistanceDuPointDeVue(ListPointsPano[j].xX, ListPointsPano[j].yY);
+				trace("3D--distanceCourante="+distanceCourante);	
+				if(DistanceMaxPlan < distanceCourante) {
+					DistanceMaxPlan = distanceCourante;
+				}
+			}
+			trace("3D--3="+DistanceMaxPlan);
 		}
 		
 		
@@ -125,15 +137,110 @@ package
 			
 			var listePointsPanoramaVus:Array = new Array();
 			var nbPointsPanoVus:Number = 0;
-			var distanceCourante:Number = 0;
+			
 			//PointPanoGauche = new Array();
 			//PointPanoDroit = new Array();
-			var xTemp:Number;
-			var yTemp:Number;
-			var positionI:Number;
-			var pointcourant:Array;
+			var xTemp:Number = 0;
+			var yTemp:Number = 0;
+			var positionI:Number = 0;
+			
+			var pointcourant:Array = new Array();
+			var pointDebut:Number = 0;
+			var pointFin:Number = 0;
 			PanoDistanceOrigine = 0;
 			PanoLongueur = 0;
+			
+			// Recherche les points visibles du panorama
+			for(var i:Number = 0; i < ListPointsPano.length; i++ ) {
+				pointcourant = Intersection(
+						// Segment 1 point 1
+						ListPointsPano[i].xX,
+						ListPointsPano[i].yY,
+						// Segment 1 point 2
+						ListPointsPano[(i + 1) % ListPointsPano.length].xX,
+						ListPointsPano[(i + 1) % ListPointsPano.length].yY,
+						// Segment 2 point 1 : origine
+						pers.getX2D(),
+						pers.getY2D(),
+						// Segment 2 point 2 (point hypothétique)
+						pers.getX2D() + 1000 * Math.cos((pers.getAngleAbsolu()+70)*Math.PI/180),
+						pers.getY2D() + 1000 * Math.sin((pers.getAngleAbsolu()+70)*Math.PI/180)
+					);
+				if (pointcourant.length > 0) {
+					pointDebut = i;
+					PointPanoDroit = new Array(pointcourant[0], pointcourant[1]);
+				}
+				
+				pointcourant = Intersection(
+						// Segment 1 point 1
+						ListPointsPano[i].xX,
+						ListPointsPano[i].yY,
+						// Segment 1 point 2
+						ListPointsPano[(i + 1) % ListPointsPano.length].xX,
+						ListPointsPano[(i + 1) % ListPointsPano.length].yY,
+						// Segment 2 point 1 : origine
+						pers.getX2D(),
+						pers.getY2D(),
+						// Segment 2 point 2 (point hypothétique)
+						pers.getX2D() + 1000 * Math.cos((pers.getAngleAbsolu()-70)*Math.PI/180),
+						pers.getY2D() + 1000 * Math.sin((pers.getAngleAbsolu()-70)*Math.PI/180)
+					);
+				if (pointcourant.length > 0) {
+					pointFin = i;
+					PointPanoGauche = new Array(pointcourant[0], pointcourant[1]);
+				}
+			}
+			
+			trace("Point gauche:" + PointPanoGauche[0] + "   " + PointPanoGauche[1]);
+			trace("Point droit:" + PointPanoDroit[0] + "   " + PointPanoDroit[1]);
+			
+			for(var j:Number = 0; j <= pointDebut; j++ ) {
+				PanoDistanceOrigine = PanoDistanceOrigine + DistanceEntreDeuxPoints(
+						// Segment 1 point 1
+						ListPointsPano[j].xX,
+						ListPointsPano[j].yY,
+						// Segment 1 point 2
+						ListPointsPano[(j + 1) % ListPointsPano.length].xX,
+						ListPointsPano[(j + 1) % ListPointsPano.length].yY);
+			}
+			PanoDistanceOrigine = PanoDistanceOrigine + DistanceEntreDeuxPoints(
+						// Segment 1 point 1
+						ListPointsPano[pointDebut].xX,
+						ListPointsPano[pointDebut].yY,
+						// Segment 1 point 2
+						PointPanoGauche[0],
+						PointPanoGauche[1]);
+			
+			trace("PanoDistanceOrigine: "+PanoDistanceOrigine);
+			
+			
+			for(var k:Number = (pointDebut + 1); k <= pointFin; k++ ) {
+				PanoLongueur = PanoLongueur + DistanceEntreDeuxPoints(
+						// Segment 1 point 1
+						ListPointsPano[k].xX,
+						ListPointsPano[k].yY,
+						// Segment 1 point 2
+						ListPointsPano[(k + 1) % ListPointsPano.length].xX,
+						ListPointsPano[(k + 1) % ListPointsPano.length].yY);
+			}
+			PanoLongueur = PanoLongueur + DistanceEntreDeuxPoints(
+						// Segment 1 point 1
+						ListPointsPano[pointFin].xX,
+						ListPointsPano[pointFin].yY,
+						// Segment 1 point 2
+						PointPanoDroit[0],
+						PointPanoDroit[1]);
+			
+			trace("PanoLongueur: "+PanoLongueur);
+			
+			// Correction des coordonnees par rapport aux dimensions des batonnets
+			PanoDistanceOrigine = Math.round(PanoDistanceOrigine/10) * 10;
+			PanoLongueur = Math.round(PanoLongueur/10) + 10;
+			trace("PanoDistanceOrigine2:"+PanoDistanceOrigine);
+			trace("Panolongueur2:"+PanoLongueur);
+			
+			/**€
+			
 			
 			// Recherche les points visibles du panorama
 			for(var i:Number = 0; i < ListPointsPano.length; i++ ) {
@@ -142,27 +249,20 @@ package
 					nbPointsPanoVus++;
 				}
 			}
-			
+			trace("ListPointsPano.length:"+ListPointsPano.length);
+			trace("nbPointsPanoVus:"+nbPointsPanoVus);
+			trace("Perso : "+pers.getX2D()+"  "+pers.getY2D());
 			// Si des points sont trouvés, alors on lance les calculs
 			if (listePointsPanoramaVus.length > 0) {
 				
-				// Recherche de la distance la plus éloignée
-				for(var j:Number = 0; j < listePointsPanoramaVus.length; j++) {
-					distanceCourante = DistanceDuPointDeVue(ListPointsPano[listePointsPanoramaVus[j]].xX, ListPointsPano[listePointsPanoramaVus[j]].yY);
-					
-					if(DistanceMaxPlan < distanceCourante) {
-						DistanceMaxPlan = distanceCourante;
-						// Eventuellement, sauvegarder ici le point le plus éloigné
-					}
-				}
-				
 				// Calcul des points gauche et droit :
 				// Calcul à la main du modulo (pour pas dépacer le tableau)
-				if (listePointsPanoramaVus[0] - 1 < 0) {
+				if ((listePointsPanoramaVus[0] - 1) < 0) {
 					positionI = ListPointsPano.length - 1;
 				} else {
 					positionI = listePointsPanoramaVus[0] - 1;
 				}
+				trace("1positionI:"+positionI);
 				// Calcul du x gauche
 				xTemp = Equation1(
 							ListPointsPano[positionI].xX,
@@ -170,6 +270,7 @@ package
 							ListPointsPano[listePointsPanoramaVus[0]].xX,
 							ListPointsPano[listePointsPanoramaVus[0]].yY,
 							77);
+				trace("1xTemp:"+xTemp);
 				// Calcul du y gauche
 				yTemp = Equation2a(
 							ListPointsPano[positionI].xX,
@@ -177,8 +278,11 @@ package
 							ListPointsPano[listePointsPanoramaVus[0]].xX,
 							ListPointsPano[listePointsPanoramaVus[0]].yY,
 							xTemp);
+				trace("1yTemp:"+yTemp);			
 				var dmc = {xX:xTemp, yY:yTemp};
-				PointPanoGauche = dmc;
+				trace("1dmc:"+dmc);
+				PointPanoGauche = new Array(xTemp, yTemp);
+				trace("PointPanoGauche:"+PointPanoGauche);
 				
 				// Calcul à la main du modulo (pour pas dépacer le tableau)
 				if (listePointsPanoramaVus[listePointsPanoramaVus.length] + 1 >= ListPointsPano.length) {
@@ -186,34 +290,34 @@ package
 				} else {
 					positionI = listePointsPanoramaVus[listePointsPanoramaVus.length] + 1;
 				}
+				trace("2positionI:"+positionI);
 				// Calcul du x droit
 				xTemp = Equation1(
 							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length]].xX,
 							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length]].yY,
-							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length] + 1 ].xX,
-							ListPointsPano[listePointsPanoramaVus[0]].yY,
+							ListPointsPano[positionI].xX,
+							ListPointsPano[positionI].yY,
 							-77);
+				trace("2xTemp:"+xTemp);
 				// Calcul du y droit
 				yTemp = Equation2a(
 							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length]].xX,
 							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length]].yY,
-							ListPointsPano[listePointsPanoramaVus[listePointsPanoramaVus.length] + 1 ].xX,
-							ListPointsPano[listePointsPanoramaVus[0]].yY,
+							ListPointsPano[positionI].xX,
+							ListPointsPano[positionI].yY,
 							xTemp);
-				
-				var dmc2 = {xX:xTemp, yY:yTemp};			
-				PointPanoDroit = dmc2;
+				trace("2yTemp:"+yTemp);
+				var dmc2 = {xX:xTemp, yY:yTemp};
+				trace("dmc2:"+dmc2);			
+				PointPanoDroit = new Array(xTemp, yTemp);
+				trace("PointPanoDroit:"+PointPanoDroit);
 			}			
 			// Si rien n'est trouvé, recherche des points les plus proches
 			else {
 				// Recherche les points visibles du panorama
 				for(var k:Number=0; k < ListPointsPano.length; k++) {
-					if (k + 1 >= ListPointsPano.length) {
-						positionI = 0;
-					} else {
-						positionI = k + 1;
-					}
-				
+					positionI = (k + 1)%ListPointsPano.length;
+					trace("3positionI:"+positionI);
 					if(Intersection(
 								// Segment 1 point 1
 								ListPointsPano[k].xX,
@@ -224,11 +328,11 @@ package
 								// Segment 2 point 1 : origine
 								pers.getX2D(),
 								pers.getY2D(),
-								// Segment 2 point 2 (point hypothétique
-								pers.getX2D() + 1000000 * Math.cos(pers.getAngleVue() + 70),
-								pers.getY2D() + 1000000 * Math.sin(pers.getAngleVue() + 70)
+								// Segment 2 point 2 (point hypothétique)
+								pers.getX2D() + 1000 * Math.cos((pers.getAngleAbsolu() + 70)*Math.PI/180),
+								pers.getY2D() + 1000 * Math.sin((pers.getAngleAbsolu() + 70)*Math.PI/180)
 							).length > 1) {
-						
+						trace("est dans l'intersection 3");
 						listePointsPanoramaVus[0] = k;
 						listePointsPanoramaVus[1] = positionI;
 						
@@ -243,12 +347,12 @@ package
 											pers.getX2D(),
 											pers.getY2D(),
 											// Segment 2 point 2 (point hypothétique)
-											pers.getX2D() + 1000000 * Math.cos(pers.getAngleVue() + 70),
-											pers.getY2D() + 1000000 * Math.sin(pers.getAngleVue() + 70)
+											pers.getX2D() + 1000 * Math.cos((pers.getAngleAbsolu()+70)*Math.PI/180),
+											pers.getY2D() + 1000 * Math.sin((pers.getAngleAbsolu()+70)*Math.PI/180)
 										);
-						
-						var dmc3 = {xX:pointcourant.xX, yY:pointcourant.yY};				
-						PointPanoGauche = dmc3;
+						trace("pointcourant1:"+pointcourant);
+						//var dmc3 = {xX:pointcourant.xX, yY:pointcourant.yY};			
+						PointPanoGauche = new Array(pointcourant[0], pointcourant[1]);
 						
 						pointcourant = Intersection(
 											// Segment 1 point 1
@@ -261,37 +365,52 @@ package
 											pers.getX2D(),
 											pers.getY2D(),
 											// Segment 2 point 2 (point hypothétique)
-											pers.getX2D() + 1000000 * Math.cos(pers.getAngleVue() - 70),
-											pers.getY2D() + 1000000 * Math.sin(pers.getAngleVue() - 70)
+											pers.getX2D() + 10 * Math.cos((pers.getAngleAbsolu()-70)*Math.PI/180),
+											pers.getY2D() + 10 * Math.sin((pers.getAngleAbsolu()-70)*Math.PI/180)
 										);
-										
-						var dmc4 = {xX:pointcourant.xX, yY:pointcourant.yY};
-						PointPanoDroit = dmc4;
-						DistanceMaxPlan = Math.max(
+						trace("pointcourant2:"+pointcourant);
+						//trace("pointcourant2:"+pointcourant[0] +"  "+pointcourant[1]);									
+						//var dmc4 = {xX:pointcourant.xX, yY:pointcourant.yY};
+						
+						
+						PointPanoDroit = new Array(pointcourant[0], pointcourant[1]);
+						
+						trace("Point gauche:" + PointPanoGauche[0] + "   " + PointPanoGauche[1]);
+						trace("Point droit:" + PointPanoDroit[0] + "   " + PointPanoDroit[1]);
+						
+						/**DistanceMaxPlan = Math.max(
 												DistanceDuPointDeVue(PointPanoGauche.xX, PointPanoGauche.yY),
 												DistanceDuPointDeVue(PointPanoDroit.xX, PointPanoDroit.yY)
 											);
-						
+						trace("DistanceMaxPlan4:"+DistanceMaxPlan);
+						trace(PointPanoGauche[0]);
+						trace(PointPanoGauche[1]);
+						trace(ListPointsPano[k].xX);
+						trace(ListPointsPano[k].yY);
 						// Correction de distance :
 						PanoDistanceOrigine = 0 - DistanceEntreDeuxPoints(
-										PointPanoGauche.xX,
-										PointPanoGauche.yY,
+										PointPanoGauche[0],
+										PointPanoGauche[1],
 										ListPointsPano[k].xX,
 										ListPointsPano[k].yY);
+						trace("PanoDistanceOrigine2-2:"+PanoDistanceOrigine);
+					}else{
+						trace("pas d'intersection");
 					}
 				}
 				
 			}
 			
+						
 			// Conversion pour le groupe 1 :
 			for(var l:Number=0; l < listePointsPanoramaVus[0]; l++) {
 				PanoDistanceOrigine = PanoDistanceOrigine + DistanceEntreDeuxPoints(ListPointsPano[l].xX,ListPointsPano[l].yY,ListPointsPano[l + 1].xX,ListPointsPano[l + 1].yY);
 			}
-			PanoLongueur = DistanceEntreDeuxPoints(PointPanoGauche.xX, PointPanoGauche.yY, PointPanoDroit.xX, PointPanoDroit.yY);
+			trace("DistanceEntreDeuxPoints("+PointPanoGauche[0]+", "+PointPanoGauche[1]+", "+PointPanoDroit[0]+", "+PointPanoDroit[1]+")");
+			PanoLongueur = DistanceEntreDeuxPoints(PointPanoGauche[0], PointPanoGauche[1], PointPanoDroit[0], PointPanoDroit[1]);
+			trace("Panolongueur:"+PanoLongueur);
 			
-			// Correction des coordonn�es par rapport aux dimensions des batonnets
-			PanoDistanceOrigine = Math.round(PanoDistanceOrigine/10) * 10;
-			PanoLongueur = Math.round(PanoLongueur/10) + 10;
+			**/
 			
 		}
 		
@@ -453,24 +572,24 @@ package
 			var eq1:Number = 0;
 			var eq2:Number = 0;
 			
-			eq1 = (Math.cos(pers.getAngleVue() - 70) * yR - Math.sin(pers.getAngleVue() - 70) * xR)/(Math.cos(pers.getAngleVue() - 70) * pers.getY2D() - Math.sin(pers.getAngleVue() - 70) * pers.getX2D());
+			eq1 = (Math.cos((pers.getAngleVue() - 70)*Math.PI/180) * yR - Math.sin((pers.getAngleVue() - 70)*Math.PI/180) * xR)/(Math.cos((pers.getAngleVue() - 70)*Math.PI/180) * pers.getY2D() - Math.sin((pers.getAngleVue() - 70)*Math.PI/180) * pers.getX2D());
 			
-			eq2 = (Math.cos(pers.getAngleVue() + 70) * yR - Math.sin(pers.getAngleVue() + 70) * xR)/(Math.cos(pers.getAngleVue() + 70) * pers.getY2D() - Math.sin(pers.getAngleVue() + 70) * pers.getX2D());
+			eq2 = (Math.cos((pers.getAngleVue() + 70)*Math.PI/180) * yR - Math.sin((pers.getAngleVue() + 70)*Math.PI/180) * xR)/(Math.cos((pers.getAngleVue() + 70)*Math.PI/180) * pers.getY2D() - Math.sin((pers.getAngleVue() + 70)*Math.PI/180) * pers.getX2D());
 			
 			return (eq1 > 0 && eq2 < 0) ;
 		}
 		
 		public function DistanceDuPointDeVue(xR:Number,yR:Number):Number {
-			return Math.sqrt(Math.pow(xR - pers.getX2D(), 2) + Math.pow(xR - pers.getY2D(), 2));
+			return DistanceEntreDeuxPoints(xR, yR, pers.getX2D(), pers.getY2D());
 		}
 		
 		public function DistanceEntreDeuxPoints(xR:Number,yR:Number,xA:Number,yA:Number):Number {
-			return Math.sqrt(Math.pow(xR - xA, 2) + Math.pow(xR - yA, 2));
+			return Math.sqrt(Math.pow(xR - xA, 2) + Math.pow(yR - yA, 2));
 		}
 		
 		
 		public function Equation1(x4:Number, y4:Number, x5:Number, y5:Number, theta:Number):Number {
-			return (y4 - x4 * ((y5 -y4)/(x5 - x4)) + (pers.getY2D()/pers.getX2D())*((Math.cos(pers.getAngleVue() + theta) - 1)/(Math.sin(pers.getAngleVue() + theta) - 1)))/(((y5 - y4)/(x5 - x4)) - pers.getY2D() - pers.getY2D()*((Math.cos(pers.getAngleVue() + theta) - 1)/(Math.sin(pers.getAngleVue() + theta) - 1)));
+			return (y4 - x4 * ((y5 -y4)/(x5 - x4)) + (pers.getY2D()/pers.getX2D())*((Math.cos((pers.getAngleVue() + theta) - 1)*Math.PI/180)/(Math.sin((pers.getAngleVue() + theta) - 1)*Math.PI/180)))/(((y5 - y4)/(x5 - x4)) - pers.getY2D() - pers.getY2D()*((Math.cos((pers.getAngleVue() + theta) - 1)*Math.PI/180)/(Math.sin((pers.getAngleVue() + theta) - 1)*Math.PI/180)));
 		}
 		
 		public function Equation2a(x4:Number, y4:Number, x5:Number, y5:Number, x2:Number):Number {
@@ -480,12 +599,14 @@ package
 		
 		
 		public function Intersection(Ax:Number, Ay:Number, Bx:Number, By:Number, Cx:Number, Cy:Number, Dx:Number, Dy:Number):Array{
-			var Sx : Number;
-			var Sy : Number;
-			var pCD : Number;
-			var pAB : Number;
-			var oCD : Number;
-			var oAB : Number;
+			
+			trace("  A :"+Ax+" "+Ay+"  B :"+Bx+" "+By+"  C :"+Cx+" "+Cy+"  D :"+Dx+" "+Dy);
+			var Sx : Number = 0;
+			var Sy : Number = 0;
+			var pCD : Number = 0;
+			var pAB : Number = 0;
+			var oCD : Number = 0;
+			var oAB : Number = 0;
  
 			if(Ax==Bx)
 			{
@@ -525,6 +646,7 @@ package
 				(Sy>Cy && Sy>Dy)) {
 					return new Array();
 				} else {
+					trace("intersection trouvé: "+ Sx +"   " + Sy);
 					return new Array(Sx, Sy);
 				}
 		}
